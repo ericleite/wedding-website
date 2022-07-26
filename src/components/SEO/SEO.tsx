@@ -5,19 +5,19 @@
  */
 
 import { graphql, useStaticQuery } from 'gatsby';
-import * as React from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import { SiteData } from '../types/data';
+import { SiteData } from '../../types';
 
-interface SeoProps {
+interface SEOProps {
   description?: string;
   lang?: string;
   meta?: Array<JSX.IntrinsicElements['meta']>;
   title?: string;
 }
 
-const Seo: React.FC<SeoProps> = ({ description = '', lang = 'en', meta = [], title }) => {
+const SEO: React.FC<SEOProps> = ({ description = '', lang = 'en', meta = [], title }) => {
   const { site }: SiteData = useStaticQuery(
     graphql`
       query {
@@ -81,4 +81,4 @@ const Seo: React.FC<SeoProps> = ({ description = '', lang = 'en', meta = [], tit
   );
 };
 
-export default Seo;
+export default SEO;

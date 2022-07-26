@@ -1,22 +1,24 @@
 import { graphql, PageProps } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import * as React from 'react';
+import React from 'react';
 
-import Seo from '../components/seo';
-import Layout from '../templates/layout';
-import { SiteData } from '../types/data';
+import { SEO } from '../components';
+import { DESKTOP_BREAKPOINTS } from '../constants';
+import { PageLayout } from '../templates';
+import { SiteData } from '../types';
 
 const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
-  <Layout>
-    <Seo />
+  <PageLayout>
+    <SEO />
     <StaticImage
       alt="Eric and Lauren at the beach"
-      breakpoints={[1080, 1366, 1920, 2560, 3440]}
+      breakpoints={DESKTOP_BREAKPOINTS}
+      layout="fullWidth"
       loading="eager"
-      quality={100}
+      quality={90}
       src="../assets/images/P1199322.jpg"
     />
-  </Layout>
+  </PageLayout>
 );
 
 export default Index;

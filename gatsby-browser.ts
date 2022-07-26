@@ -6,4 +6,4 @@
 
 // You can delete this file if you're not using it
 
-import './src/assets/styles/global.css';
+import './src/assets/styles/globals.css';

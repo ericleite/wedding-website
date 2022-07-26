@@ -1,14 +1,14 @@
 import { PageProps } from 'gatsby';
-import * as React from 'react';
+import React from 'react';
 
-import Seo from '../components/seo';
-import Layout from '../templates/layout';
+import { SEO } from '../components';
+import { PageLayout } from '../templates';
 
 const Rsvp: React.FC<PageProps> = () => (
-  <Layout>
-    <Seo title="RSVP" />
+  <PageLayout>
+    <SEO title="RSVP" />
     <h1>RSVP</h1>
-  </Layout>
+  </PageLayout>
 );
 
 export default Rsvp;
