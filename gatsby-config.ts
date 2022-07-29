@@ -20,8 +20,8 @@ const config: GatsbyConfig = {
         preconnect: [`https://fonts.gstatic.com`],
         web: [
           {
-            file: `https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap`,
-            name: `Cormorant Garamond`,
+            file: `https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&display=swap`,
+            name: `Playfair Display`,
           },
           {
             file: `https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap`,

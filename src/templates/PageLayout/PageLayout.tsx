@@ -4,28 +4,15 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 
-import { Footer, Header } from '../../components';
-import { SiteData } from '../../types';
+import { Footer } from '../../components';
 
 interface PageLayoutProps {}
 
 const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({ children }) => {
-  const { site }: SiteData = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   return (
     <>
-      <Header siteTitle={site.siteMetadata.title} />
       <main>{children}</main>
       <Footer />
     </>
