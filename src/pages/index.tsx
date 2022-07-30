@@ -22,14 +22,19 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
           loading="eager"
           placeholder="dominantColor"
           quality={90}
-          src="../assets/images/P1188863.jpg"
+          src="../assets/images/P1188863-2.jpg"
         />
       }
     >
-      <div className="flex flex-col items-center">
-        <Header className="mb-9" />
-        <h1 className="text-lightPrimary font-normal font-stylized">We&apos;re getting married!</h1>
-        <h5 className="text-lightSecondary">03.04.2023</h5>
+      <div className="flex flex-col items-center justify-between">
+        <Header />
+        <div className="p-6 border border-lightSecondary border-solid">
+          <div className="flex flex-col items-center p-9 bg-lightSecondary">
+            <p className="text-darkPrimary uppercase tracking-widest leading-none">The Wedding Celebration of</p>
+            <hr className="h-1 w-10 bg-darkSecondary mt-8 mb-9" />
+            <h1 className="text-darkPrimary font-normal font-stylized leading-none mb-0">Eric &amp; Lauren</h1>
+          </div>
+        </div>
       </div>
     </HeroImage>
   </PageLayout>
