@@ -26,7 +26,7 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
       />
     }
     heroImageClassName={styles.heroImageContainer}
-    seoTitle=""
+    seoTitle="Our Wedding"
     showRsvp={false}
     subtitle="The Wedding of"
     title="Eric &amp; Lauren"
