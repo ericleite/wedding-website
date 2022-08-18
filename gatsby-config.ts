@@ -37,12 +37,6 @@ const config: GatsbyConfig = {
     },
     {
       options: {
-        trackingId: 'G-4LDM0PN4MD',
-      },
-      resolve: 'gatsby-plugin-google-analytics',
-    },
-    {
-      options: {
         background_color: `#7c0022`,
         icon: 'static/favicon.png',
       },
@@ -88,9 +82,7 @@ const config: GatsbyConfig = {
     },
     {
       options: {
-        trackingIds: [
-          'G-F71JD0Z4DM', // Google Analytics / GA
-        ],
+        trackingIds: ['G-F71JD0Z4DM'],
       },
       resolve: `gatsby-plugin-google-gtag`,
     },

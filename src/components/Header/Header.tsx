@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { Link } from 'gatsby';
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import React from 'react';
 
 import { Routes, Theme } from '../../types';
@@ -34,13 +35,13 @@ const Header: React.FC<HeaderProps> = ({ className, theme = Theme.Light }) => {
           Accommodations
         </Link>
         <span className={styles.divider}>|</span>
-        <Link activeClassName={styles.isActive} className={styles.navLink} to={Routes.Rsvp}>
-          RSVP
-        </Link>
-        <span className={styles.divider}>|</span>
         <Link activeClassName={styles.isActive} className={styles.navLink} to={Routes.Registry}>
           Registry
         </Link>
+        <span className={styles.divider}>|</span>
+        <OutboundLink className={styles.navLink} href={Routes.Rsvp} target="_blank">
+          RSVP
+        </OutboundLink>
       </nav>
     </header>
   );
