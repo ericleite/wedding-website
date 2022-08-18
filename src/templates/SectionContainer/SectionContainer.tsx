@@ -16,14 +16,12 @@ interface SectionContainerProps {
 
 const SectionContainer: React.FC<React.PropsWithChildren<SectionContainerProps>> = ({
   children,
-  className,
+  className = 'place-items-stretch',
   theme = Theme.Light,
 }) => {
   const isDark = theme === Theme.Dark;
   return (
-    <div className={clsx(className, { 'bg-darkPrimary': isDark }, 'grid grid-cols-12 gap-13 place-items-stretch p-13')}>
-      {children}
-    </div>
+    <div className={clsx(className, { 'bg-darkPrimary': isDark }, 'grid grid-cols-12 gap-13 p-13')}>{children}</div>
   );
 };
 

@@ -2,7 +2,7 @@ import { PageProps } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-import MountainOutline from '../assets/images/accents/mountain-outline.inline.svg';
+import MountainOutlineSVG from '../assets/images/accents/mountain-outline.inline.svg';
 import * as globalStyles from '../assets/styles/global.module.css';
 import { PageLayout, SectionContainer } from '../templates';
 import { SiteData, Theme } from '../types';
@@ -25,28 +25,39 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
     subtitle="The Wedding Celebration of"
     title="Eric &amp; Lauren"
   >
-    <SectionContainer>
-      <section className="col-start-1 col-end-5 border border-darkPrimary border-solid p-13">
-        <p className="text-darkPrimary uppercase tracking-widest leading-none">
-          Join the celebration as Eric Leite and Lauren Dubose say &ldquo;I do&rdquo; on the shores of the Dubose
-          residence in Palm Springs, California.
-        </p>
+    <SectionContainer className="place-items-center">
+      <section className="col-start-1 col-end-5">
+        <StaticImage
+          alt="Watercolor drawing of decorative flowers"
+          placeholder="tracedSVG"
+          quality={80}
+          src="../assets/images/accents/flowers-with-birds-of-paradise.jpeg"
+          width={378}
+        />
       </section>
-      <section className="col-start-5 col-end-9">[Insert graphic here]</section>
-      <section className="col-start-9 col-end-13 flex flex-col items-center justify-between border border-darkPrimary border-solid p-13">
-        <p className="text-darkPrimary uppercase tracking-widest leading-none">The Date</p>
+      <section className="col-start-5 col-end-9 flex flex-col items-center">
+        <h3 className="text-center">Join the celebration</h3>
         <hr className="h-6 w-14 bg-darkTertiary mt-12 mb-13" />
-        <h3>
-          Saturday
-          <br />
-          March 4th
-          <br />
-          2023
-        </h3>
+        <p className="text-center">
+          Eric Leite and Lauren Dubose are getting married on shores of the Dubose family residence, which sits at the
+          base of the beautiful San Jacinto mountains.
+        </p>
+        <p className="text-center">They are elated to have your company as they say &#8220;I do&#8221; on</p>
+        <p className="font-bold uppercase tracking-widest leading-none">Saturday, March 4, 2023</p>
+      </section>
+      <section className="col-start-9 col-end-13">
+        <StaticImage
+          alt="Watercolor drawing of decorative flowers"
+          placeholder="tracedSVG"
+          quality={80}
+          src="../assets/images/accents/flowers-with-birds-of-paradise.jpeg"
+          style={{ transform: 'scaleX(-1)' }}
+          width={378}
+        />
       </section>
     </SectionContainer>
     <SectionContainer className="relative" theme={Theme.Dark}>
-      <MountainOutline className="absolute bottom-0 w-full text-darkSecondary" />
+      <MountainOutlineSVG className="absolute bottom-0 w-full text-darkSecondary" />
       <section className="z-10 col-start-6 col-end-13">
         <h2 className="text-h1 text-lightPrimary my-18">
           Palm
