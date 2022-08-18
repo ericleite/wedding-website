@@ -1,18 +1,44 @@
 .navLink {
-  @apply text-lightSecondary;
   @apply transition-colors;
-}
-
-.navLink:hover,
-.navLink.isActive {
-  @apply text-lightPrimary;
-}
-
-.navLink {
   @apply px-7;
 }
 
 .divider {
-  @apply text-lightSecondary;
   @apply pointer-events-none;
+}
+
+.isLight .navLink {
+  @apply text-lightSecondary;
+}
+
+.isLight .navLink:hover,
+.isLight .navLink.isActive {
+  @apply text-lightPrimary;
+}
+
+.isLight .divider {
+  @apply text-lightSecondary;
+}
+
+.isLight .monogram {
+  @apply text-lightSecondary;
+  @apply hover:text-lightPrimary;
+}
+
+.isDark .navLink {
+  @apply text-darkPrimary;
+}
+
+.isDark .navLink:hover,
+.isDark .navLink.isActive {
+  @apply text-darkSecondary;
+}
+
+.isDark .divider {
+  @apply text-darkPrimary;
+}
+
+.isDark .monogram {
+  @apply text-darkPrimary;
+  @apply hover:text-darkSecondary;
 }

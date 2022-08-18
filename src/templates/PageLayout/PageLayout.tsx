@@ -6,12 +6,13 @@
 
 import React from 'react';
 
-import { Footer, Header, HeroImage, SEO } from '../../components';
+import { Footer, Header, HeaderTheme, HeroImage, SEO } from '../../components';
 
 interface PageLayoutProps {
   heroImageClassName?: string;
   heroImage: React.ReactNode;
   subtitle?: string;
+  theme?: HeaderTheme;
   title: string;
 }
 
@@ -20,6 +21,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   heroImageClassName,
   heroImage,
   subtitle,
+  theme,
   title,
 }) => {
   return (
@@ -27,7 +29,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
       <SEO />
       <HeroImage className={heroImageClassName} image={heroImage}>
         <div className="flex flex-col items-center justify-between border border-lightPrimary border-solid p-9">
-          <Header />
+          <Header theme={theme} />
           <div className="flex flex-col items-center">
             {subtitle && (
               <>

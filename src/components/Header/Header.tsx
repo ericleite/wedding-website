@@ -5,18 +5,26 @@ import React from 'react';
 import { Routes } from '../../types/routes';
 import * as styles from './Header.module.css';
 
-interface HeaderProps {
-  className?: string;
+export enum HeaderTheme {
+  Dark,
+  Light,
 }
 
-const Header: React.FC<HeaderProps> = ({ className }) => {
+interface HeaderProps {
+  className?: string;
+  theme?: HeaderTheme;
+}
+
+const Header: React.FC<HeaderProps> = ({ className, theme = HeaderTheme.Light }) => {
+  const isDark = theme === HeaderTheme.Dark;
+  const isLight = theme === HeaderTheme.Light;
+
   return (
-    <header className={clsx(className, 'flex flex-col items-center')}>
+    <header
+      className={clsx(className, isDark && styles.isDark, isLight && styles.isLight, 'flex flex-col items-center')}
+    >
       <h3>
-        <Link
-          className="flex items-center font-serif text-lightSecondary hover:text-lightPrimary transition-colors"
-          to={Routes.Index}
-        >
+        <Link className={clsx(styles.monogram, 'flex items-center font-serif transition-colors')} to={Routes.Index}>
           <span>E</span>
           <span className="text-h5 px-4">&amp;</span>
           <span>L</span>

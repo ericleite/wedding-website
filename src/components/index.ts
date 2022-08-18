@@ -1,4 +1,4 @@
-export { Footer } from './Footer';
-export { Header } from './Header';
-export { HeroImage } from './HeroImage';
-export { SEO } from './SEO';
+export * from './Footer';
+export * from './Header';
+export * from './HeroImage';
+export * from './SEO';

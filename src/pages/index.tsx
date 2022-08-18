@@ -4,7 +4,7 @@ import React from 'react';
 
 import { PageLayout } from '../templates';
 import { SiteData } from '../types';
-import * as styles from './index.module.css';
+import * as styles from './global.module.css';
 
 const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
   <PageLayout
@@ -17,7 +17,7 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
         loading="eager"
         placeholder="dominantColor"
         quality={80}
-        src="../assets/images/P1188863-2.jpg"
+        src="../assets/images/eric-and-lauren-in-cave.jpg"
       />
     }
     heroImageClassName={styles.heroImageContainer}
