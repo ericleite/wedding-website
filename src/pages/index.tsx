@@ -2,9 +2,9 @@ import { PageProps } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-import { PageLayout } from '../templates';
-import { SiteData } from '../types';
-import * as styles from './global.module.css';
+import * as styles from '../assets/styles/global.module.css';
+import { PageLayout, SectionContainer } from '../templates';
+import { SiteData, Theme } from '../types';
 
 const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
   <PageLayout
@@ -17,14 +17,44 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
         loading="eager"
         placeholder="dominantColor"
         quality={80}
-        src="../assets/images/eric-and-lauren-in-cave.jpg"
+        src="../assets/images/heros/eric-and-lauren-in-cave.jpg"
       />
     }
     heroImageClassName={styles.heroImageContainer}
     subtitle="The Wedding Celebration of"
     title="Eric &amp; Lauren"
   >
-    <p>content</p>
+    <SectionContainer>
+      <section className="col-start-1 col-end-5 border border-darkPrimary border-solid p-13">
+        <p className="text-darkPrimary uppercase tracking-widest leading-none">
+          Join the celebration as Eric Leite and Lauren Dubose say &ldquo;I do&rdquo; on the shores of the Dubose
+          residence in Palm Springs, California.
+        </p>
+      </section>
+      <section className="col-start-5 col-end-9">[Insert graphic here]</section>
+      <section className="col-start-9 col-end-13 flex flex-col items-center justify-between border border-darkPrimary border-solid p-13">
+        <p className="text-darkPrimary uppercase tracking-widest leading-none">The Date</p>
+        <hr className="h-6 w-14 bg-darkTertiary mt-12 mb-13" />
+        <h3>
+          Saturday
+          <br />
+          March 4th
+          <br />
+          2023
+        </h3>
+      </section>
+    </SectionContainer>
+    <SectionContainer theme={Theme.Dark}>
+      <section className="col-start-6 col-end-13">
+        <h2 className="text-lightPrimary my-18">
+          Palm
+          <br />
+          Springs,
+          <br />
+          CA
+        </h2>
+      </section>
+    </SectionContainer>
   </PageLayout>
 );
 

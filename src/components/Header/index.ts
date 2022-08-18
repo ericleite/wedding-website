@@ -1,1 +1,1 @@
-export { default as Header, HeaderTheme } from './Header';
+export { default as Header } from './Header';

@@ -2,9 +2,9 @@ import { PageProps } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-import { HeaderTheme, SEO } from '../components';
-import { PageLayout } from '../templates';
-import * as styles from './global.module.css';
+import * as styles from '../assets/styles/global.module.css';
+import { PageLayout, SectionContainer } from '../templates';
+import { Theme } from '../types';
 
 const OurStory: React.FC<PageProps> = () => (
   <PageLayout
@@ -17,15 +17,18 @@ const OurStory: React.FC<PageProps> = () => (
         loading="eager"
         placeholder="dominantColor"
         quality={80}
-        src="../assets/images/eric-and-lauren-walking-up-stairs.jpg"
+        src="../assets/images/heros/eric-and-lauren-walking-up-stairs.jpg"
       />
     }
     subtitle="How we found each other"
-    theme={HeaderTheme.Dark}
+    theme={Theme.Dark}
     title="Our Story"
   >
-    <SEO title="Our Story" />
-    <h1>Hi</h1>
+    <SectionContainer>
+      <section className="col-span-full text-center">
+        <h1>Hi</h1>
+      </section>
+    </SectionContainer>
   </PageLayout>
 );
 

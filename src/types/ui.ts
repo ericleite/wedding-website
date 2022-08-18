@@ -7,3 +7,8 @@ export enum DeviceWidth {
   WQHD = 2560,
   UHD1 = 3840,
 }
+
+export enum Theme {
+  Dark,
+  Light,
+}

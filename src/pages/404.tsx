@@ -1,17 +1,20 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import { SEO } from '../components';
-import { PageLayout } from '../templates';
+import { PageLayout, SectionContainer } from '../templates';
 
 const NotFoundPage = () => {
   return (
-    <PageLayout>
-      <SEO title="404: Not found" />
-      <h1>404: Not Found</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-      <br />
-      <Link to="/">Go home</Link>.
+    <PageLayout title="Page Not Found">
+      <SectionContainer>
+        <section className="col-span-full text-center">
+          <h1>Uh oh!</h1>
+          <p>Looks like there&#8217;s no page that matches the current URL.</p>
+          <p>
+            Please double check the URL or <Link to="/">click here</Link> to go home.
+          </p>
+        </section>
+      </SectionContainer>
     </PageLayout>
   );
 };

@@ -1,13 +1,15 @@
 import { PageProps } from 'gatsby';
 import React from 'react';
 
-import { SEO } from '../components';
-import { PageLayout } from '../templates';
+import { PageLayout, SectionContainer } from '../templates';
 
 const Accommodations: React.FC<PageProps> = () => (
-  <PageLayout>
-    <SEO title="Accommodations" />
-    <h1>Accommodations</h1>
+  <PageLayout title="Accomodations">
+    <SectionContainer>
+      <section className="col-span-full text-center">
+        <h1>Coming soon!</h1>
+      </section>
+    </SectionContainer>
   </PageLayout>
 );
 

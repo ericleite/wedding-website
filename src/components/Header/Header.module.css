@@ -1,6 +1,12 @@
+.monogramLink {
+  @apply border-none;
+  @apply flex items-center font-serif transition-colors;
+}
+
 .navLink {
+  @apply border-none;
+  @apply px-11;
   @apply transition-colors;
-  @apply px-7;
 }
 
 .divider {
@@ -20,7 +26,7 @@
   @apply text-lightSecondary;
 }
 
-.isLight .monogram {
+.isLight .monogramLink {
   @apply text-lightSecondary;
   @apply hover:text-lightPrimary;
 }
@@ -38,7 +44,7 @@
   @apply text-darkPrimary;
 }
 
-.isDark .monogram {
+.isDark .monogramLink {
   @apply text-darkPrimary;
   @apply hover:text-darkSecondary;
 }

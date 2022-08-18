@@ -2,31 +2,26 @@ import clsx from 'clsx';
 import { Link } from 'gatsby';
 import React from 'react';
 
-import { Routes } from '../../types/routes';
+import { Routes, Theme } from '../../types';
 import * as styles from './Header.module.css';
-
-export enum HeaderTheme {
-  Dark,
-  Light,
-}
 
 interface HeaderProps {
   className?: string;
-  theme?: HeaderTheme;
+  theme?: Theme;
 }
 
-const Header: React.FC<HeaderProps> = ({ className, theme = HeaderTheme.Light }) => {
-  const isDark = theme === HeaderTheme.Dark;
-  const isLight = theme === HeaderTheme.Light;
+const Header: React.FC<HeaderProps> = ({ className, theme = Theme.Light }) => {
+  const isDark = theme === Theme.Dark;
+  const isLight = theme === Theme.Light;
 
   return (
     <header
       className={clsx(className, isDark && styles.isDark, isLight && styles.isLight, 'flex flex-col items-center')}
     >
       <h3>
-        <Link className={clsx(styles.monogram, 'flex items-center font-serif transition-colors')} to={Routes.Index}>
+        <Link className={styles.monogramLink} to={Routes.Index}>
           <span>E</span>
-          <span className="text-h5 px-4">&amp;</span>
+          <span className="text-h5 px-7">&amp;</span>
           <span>L</span>
         </Link>
       </h3>

@@ -5,14 +5,15 @@ import * as styles from './HeroImage.module.css';
 
 interface HeroImageProps {
   className?: string;
+  contentClassName?: string;
   image: React.ReactNode;
 }
 
-const HeroImage: React.FC<HeroImageProps> = ({ children, className, image }) => {
+const HeroImage: React.FC<HeroImageProps> = ({ children, className, contentClassName, image }) => {
   return (
-    <div className={clsx(className, 'grid w-full h-screen p-9')}>
+    <div className={clsx(className, 'grid w-full h-screen p-13')}>
       {image}
-      <div className={styles.content}>{children}</div>
+      <div className={clsx(contentClassName, styles.content)}>{children}</div>
     </div>
   );
 };
