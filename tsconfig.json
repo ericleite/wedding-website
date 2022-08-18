@@ -104,5 +104,5 @@
     /* Plugins */
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
-  "include": ["./src/**/*", "./gatsby-node.ts", "./gatsby-config.ts", "./plugins/**/*"]
+  "include": ["./src/**/*", "./src/types/globals.d.ts", "./gatsby-config.ts", "./plugins/**/*"]
 }

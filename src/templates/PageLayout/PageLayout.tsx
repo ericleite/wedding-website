@@ -20,6 +20,7 @@ interface PageLayoutProps {
   heroImageClassName?: string;
   heroImage?: React.ReactNode;
   seoTitle?: string;
+  showRsvp?: boolean;
   subtitle?: string;
   theme?: ThemeColor;
   title: string;
@@ -31,6 +32,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   heroImageClassName,
   heroImage,
   seoTitle,
+  showRsvp = true,
   subtitle,
   theme = ThemeColor.Dark,
   title,
@@ -100,7 +102,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
 
       <main className={className}>{children}</main>
 
-      <Footer />
+      <Footer showRsvp={showRsvp} />
     </>
   );
 };
