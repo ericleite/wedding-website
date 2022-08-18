@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Eric & Lauren`,
+    description: `We joyfully request your company as we state our vows and join in marriage in the presence of family and friends.`,
+    author: `@ericleite`,
+    siteUrl: `https://ericandlauren.love/`,
   },
   plugins: [
     `gatsby-plugin-postcss`,
