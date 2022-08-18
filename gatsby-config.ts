@@ -82,7 +82,7 @@ const config: GatsbyConfig = {
     },
     {
       options: {
-        trackingIds: ['G-F71JD0Z4DM'],
+        trackingIds: [process.env.GTAG_ID].filter(Boolean),
       },
       resolve: `gatsby-plugin-google-gtag`,
     },
