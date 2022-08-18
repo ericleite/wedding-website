@@ -33,7 +33,7 @@ const TimelineSection: React.FC<TimelineSectionProps> = ({
   title,
 }) => (
   <section className={clsx('grid grid-cols-1 gap-11 relative lg:gap-13 2xl:gap-15 2xl:grid-cols-2', className)}>
-    <HeartSVG className="absolute top-12 left-1/2 -translate-x-1/2 w-10 h-10 p-5 box-content text-darkSecondary bg-white" />
+    <HeartSVG className="absolute top-12 left-1/2 -translate-x-1/2 w-10 h-10 p-5 box-content text-maroonTertiary bg-white" />
     <div className={orientation === TimelineSectionOrientation.Left ? rightClassNames : leftClassNames}>{image}</div>
     <div
       className={clsx(

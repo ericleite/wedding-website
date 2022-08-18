@@ -16,12 +16,20 @@ module.exports = {
     },
     extend: {
       colors: {
-        darkPrimary: '#1e293b',
-        darkSecondary: '#475569',
-        darkTertiary: '#94a3b8',
-        lightPrimary: '#f8fafc',
-        lightSecondary: '#cbd5e1',
-        lightTertiary: '#64748b',
+        // Color palette can be found here:
+        // https://coolors.co/243a47-eff1f3-e09f3e-eecb95-540b0e-e6ad9e
+        darkPrimary: '#142028',
+        darkSecondary: '#335466',
+        darkTertiary: '#667F8C',
+        goldPrimary: '#996D2A',
+        goldSecondary: '#E09F3E',
+        goldTertiary: '#F5D18F',
+        lightPrimary: '#FAFAFA',
+        lightSecondary: '#E2E6E9',
+        lightTertiary: '#C4CED2',
+        maroonPrimary: '#270506',
+        maroonSecondary: '#540B0E',
+        maroonTertiary: '#7F4749',
       },
       fontFamily: {
         sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
@@ -37,6 +45,7 @@ module.exports = {
       h4: ['2.369rem', 1.333],
       h5: ['1.777rem', 1.333],
       h6: ['1.333rem', 1.333],
+      hBase: ['1rem', 1.333],
       small: ['0.75rem', 1.333],
     },
     spacing: {

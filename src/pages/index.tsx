@@ -53,7 +53,7 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
             which sits at the base of the beautiful San Jacinto mountains near Palm Springs, California.
           </p>
         </div>
-        <div className="md:grid md:grid-cols-2 w-full space-y-13 md:space-y-0">
+        <div className="sm:grid sm:grid-cols-2 w-full space-y-13 sm:space-y-0">
           <div className="flex flex-col items-center">
             <p className={globalStyles.textHeading}>When</p>
             <Divider size={ThemeSize.Sm} spacing={ThemeSize.Sm} />

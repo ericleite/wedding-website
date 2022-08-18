@@ -1,7 +1,9 @@
+import clsx from 'clsx';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import React from 'react';
 
-import { Routes } from '../../types';
+import * as globalStyles from '../../assets/styles/global.module.css';
+import { Routes, ThemeSize } from '../../types';
 import { Button } from '../Button';
 import { Divider } from '../Divider';
 
@@ -12,9 +14,13 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ showRsvp }) => (
   <footer>
     {showRsvp && (
-      <section className="flex flex-col items-center bg-darkPrimary p-15">
-        <h4 className="text-center text-lightPrimary">If you haven&#39;t already, please take a moment to RSVP!</h4>
-        <Divider />
+      <section className="flex flex-col items-center bg-darkPrimary py-15 px-13">
+        <p className={clsx('text-center text-lightPrimary', globalStyles.textHeading)}>
+          If you haven&#39;t already,
+          <br />
+          please take a moment to RSVP!
+        </p>
+        <Divider spacing={ThemeSize.Lg} />
         <p>
           <OutboundLink className="border-none inline-block" href={Routes.RsvpExternal} target="_blank">
             <Button>RSVP</Button>
