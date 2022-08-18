@@ -10,7 +10,7 @@ interface DividerProps {
   spacing?: ThemeSize;
 }
 
-const COLOR_MAP: Partial<Record<ThemeColor, string>> = {
+export const COLOR_MAP: Partial<Record<ThemeColor, string>> = {
   [ThemeColor.Dark]: 'bg-darkTertiary',
   [ThemeColor.Light]: 'bg-lightTertiary',
 };

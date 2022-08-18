@@ -2,31 +2,54 @@ import clsx from 'clsx';
 import React from 'react';
 
 import * as globalStyles from '../../assets/styles/global.module.css';
-import { ThemeColor } from '../../types';
+import { ThemeColor, ThemeSize } from '../../types';
 
 interface ButtonProps {
   className?: string;
   color?: ThemeColor;
+  semantic?: boolean;
+  size?: ThemeSize;
 }
 
-const COLOR_MAP: Partial<Record<ThemeColor, string>> = Object.freeze({
-  [ThemeColor.Gold]: 'bg-goldSecondary hover:bg-goldTertiary text-lightPrimary hover:text-darkPrimary',
-  [ThemeColor.Maroon]: 'bg-maroonPrimary hover:bg-maroonSecondary text-lightPrimary hover:text-darkPrimary',
-  [ThemeColor.Dark]: 'bg-lightPrimary hover:bg-lightSecondary text-darkPrimary hover:text-lightPrimary',
-  [ThemeColor.Light]: 'bg-darkPrimary hover:bg-darkSecondary text-lightPrimary hover:text-darkPrimary',
+export const COLOR_MAP: Partial<Record<ThemeColor, string>> = Object.freeze({
+  [ThemeColor.Gold]:
+    'border-goldSecondary text-goldSecondary hover:bg-goldSecondary hover:text-darkPrimary focus:outline-none focus:ring focus:ring-goldTertiary',
+  [ThemeColor.Maroon]:
+    'border-maroonSecondary text-maroonSecondary hover:bg-maroonSecondary hover:text-lightPrimary focus:outline-none focus:ring focus:ring-maroonTertiary',
+  [ThemeColor.Light]:
+    'border-lightSecondary text-lightSecondary hover:bg-lightSecondary hover:text-lightPrimary focus:outline-none focus:ring focus:ring-lightTertiary',
+  [ThemeColor.Dark]:
+    'border-darkSecondary text-darkSecondary hover:bg-darkSecondary hover:text-lightPrimary focus:outline-none focus:ring focus:ring-darkTertiary',
 });
 
-const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({ children, className, color = ThemeColor.Gold }) => (
-  <button
-    className={clsx(
-      'px-14 py-10 font-bold leading-none transition-colors',
-      COLOR_MAP[color],
-      globalStyles.textHeading,
-      className,
-    )}
-  >
-    <span className="flex items-center">{children}</span>
-  </button>
-);
+export const SIZE_MAP: Partial<Record<ThemeSize, string>> = {
+  [ThemeSize.Sm]: 'text-hBase px-12 py-9',
+  [ThemeSize.Md]: 'text-hBase md:text-h6 px-14 py-10',
+};
+
+const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
+  children,
+  className,
+  color = ThemeColor.Gold,
+  semantic = true,
+  size = ThemeSize.Md,
+}) => {
+  const classNames = clsx(
+    'border-5 font-bold rounded-md tracking-widest uppercase transition-colors',
+    COLOR_MAP[color],
+    SIZE_MAP[size],
+    className,
+  );
+
+  if (!semantic) {
+    return <span className={clsx('flex items-center', classNames)}>{children}</span>;
+  }
+
+  return (
+    <button className={classNames}>
+      <span className="flex items-center">{children}</span>
+    </button>
+  );
+};
 
 export default Button;

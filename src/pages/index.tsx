@@ -1,11 +1,10 @@
 import { PageProps } from 'gatsby';
-import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import MountainOutlineSVG from '../assets/images/accents/mountain-outline.inline.svg';
 import * as globalStyles from '../assets/styles/global.module.css';
-import { Button, Divider } from '../components';
+import { ButtonLink, Divider } from '../components';
 import { PageLayout, SectionContainer } from '../templates';
 import { Routes, SiteData, ThemeColor, ThemeSize } from '../types';
 import * as styles from './accommodations.module.css';
@@ -84,9 +83,9 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
             We can&#39;t wait to celebrate with you!
           </p>
           <p>
-            <OutboundLink className="border-none inline-block" href={Routes.RsvpExternal} target="_blank">
-              <Button>RSVP</Button>
-            </OutboundLink>
+            <ButtonLink href={Routes.RsvpExternal} outbound>
+              RSVP
+            </ButtonLink>
           </p>
         </div>
       </section>

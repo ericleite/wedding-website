@@ -1,4 +1,5 @@
 export * from './Button';
+export * from './ButtonLink';
 export * from './Divider';
 export * from './Footer';
 export * from './Header';

@@ -1,10 +1,9 @@
 import clsx from 'clsx';
-import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import React from 'react';
 
 import * as globalStyles from '../../assets/styles/global.module.css';
 import { Routes, ThemeSize } from '../../types';
-import { Button } from '../Button';
+import { ButtonLink } from '../ButtonLink';
 import { Divider } from '../Divider';
 
 interface FooterProps {
@@ -22,9 +21,9 @@ const Footer: React.FC<FooterProps> = ({ showRsvp }) => (
         </p>
         <Divider spacing={ThemeSize.Lg} />
         <p>
-          <OutboundLink className="border-none inline-block" href={Routes.RsvpExternal} target="_blank">
-            <Button>RSVP</Button>
-          </OutboundLink>
+          <ButtonLink href={Routes.RsvpExternal} outbound>
+            RSVP
+          </ButtonLink>
         </p>
       </section>
     )}

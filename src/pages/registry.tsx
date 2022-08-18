@@ -1,9 +1,9 @@
 import { PageProps, Script } from 'gatsby';
-import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import { StaticImage } from 'gatsby-plugin-image';
 import React, { useRef } from 'react';
 
 import * as globalStyles from '../assets/styles/global.module.css';
+import { ButtonLink } from '../components';
 import { PageLayout, SectionContainer } from '../templates';
 import * as styles from './registry.module.css';
 
@@ -29,14 +29,14 @@ const Registry: React.FC<PageProps> = () => {
     >
       <SectionContainer>
         <section className="col-span-full flex flex-col items-center">
-          <OutboundLink
+          <ButtonLink
             className="zola-registry-embed"
             data-registry-key="eric-and-lauren"
             href="https://www.zola.com/registry/eric-and-lauren"
-            target="_blank"
+            outbound
           >
-            Click here to see our Wedding Registry
-          </OutboundLink>
+            Check out our Wedding Registry
+          </ButtonLink>
           <Script id={scriptId.current} src="https://widget.zola.com/js/widget.js" />
         </section>
       </SectionContainer>
