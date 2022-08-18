@@ -4,5 +4,5 @@
   justify-content: stretch;
   position: relative;
   @apply min-h-0;
-  @apply p-13;
+  @apply p-15;
 }

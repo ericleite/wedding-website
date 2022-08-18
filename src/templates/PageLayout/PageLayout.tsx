@@ -37,7 +37,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
         contentClassName={clsx({ 'bg-darkPrimary': isDark && !heroImage, 'bg-lightPrimary': isLight && !heroImage })}
         image={heroImage}
       >
-        <div className="flex flex-col items-center justify-between border border-lightPrimary border-solid p-13">
+        <div className="flex flex-col items-center justify-between">
           <Header theme={isDark ? Theme.Light : Theme.Dark} />
           <div className="flex flex-col items-center">
             {subtitle && (

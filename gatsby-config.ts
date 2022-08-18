@@ -86,6 +86,14 @@ const config: GatsbyConfig = {
       },
       resolve: 'gatsby-plugin-react-svg',
     },
+    {
+      options: {
+        trackingIds: [
+          'G-F71JD0Z4DM', // Google Analytics / GA
+        ],
+      },
+      resolve: `gatsby-plugin-google-gtag`,
+    },
   ].filter(Boolean) as GatsbyConfig['plugins'],
   siteMetadata: {
     author: `@ericleite`,

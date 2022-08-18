@@ -7,11 +7,12 @@ module.exports = {
   theme: {
     borderWidth: {
       0: '0',
-      1: '0.1rem',
-      2: '0.178rem',
-      3: '0.317rem',
-      4: '0.422rem',
-      DEFAULT: '0.1rem',
+      1: '0.0625rem',
+      2: '0.1rem',
+      3: '0.134rem',
+      4: '0.178rem',
+      5: '0.238rem',
+      DEFAULT: '0.134rem',
     },
     extend: {
       colors: {

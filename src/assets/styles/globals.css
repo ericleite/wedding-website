@@ -50,7 +50,7 @@ p + p {
 }
 
 a {
-  @apply border-b-3;
+  @apply border-b-5;
   @apply border-darkSecondary;
   @apply text-darkSecondary;
   @apply transition-colors;
