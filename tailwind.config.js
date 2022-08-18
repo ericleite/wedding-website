@@ -7,10 +7,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        darkPrimary: '#292524',
-        darkSecondary: '#78716c',
-        lightPrimary: '#fafaf9',
-        lightSecondary: '#d6d3d1',
+        darkPrimary: '#1e293b',
+        darkSecondary: '#475569',
+        lightPrimary: '#f8fafc',
+        lightSecondary: '#cbd5e1',
       },
       fontFamily: {
         sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
@@ -29,7 +29,7 @@ module.exports = {
     },
     spacing: {
       // Typography scale can be found here:
-      // https://type-scale.com/?size=16&scale=1.333&text=This%20is%20a%20heading&font=Playfair%20Display&fontweight=600&bodyfont=Montserrat&bodyfontweight=300&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false
+      // https://type-scale.com/?size=16&scale=1.333&text=This%20is%20a%20heading&font=Playfair%20Display&fontweight=600&bodyfont=Montserrat&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false
       0: '0rem',
       1: '0.1rem',
       2: '0.178rem',

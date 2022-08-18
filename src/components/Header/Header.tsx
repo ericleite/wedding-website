@@ -27,7 +27,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   // }, []);
 
   return (
-    <header className={clsx(className, 'flex flex-col items-center p-9 transition-colors')}>
+    <header className={clsx(className, 'flex flex-col items-center transition-colors')}>
       <h3>
         <Link className="flex items-center" to={Routes.Index}>
           <span className="font-serif text-lightPrimary">E</span>
