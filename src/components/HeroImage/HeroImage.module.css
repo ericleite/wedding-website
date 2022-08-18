@@ -1,0 +1,6 @@
+.heroImageArea {
+  display: grid;
+  grid-area: 1/1;
+  justify-content: center;
+  position: relative;
+}

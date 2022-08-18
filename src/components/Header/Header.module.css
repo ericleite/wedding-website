@@ -1,3 +1,18 @@
-.navLink + .navLink {
-  @apply ml-1;
+.navLink {
+  @apply text-lightSecondary;
+  @apply transition-colors;
+}
+
+.navLink:hover,
+.navLink.isActive {
+  @apply text-lightPrimary;
+}
+
+.navLink {
+  @apply px-7;
+}
+
+.divider {
+  @apply text-lightSecondary;
+  @apply pointer-events-none;
 }
