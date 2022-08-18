@@ -12,7 +12,7 @@ const HeroImage: React.FC<HeroImageProps> = ({ children, className, image }) => 
   return (
     <div className={clsx(className, 'grid w-full h-screen p-9')}>
       {image}
-      <div className={styles.heroImageArea}>{children}</div>
+      <div className={styles.content}>{children}</div>
     </div>
   );
 };

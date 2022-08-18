@@ -1,3 +1,11 @@
-.homeImage img {
+.heroImage {
+  display: grid;
+  grid-area: 1/1;
+  justify-content: stretch;
+  position: relative;
+  @apply p-9;
+}
+
+.heroImageContainer img {
   object-position: 50% 16.7%;
 }

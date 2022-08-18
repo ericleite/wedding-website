@@ -10,22 +10,6 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ className }) => {
-  // const [isFloating, setIsFloating] = useState(() => window.scrollY > 0);
-
-  // useEffect(() => {
-  //   function updateScrollState() {
-  //     window.requestAnimationFrame(() => {
-  //       setIsFloating(window.scrollY > 0);
-  //     });
-  //   }
-  //   updateScrollState();
-  //   window.addEventListener('scroll', updateScrollState);
-
-  //   return () => {
-  //     window.removeEventListener('scroll', updateScrollState);
-  //   };
-  // }, []);
-
   return (
     <header className={clsx(className, 'flex flex-col items-center')}>
       <h3>
@@ -34,7 +18,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           to={Routes.Index}
         >
           <span>E</span>
-          <span className="text-h5 px-6">&amp;</span>
+          <span className="text-h5 px-4">&amp;</span>
           <span>L</span>
         </Link>
       </h3>
