@@ -1,56 +1,56 @@
 .monogramLink {
   @apply border-none flex items-center font-serif transition-colors;
+
+  .isLight & {
+    @apply text-lightSecondary;
+    @apply hover:text-lightPrimary;
+  }
+
+  .isDark & {
+    @apply text-darkPrimary;
+    @apply hover:text-darkSecondary;
+  }
 }
 
 .navLink {
   @apply border-none opacity-0 -translate-x-full transition-all md:px-11 md:translate-x-0 md:opacity-100;
-}
 
-.navLink.isActive {
-  @apply font-bold;
+  &.isActive {
+    @apply font-bold;
+  }
+
+  .isLight & {
+    @apply text-lightSecondary;
+
+    &:hover,
+    &.isActive {
+      @apply text-lightPrimary;
+    }
+  }
+
+  .isDark & {
+    @apply text-darkPrimary;
+
+    &:hover,
+    &.isActive {
+      @apply text-darkSecondary;
+    }
+  }
+
+  .isNavOpen & {
+    @apply translate-x-0;
+    @apply opacity-100;
+  }
 }
 
 .divider {
   @apply hidden pointer-events-none tracking-normal md:inline-block;
-}
 
-.isLight .navLink {
-  @apply text-lightSecondary;
-}
+  .isLight & {
+    @apply text-lightSecondary;
+  }
 
-.isLight .navLink:hover,
-.isLight .navLink.isActive {
-  @apply text-lightPrimary;
-}
-
-.isLight .divider {
-  @apply text-lightSecondary;
-}
-
-.isLight .monogramLink {
-  @apply text-lightSecondary;
-  @apply hover:text-lightPrimary;
-}
-
-.isDark .navLink {
-  @apply text-darkPrimary;
-}
-
-.isDark .navLink:hover,
-.isDark .navLink.isActive {
-  @apply text-darkSecondary;
-}
-
-.isDark .divider {
-  @apply text-darkPrimary;
-}
-
-.isDark .monogramLink {
-  @apply text-darkPrimary;
-  @apply hover:text-darkSecondary;
-}
-
-.isNavOpen .navLink {
-  @apply translate-x-0;
-  @apply opacity-100;
+  .isDark & {
+    @apply text-darkPrimary;
+  }
 }

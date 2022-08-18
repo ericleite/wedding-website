@@ -5,11 +5,15 @@
  */
 
 import clsx from 'clsx';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import resolveConfig from 'tailwindcss/resolveConfig';
 
+import tailwindConfig from '../../../tailwind.config.js';
 import * as globalStyles from '../../assets/styles/global.module.css';
 import { Divider, Footer, Header, HeroImage, SEO } from '../../components';
 import { ThemeColor } from '../../types';
+
+const resolvedTailwindConfig = resolveConfig(tailwindConfig);
 
 interface PageLayoutProps {
   className?: string;
@@ -39,6 +43,19 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   const onClickNavToggle = useCallback(() => {
     setIsNavOpen((prevIsNavOpen) => !prevIsNavOpen);
   }, []);
+
+  useEffect(() => {
+    function handleMatchMedia() {
+      if (isNavOpen) {
+        setIsNavOpen(false);
+      }
+    }
+    const navOpenMediaQueryList = matchMedia(`(min-width: ${resolvedTailwindConfig.theme.screens.md})`);
+    navOpenMediaQueryList.addEventListener('change', handleMatchMedia);
+    return () => {
+      navOpenMediaQueryList.removeEventListener('change', handleMatchMedia);
+    };
+  }, [isNavOpen]);
 
   return (
     <>
