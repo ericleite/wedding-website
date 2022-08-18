@@ -27,12 +27,15 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   // }, []);
 
   return (
-    <header className={clsx(className, 'flex flex-col items-center transition-colors')}>
+    <header className={clsx(className, 'flex flex-col items-center')}>
       <h3>
-        <Link className="flex items-center" to={Routes.Index}>
-          <span className="font-serif text-lightPrimary">E</span>
-          <span className="font-serif text-lightSecondary text-h5 px-6">&amp;</span>
-          <span className="font-serif text-lightPrimary">L</span>
+        <Link
+          className="flex items-center font-serif text-lightSecondary hover:text-lightPrimary transition-colors"
+          to={Routes.Index}
+        >
+          <span>E</span>
+          <span className="text-h5 px-6">&amp;</span>
+          <span>L</span>
         </Link>
       </h3>
       <nav className="flex uppercase tracking-widest">
