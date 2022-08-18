@@ -42,11 +42,11 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
           <div className="flex flex-col items-center">
             {subtitle && (
               <>
-                <p className="text-lightPrimary uppercase tracking-widest leading-none">{subtitle}</p>
+                <p className="text-center text-lightPrimary uppercase tracking-widest leading-none">{subtitle}</p>
                 <hr className="h-6 w-14 bg-lightSecondary mt-12 mb-13" />
               </>
             )}
-            <h1 className="text-lightPrimary font-normal font-stylized leading-none mb-0">{title}</h1>
+            <h1 className="text-center text-lightPrimary font-normal font-stylized leading-none mb-0">{title}</h1>
           </div>
         </div>
       </HeroImage>

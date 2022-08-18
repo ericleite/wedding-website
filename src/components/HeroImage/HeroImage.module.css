@@ -1,8 +1,4 @@
 .content {
-  display: grid;
   grid-area: 1/1;
-  justify-content: stretch;
-  position: relative;
-  @apply min-h-0;
-  @apply p-15;
+  @apply relative grid place-content-stretch p-13 lg:p-15;
 }

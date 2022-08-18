@@ -22,11 +22,11 @@ const Header: React.FC<HeaderProps> = ({ className, theme = Theme.Light }) => {
       <h3>
         <Link className={styles.monogramLink} to={Routes.Index}>
           <span>E</span>
-          <span className="text-h5 px-7">&amp;</span>
+          <span className="text-h6 lg:text-h5 px-7">&amp;</span>
           <span>L</span>
         </Link>
       </h3>
-      <nav className="flex uppercase tracking-widest">
+      <nav className="hidden uppercase tracking-widest lg:static lg:flex lg:flex-row">
         <Link activeClassName={styles.isActive} className={styles.navLink} to={Routes.OurStory}>
           Our Story
         </Link>

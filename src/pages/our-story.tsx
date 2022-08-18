@@ -11,7 +11,7 @@ const OurStory: React.FC<PageProps> = () => (
     heroImage={
       <StaticImage
         alt="Eric and Lauren with rock background"
-        breakpoints={[428, 768, 1024, 1366, 1920, 2560, 3840]}
+        breakpoints={[320, 428, 768, 1024, 1366, 1920, 2560, 3840]}
         className={styles.heroImage}
         layout="fullWidth"
         loading="eager"

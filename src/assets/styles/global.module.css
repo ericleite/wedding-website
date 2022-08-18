@@ -1,6 +1,4 @@
 .heroImage {
-  display: grid;
   grid-area: 1/1;
-  justify-content: stretch;
-  position: relative;
+  @apply relative grid place-content-stretch;
 }

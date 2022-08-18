@@ -15,7 +15,7 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
     heroImage={
       <StaticImage
         alt="Eric and Lauren with rock background"
-        breakpoints={[428, 768, 1024, 1366, 1920, 2560, 3840]}
+        breakpoints={[320, 428, 768, 1024, 1366, 1920, 2560, 3840]}
         className={globalStyles.heroImage}
         layout="fullWidth"
         loading="eager"
@@ -29,7 +29,7 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
     title="Eric &amp; Lauren"
   >
     <SectionContainer className="place-items-center">
-      <section className="col-start-2 col-end-5">
+      <section className="hidden lg:block col-start-2 col-end-5">
         <StaticImage
           alt="Watercolor drawing of decorative flowers"
           placeholder="tracedSVG"
@@ -39,16 +39,18 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
           width={512}
         />
       </section>
-      <section className="col-start-5 col-end-9 flex flex-col items-center space-y-15">
+      <section className="col-span-full flex flex-col items-center space-y-13 lg:space-y-15 lg:col-start-5 lg:col-end-9">
         <div className="flex flex-col items-center">
-          <h3 className="text-center">Join the celebration</h3>
+          <h3 className="text-center">
+            Join <span className="lowercase">the</span> Celebration
+          </h3>
           <hr className="h-6 w-14 bg-darkTertiary mb-12" />
           <p className="text-center">
             Eric Leite and Lauren Dubose are getting married on the water&#39;s edge of the Dubose family residence,
             which sits at the base of the beautiful San Jacinto mountains near Palm Springs, California.
           </p>
         </div>
-        <div className="grid grid-cols-2 w-full">
+        <div className="lg:grid lg:grid-cols-2 w-full space-y-13 lg:space-y-0">
           <div className="flex flex-col items-center">
             <p className="font-bold uppercase tracking-widest leading-none">When</p>
             <hr className="h-5 w-13 bg-darkTertiary mt-10 mb-11" />
@@ -85,7 +87,7 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
           </p>
         </div>
       </section>
-      <section className="col-start-9 col-end-12">
+      <section className="hidden lg:block col-start-9 col-end-12">
         <StaticImage
           alt="Watercolor drawing of decorative flowers"
           placeholder="tracedSVG"
@@ -95,10 +97,10 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
         />
       </section>
     </SectionContainer>
-    <SectionContainer className="relative overflow-hidden p-15" theme={Theme.Dark}>
+    <SectionContainer className="relative overflow-hidden p-13 lg:p-15" theme={Theme.Dark}>
       <MountainOutlineSVG className="absolute bottom-0 w-full text-darkSecondary" />
-      <section className="z-10 col-start-6 col-end-13">
-        <h2 className="text-h1 text-lightPrimary my-15">
+      <section className="z-10 col-span-full lg:col-start-6 lg:col-end-13">
+        <h2 className="text-center text-lightPrimary my-13 lg:my-15 lg:text-left lg:text-h1">
           Palm
           <br />
           Springs,
