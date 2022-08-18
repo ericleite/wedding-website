@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({ className, isNavOpen, onClickNavToggle,
   const isDark = theme === ThemeColor.Dark || isNavOpen;
   const isLight = theme === ThemeColor.Light;
 
-  const monogram = (
+  const monogramLink = (
     <h3 className="text-h3">
       <Link className={styles.monogramLink} to={Routes.Index}>
         <span>E</span>
@@ -63,7 +63,7 @@ const Header: React.FC<HeaderProps> = ({ className, isNavOpen, onClickNavToggle,
     >
       {navBackgroundLayer}
       <div className="relative flex flex-col items-center">
-        {monogram}
+        {monogramLink}
         {navToggleButton}
       </div>
       <nav

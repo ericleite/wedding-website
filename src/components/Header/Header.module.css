@@ -2,13 +2,11 @@
   @apply border-none flex items-center font-serif transition-colors;
 
   .isLight & {
-    @apply text-lightSecondary;
-    @apply hover:text-lightPrimary;
+    @apply text-lightPrimary;
   }
 
   .isDark & {
     @apply text-darkPrimary;
-    @apply hover:text-darkSecondary;
   }
 }
 

@@ -5,7 +5,7 @@ import { Divider } from '../components';
 import { PageLayout, SectionContainer } from '../templates';
 
 const Registry: React.FC<PageProps> = () => (
-  <PageLayout title="Registry">
+  <PageLayout className="space-y-15 my-15" title="Registry">
     <SectionContainer>
       <section className="col-span-full flex flex-col items-center">
         <h3 className="text-center">Stay tuned!</h3>

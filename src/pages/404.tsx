@@ -6,7 +6,7 @@ import { PageLayout, SectionContainer } from '../templates';
 
 const NotFoundPage = () => {
   return (
-    <PageLayout title="Page Not Found">
+    <PageLayout className="my-15" title="Page Not Found">
       <SectionContainer>
         <section className="col-span-full flex flex-col items-center">
           <h3 className="text-center">Uh oh!</h3>

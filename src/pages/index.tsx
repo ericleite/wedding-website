@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { PageProps } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -13,7 +12,7 @@ import * as indexStyles from './index.module.css';
 
 const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
   <PageLayout
-    className="space-y-15"
+    className="space-y-15 mt-15"
     heroImage={
       <StaticImage
         alt="Eric and Lauren with rock background"
@@ -26,7 +25,7 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
         src="../assets/images/heros/eric-and-lauren-in-cave.jpg"
       />
     }
-    heroImageClassName={clsx('mb-13 sm:mb-12 lg:mb-0', indexStyles.heroImageContainer)}
+    heroImageClassName={indexStyles.heroImageContainer}
     seoTitle=""
     subtitle="The Wedding of"
     title="Eric &amp; Lauren"

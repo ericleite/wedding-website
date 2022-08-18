@@ -9,6 +9,7 @@ import { ThemeColor } from '../types';
 
 const OurStory: React.FC<PageProps> = () => (
   <PageLayout
+    className="space-y-15 my-15"
     heroImage={
       <StaticImage
         alt="Eric and Lauren with rock background"

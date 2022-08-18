@@ -5,7 +5,7 @@ import { Divider } from '../components';
 import { PageLayout, SectionContainer } from '../templates';
 
 const Accommodations: React.FC<PageProps> = () => (
-  <PageLayout title="Travel &amp; Hotel">
+  <PageLayout className="space-y-15 my-15" title="Travel &amp; Hotel">
     <SectionContainer>
       <section className="col-span-full flex flex-col items-center">
         <h3 className="text-center">Stay tuned!</h3>
