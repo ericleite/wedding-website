@@ -2,7 +2,8 @@ import { PageProps } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-import * as styles from '../assets/styles/global.module.css';
+import MountainOutline from '../assets/images/accents/mountain-outline.inline.svg';
+import * as globalStyles from '../assets/styles/global.module.css';
 import { PageLayout, SectionContainer } from '../templates';
 import { SiteData, Theme } from '../types';
 
@@ -12,7 +13,7 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
       <StaticImage
         alt="Eric and Lauren with rock background"
         breakpoints={[428, 768, 1024, 1366, 1920, 2560, 3840]}
-        className={styles.heroImage}
+        className={globalStyles.heroImage}
         layout="fullWidth"
         loading="eager"
         placeholder="dominantColor"
@@ -20,7 +21,7 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
         src="../assets/images/heros/eric-and-lauren-in-cave.jpg"
       />
     }
-    heroImageClassName={styles.heroImageContainer}
+    heroImageClassName={globalStyles.heroImageContainer}
     subtitle="The Wedding Celebration of"
     title="Eric &amp; Lauren"
   >
@@ -44,9 +45,10 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
         </h3>
       </section>
     </SectionContainer>
-    <SectionContainer theme={Theme.Dark}>
-      <section className="col-start-6 col-end-13">
-        <h2 className="text-lightPrimary my-18">
+    <SectionContainer className="relative" theme={Theme.Dark}>
+      <MountainOutline className="absolute bottom-0 w-full text-darkSecondary" />
+      <section className="z-10 col-start-6 col-end-13">
+        <h2 className="text-h1 text-lightPrimary my-18">
           Palm
           <br />
           Springs,

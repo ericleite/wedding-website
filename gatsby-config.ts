@@ -78,6 +78,14 @@ const config: GatsbyConfig = {
       },
       resolve: 'gatsby-source-filesystem',
     },
+    {
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+        },
+      },
+      resolve: 'gatsby-plugin-react-svg',
+    },
   ].filter(Boolean) as GatsbyConfig['plugins'],
   siteMetadata: {
     author: `@ericleite`,
