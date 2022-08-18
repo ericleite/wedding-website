@@ -1,28 +1,26 @@
 import clsx from 'clsx';
 import { Link } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 
 import { Routes, ThemeColor } from '../../types';
 import * as styles from './Header.module.css';
 
+const NAV_ID = 'navigation';
+
 interface HeaderProps {
   className?: string;
+  isNavOpen: boolean;
+  onClickNavToggle: () => void;
   theme?: ThemeColor;
 }
 
-const Header: React.FC<HeaderProps> = ({ className, theme = ThemeColor.Light }) => {
-  const isDark = theme === ThemeColor.Dark;
+const Header: React.FC<HeaderProps> = ({ className, isNavOpen, onClickNavToggle, theme = ThemeColor.Light }) => {
+  const isDark = theme === ThemeColor.Dark || isNavOpen;
   const isLight = theme === ThemeColor.Light;
 
-  const [isNavOpen, setIsNavOpen] = useState(false);
-
-  const onClickNavToggle = useCallback(() => {
-    setIsNavOpen((prevIsNavOpen) => !prevIsNavOpen);
-  }, []);
-
   const monogram = (
-    <h3 className="leading-none text-h3">
+    <h3 className="text-h3">
       <Link className={styles.monogramLink} to={Routes.Index}>
         <span>E</span>
         <span className="text-h5 px-7">&amp;</span>
@@ -33,40 +31,54 @@ const Header: React.FC<HeaderProps> = ({ className, theme = ThemeColor.Light }) 
 
   const navToggleButton = (
     <button
-      aria-controls="navigation"
-      aria-label="Menu Toggle"
+      aria-controls={NAV_ID}
+      aria-label="Navigation Menu Toggle"
       className="absolute top-1/2 left-0 -translate-y-1/2 flex flex-col space-y-6 -mx-6 px-6 py-7 md:hidden"
       onClick={onClickNavToggle}
     >
-      <span className="w-11 h-3 bg-lightSecondary" />
-      <span className="w-11 h-3 bg-lightSecondary" />
-      <span className="w-11 h-3 bg-lightSecondary" />
+      <span
+        className={clsx('w-11 h-3 transition-all', { 'bg-darkSecondary': isNavOpen, 'bg-lightSecondary': !isNavOpen })}
+      />
+      <span
+        className={clsx('w-11 h-3 transition-all', { 'bg-darkSecondary': isNavOpen, 'bg-lightSecondary': !isNavOpen })}
+      />
+      <span
+        className={clsx('w-11 h-3 transition-all', { 'bg-darkSecondary': isNavOpen, 'bg-lightSecondary': !isNavOpen })}
+      />
     </button>
+  );
+
+  const navBackgroundLayer = (
+    <div
+      className={clsx('fixed top-0 w-full h-full bg-lightPrimary transition-all md:hidden', {
+        '-left-full': !isNavOpen,
+        'left-0': isNavOpen,
+      })}
+    />
   );
 
   return (
     <header
       className={clsx(
-        'relative flex flex-col items-center',
+        'flex flex-col items-stretch min-h-0 z-30',
         isDark && styles.isDark,
         isLight && styles.isLight,
         isNavOpen && styles.isNavOpen,
         className,
       )}
     >
-      {monogram}
-      {navToggleButton}
+      {navBackgroundLayer}
+      <div className="relative flex flex-col items-center">
+        {monogram}
+        {navToggleButton}
+      </div>
       <nav
         className={clsx(
-          'bg-lightPrimary break-words fixed flex flex-col font-bold h-full p-11 space-y-10 text-h5 top-0 tracking-widest transition-all uppercase w-full',
-          'sm:p-13',
-          'md:bg-transparent md:flex-row md:flex-wrap md:font-normal md:h-auto md:justify-center md:p-0 md:text-base md:space-y-0 md:static md:w-auto',
-          {
-            '-left-full': !isNavOpen,
-            'left-0': isNavOpen,
-          },
+          'break-words flex flex-col mt-15 space-y-11 text-h5 tracking-widest uppercase',
+          'md:flex-row md:flex-wrap md:justify-center md:mt-11 md:text-base md:space-y-0',
+          !isNavOpen && 'pointer-events-none md:pointer-events-auto',
         )}
-        id="navigation"
+        id={NAV_ID}
       >
         <Link activeClassName={styles.isActive} className={styles.navLink} to={Routes.OurStory}>
           Our Story

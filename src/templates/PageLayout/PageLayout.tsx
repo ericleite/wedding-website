@@ -5,7 +5,7 @@
  */
 
 import clsx from 'clsx';
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 
 import * as globalStyles from '../../assets/styles/global.module.css';
 import { Divider, Footer, Header, HeroImage, SEO } from '../../components';
@@ -34,18 +34,28 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   const isDark = theme === ThemeColor.Dark;
   const isLight = theme === ThemeColor.Light;
 
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const onClickNavToggle = useCallback(() => {
+    setIsNavOpen((prevIsNavOpen) => !prevIsNavOpen);
+  }, []);
+
   return (
     <>
-      <SEO title={seoTitle ?? title} />
+      <SEO bodyAttributes={{ class: isNavOpen && 'overflow-hidden md:overflow-visible' }} title={seoTitle ?? title} />
 
       <HeroImage
-        className={heroImageClassName}
+        className={clsx(isNavOpen && 'overflow-y-auto', heroImageClassName)}
         contentClassName={clsx({ 'bg-darkPrimary': isDark && !heroImage, 'bg-lightPrimary': isLight && !heroImage })}
         image={heroImage}
       >
-        <div className="flex flex-col items-center justify-between">
-          <Header className="w-full" theme={isDark ? ThemeColor.Light : ThemeColor.Dark} />
-          <div className="flex flex-col items-center">
+        <div className="flex flex-col items-stretch justify-between min-h-0">
+          <Header
+            isNavOpen={isNavOpen}
+            onClickNavToggle={onClickNavToggle}
+            theme={isDark ? ThemeColor.Light : ThemeColor.Dark}
+          />
+          <div className={clsx('flex-col items-center', isNavOpen ? 'hidden md:flex' : 'flex')}>
             {subtitle && (
               <>
                 <p className={clsx('text-center text-lightPrimary', globalStyles.textHeading)}>{subtitle}</p>

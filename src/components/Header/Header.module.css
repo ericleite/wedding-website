@@ -1,16 +1,17 @@
 .monogramLink {
-  @apply border-none;
-  @apply flex items-center font-serif transition-colors;
+  @apply border-none flex items-center font-serif transition-colors;
 }
 
 .navLink {
-  @apply border-none;
-  @apply px-11;
-  @apply transition-colors;
+  @apply border-none opacity-0 -translate-x-full transition-all md:px-11 md:translate-x-0 md:opacity-100;
+}
+
+.navLink.isActive {
+  @apply font-bold;
 }
 
 .divider {
-  @apply pointer-events-none;
+  @apply hidden pointer-events-none tracking-normal md:inline-block;
 }
 
 .isLight .navLink {
@@ -50,14 +51,6 @@
 }
 
 .isNavOpen .navLink {
-  @apply text-darkPrimary;
-}
-
-.isNavOpen .navLink:hover,
-.isNavOpen .navLink.isActive {
-  @apply text-darkSecondary;
-}
-
-.isNavOpen .divider {
-  @apply hidden;
+  @apply translate-x-0;
+  @apply opacity-100;
 }
