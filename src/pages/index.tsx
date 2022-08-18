@@ -3,7 +3,6 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import { SEO } from '../components';
-import { DESKTOP_BREAKPOINTS } from '../constants';
 import { PageLayout } from '../templates';
 import { SiteData } from '../types';
 
@@ -12,7 +11,7 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
     <SEO />
     <StaticImage
       alt="Eric and Lauren at the beach"
-      breakpoints={DESKTOP_BREAKPOINTS}
+      breakpoints={[2560]}
       layout="fullWidth"
       loading="eager"
       quality={90}
