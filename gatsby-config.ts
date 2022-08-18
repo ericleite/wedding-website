@@ -6,9 +6,9 @@ const shouldAnalyzeBundle = process.env.ANALYZE_BUNDLE;
 
 const config: GatsbyConfig = {
   plugins: [
+    'gatsby-plugin-postcss',
     'gatsby-plugin-image',
     'gatsby-plugin-mdx',
-    'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     'gatsby-transformer-sharp',
@@ -20,16 +20,16 @@ const config: GatsbyConfig = {
         preconnect: [`https://fonts.gstatic.com`],
         web: [
           {
-            file: `https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap`,
-            name: `Abril Fatface`,
+            file: `https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap`,
+            name: `Cormorant Garamond`,
           },
           {
-            file: `https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&display=swap`,
-            name: `Gwendolyn`,
+            file: `https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap`,
+            name: `Great Vibes`,
           },
           {
-            file: `https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500&display=swap`,
-            name: `Work Sans`,
+            file: `https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap`,
+            name: `Montserrat`,
           },
         ],
       },

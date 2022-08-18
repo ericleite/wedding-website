@@ -1,0 +1,3 @@
+.navLink + .navLink {
+  @apply ml-1;
+}

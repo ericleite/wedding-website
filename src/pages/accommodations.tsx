@@ -1,14 +1,14 @@
 import { PageProps } from 'gatsby';
-import * as React from 'react';
+import React from 'react';
 
-import Seo from '../components/seo';
-import Layout from '../templates/layout';
+import { SEO } from '../components';
+import { PageLayout } from '../templates';
 
 const Accommodations: React.FC<PageProps> = () => (
-  <Layout>
-    <Seo title="Accommodations" />
+  <PageLayout>
+    <SEO title="Accommodations" />
     <h1>Accommodations</h1>
-  </Layout>
+  </PageLayout>
 );
 
 export default Accommodations;
