@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import * as globalStyles from '../assets/styles/global.module.css';
-import { ButtonLink, Divider } from '../components';
+import { ButtonLink, Divider, ExpandableContent } from '../components';
 import { PageLayout, SectionContainer } from '../templates';
 import { ThemeColor, ThemeSize } from '../types';
 import * as styles from './accommodations.module.css';
@@ -29,38 +29,40 @@ const Accommodations: React.FC<PageProps> = () => (
     title="Travel &amp; Hotel"
   >
     <SectionContainer className="place-items-center max-w-5xl">
-      <section className="flex flex-col items-center col-span-4 text-center">
+      <section className="space-y-11 flex flex-col items-center col-span-4 text-center">
         <p className={globalStyles.textHeading}>Travel</p>
         <Divider size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
-        <h5 className="mb-11">
+        <h5>
           Palm Springs
           <br />
           International
           <br />
           Airport
         </h5>
-        <p>
-          We reccommend flying directly into{' '}
-          <OutboundLink href="https://palmspringsairport.com" target="_blank">
-            PSP
-          </OutboundLink>{' '}
-          for convenience as it is a short 10-minute ride from the hotel.
-        </p>
-        <p>
-          More affordable flights can be found to{' '}
-          <OutboundLink href="https://www.flyontario.com" target="_blank">
-            ONT
-          </OutboundLink>
-          ,{' '}
-          <OutboundLink href="https://www.ocair.com" target="_blank">
-            SNA
-          </OutboundLink>
-          , and{' '}
-          <OutboundLink href="https://www.flylax.com" target="_blank">
-            LAX
-          </OutboundLink>
-          . However, rental car arrangements may be needed as these airports are 2-3 hours away.
-        </p>
+        <ExpandableContent>
+          <p>
+            We reccommend flying directly into{' '}
+            <OutboundLink href="https://palmspringsairport.com" target="_blank">
+              PSP
+            </OutboundLink>{' '}
+            as it is a short 10-minute ride from the hotel.
+          </p>
+          <p>
+            More affordable flights can be found to{' '}
+            <OutboundLink href="https://www.flyontario.com" target="_blank">
+              ONT
+            </OutboundLink>
+            ,{' '}
+            <OutboundLink href="https://www.ocair.com" target="_blank">
+              SNA
+            </OutboundLink>
+            , and{' '}
+            <OutboundLink href="https://www.flylax.com" target="_blank">
+              LAX
+            </OutboundLink>
+            . However, rental car arrangements may be needed as these airports are 2-3 hours away.
+          </p>
+        </ExpandableContent>
         <p>
           <ButtonLink
             color={ThemeColor.Maroon}
@@ -80,21 +82,23 @@ const Accommodations: React.FC<PageProps> = () => (
           src="../assets/images/accents/flowers-with-birds-of-paradise.jpeg"
         />
       </section>
-      <section className="flex flex-col items-center col-span-4 text-center">
+      <section className="space-y-11 flex flex-col items-center col-span-4 text-center">
         <p className={globalStyles.textHeading}>Lodging</p>
         <Divider size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
-        <h5 className="mb-11">
+        <h5>
           The Westin
           <br />
           Golf Resort &amp; Spa
           <br />
           Rancho Mirage
         </h5>
-        <p>
-          We reccommend booking a room within our hotel block. We have a limited number of rooms reserved at a
-          discounted rate on a first come, first serve basis.
-        </p>
-        <p>March is a popular time to visit Palm Springs, so be sure to reserve accomodations before prices go up!</p>
+        <ExpandableContent>
+          <p>
+            We reccommend booking a room within our hotel block. We have reserved a limited number of rooms at a
+            discounted rate on a first come, first serve basis.
+          </p>
+          <p>March is a popular time to visit Palm Springs, so be sure to reserve accomodations before prices go up!</p>
+        </ExpandableContent>
         <p>
           <ButtonLink
             href="https://www.marriott.com/reservation/availabilitySearch.mi?destinationAddress.country=&lengthOfStay=2&fromDate=03%2F03%2F2023&toDate=03%2F05%2F2023&numberOfRooms=1&numberOfAdults=2&guestCountBox=2+Adults+Per+Room&childrenCountBox=0+Children+Per+Room&roomCountBox=1+Rooms&childrenCount=0&childrenAges=&clusterCode=none&corporateCode=&groupCode=&isHwsGroupSearch=true&propertyCode=PSPWI&useRewardsPoints=false&flexibleDateSearch=false&t-start=03%2F03%2F2023&t-end=03%2F05%2F2023&fromDateDefaultFormat=03%2F03%2F2023&toDateDefaultFormat=03%2F05%2F2023&fromToDate_submit=03%2F05%2F2023&fromToDate="
@@ -115,31 +119,34 @@ const Accommodations: React.FC<PageProps> = () => (
           src="../assets/images/accents/flowers-with-birds-of-paradise.jpeg"
         />
       </section>
-      <section className="flex flex-col items-center col-span-4 text-center">
+      <section className="space-y-11 flex flex-col items-center col-span-4 text-center">
         <p className={globalStyles.textHeading}>Venue</p>
         <Divider size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
-        <h5 className="mb-11">
+        <h5>
           38402 Vista Del Sol
           <br />
           Rancho Mirage
           <br />
           CA 92270
         </h5>
-        <p>
-          The ceremony and reception will take place at the Dubose family home. While there will be ample event space,
-          parking in the area is limited, so we reccommend taking an{' '}
-          <OutboundLink href="" target="_blank">
-            Uber
-          </OutboundLink>{' '}
-          or{' '}
-          <OutboundLink
-            href="https://ride.lyft.com/ridetype?origin=33.800403%2C-116.417549&destination=33.76744%2C-116.39747&offerProductId=standard"
-            target="_blank"
-          >
-            Lyft
-          </OutboundLink>{' '}
-          to/from the venue.
-        </p>
+        <ExpandableContent>
+          <p>
+            The ceremony and reception will take place at the Dubose family home. While there will be ample event space,
+            parking in the area is limited, so we reccommend taking an{' '}
+            <OutboundLink href="" target="_blank">
+              Uber
+            </OutboundLink>{' '}
+            or{' '}
+            <OutboundLink
+              href="https://ride.lyft.com/ridetype?origin=33.800403%2C-116.417549&destination=33.76744%2C-116.39747&offerProductId=standard"
+              target="_blank"
+            >
+              Lyft
+            </OutboundLink>{' '}
+            to/from the venue.
+          </p>
+        </ExpandableContent>
+
         <p>
           <ButtonLink color={ThemeColor.Dark} href="https://goo.gl/maps/5ytSYu69nMvMbqT86" outbound size={ThemeSize.Sm}>
             Get directions
