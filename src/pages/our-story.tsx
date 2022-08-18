@@ -2,10 +2,11 @@ import { PageProps } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-import * as styles from '../assets/styles/global.module.css';
+import * as globalStyles from '../assets/styles/global.module.css';
 import { Divider } from '../components';
 import { PageLayout, SectionContainer } from '../templates';
 import { ThemeColor } from '../types';
+import * as styles from './our-story.module.css';
 
 const OurStory: React.FC<PageProps> = () => (
   <PageLayout
@@ -14,7 +15,7 @@ const OurStory: React.FC<PageProps> = () => (
       <StaticImage
         alt="Eric and Lauren walking on the beach holding hands"
         breakpoints={[1920, 2560, 3840]}
-        className={styles.heroImage}
+        className={globalStyles.heroImage}
         layout="fullWidth"
         loading="eager"
         placeholder="dominantColor"
@@ -22,6 +23,7 @@ const OurStory: React.FC<PageProps> = () => (
         src="../assets/images/heros/eric-and-lauren-walking-on-beach-holding-hands.jpg"
       />
     }
+    heroImageClassName={styles.heroImageContainer}
     subtitle="How we found each other"
     theme={ThemeColor.Light}
     title="Our Story"

@@ -1,12 +1,31 @@
 import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
+import * as globalStyles from '../assets/styles/global.module.css';
 import { Divider } from '../components';
 import { PageLayout, SectionContainer } from '../templates';
+import * as styles from './404.module.css';
 
 const NotFoundPage = () => {
   return (
-    <PageLayout className="my-15" title="Page Not Found">
+    <PageLayout
+      className="my-15"
+      heroImage={
+        <StaticImage
+          alt="Eve on mountain looking confused"
+          breakpoints={[1920, 2560, 3840]}
+          className={globalStyles.heroImage}
+          layout="fullWidth"
+          loading="eager"
+          placeholder="dominantColor"
+          quality={80}
+          src="../assets/images/heros/eve-on-mountain-looking-confused.jpg"
+        />
+      }
+      heroImageClassName={styles.heroImageContainer}
+      title="Page Not Found"
+    >
       <SectionContainer>
         <section className="col-span-full flex flex-col items-center">
           <h3 className="text-center">Uh oh!</h3>

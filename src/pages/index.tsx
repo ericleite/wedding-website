@@ -8,7 +8,7 @@ import * as globalStyles from '../assets/styles/global.module.css';
 import { Button, Divider } from '../components';
 import { PageLayout, SectionContainer } from '../templates';
 import { Routes, SiteData, ThemeColor, ThemeSize } from '../types';
-import * as indexStyles from './index.module.css';
+import * as styles from './accommodations.module.css';
 
 const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
   <PageLayout
@@ -25,7 +25,7 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
         src="../assets/images/heros/eric-and-lauren-in-cave.jpg"
       />
     }
-    heroImageClassName={indexStyles.heroImageContainer}
+    heroImageClassName={styles.heroImageContainer}
     seoTitle=""
     subtitle="The Wedding of"
     title="Eric &amp; Lauren"
