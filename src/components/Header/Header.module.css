@@ -48,3 +48,16 @@
   @apply text-darkPrimary;
   @apply hover:text-darkSecondary;
 }
+
+.isNavOpen .navLink {
+  @apply text-darkPrimary;
+}
+
+.isNavOpen .navLink:hover,
+.isNavOpen .navLink.isActive {
+  @apply text-darkSecondary;
+}
+
+.isNavOpen .divider {
+  @apply hidden;
+}

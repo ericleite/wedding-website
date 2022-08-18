@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
+import { Divider } from '../components';
 import { PageLayout, SectionContainer } from '../templates';
 
 const NotFoundPage = () => {
@@ -9,7 +10,7 @@ const NotFoundPage = () => {
       <SectionContainer>
         <section className="col-span-full flex flex-col items-center">
           <h3 className="text-center">Uh oh!</h3>
-          <hr className="h-6 w-14 bg-darkTertiary mb-12" />
+          <Divider />
           <p className="text-center">Looks like there&#8217;s no page that matches the current URL.</p>
           <p className="text-center">
             Please double check the URL or <Link to="/">click here</Link> to go home.

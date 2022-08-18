@@ -2,3 +2,7 @@
   grid-area: 1/1;
   @apply relative grid place-content-stretch;
 }
+
+.textHeading {
+  @apply text-small md:text-base font-bold leading-none tracking-widest uppercase;
+}

@@ -30,13 +30,14 @@ module.exports = {
       },
     },
     fontSize: {
-      base: ['1rem', 1.75],
-      h1: ['5.61rem', 1.3],
-      h2: ['4.209rem', 1.3],
-      h3: ['3.157rem', 1.3],
-      h4: ['2.369rem', 1.3],
-      h5: ['1.777rem', 1.3],
-      h6: ['1.333rem', 1.3],
+      base: ['1rem', 1.777],
+      h1: ['5.61rem', 1.333],
+      h2: ['4.209rem', 1.333],
+      h3: ['3.157rem', 1.333],
+      h4: ['2.369rem', 1.333],
+      h5: ['1.777rem', 1.333],
+      h6: ['1.333rem', 1.333],
+      small: ['0.75rem', 1.333],
     },
     spacing: {
       // Typography scale can be found here:

@@ -11,9 +11,9 @@ interface HeroImageProps {
 
 const HeroImage: React.FC<HeroImageProps> = ({ children, className, contentClassName, image }) => {
   return (
-    <div className={clsx(className, 'grid w-full h-screen p-13 lg:p-15')}>
+    <div className={clsx('grid w-full h-screen p-11 sm:p-13 lg:p-15', className)}>
       {image}
-      <div className={clsx(contentClassName, styles.content)}>{children}</div>
+      <div className={clsx(styles.content, contentClassName)}>{children}</div>
     </div>
   );
 };

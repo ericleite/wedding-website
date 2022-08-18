@@ -7,50 +7,58 @@
 import clsx from 'clsx';
 import React from 'react';
 
-import { Footer, Header, HeroImage, SEO } from '../../components';
-import { Theme } from '../../types';
+import * as globalStyles from '../../assets/styles/global.module.css';
+import { Divider, Footer, Header, HeroImage, SEO } from '../../components';
+import { ThemeColor } from '../../types';
 
 interface PageLayoutProps {
+  className?: string;
   heroImageClassName?: string;
   heroImage?: React.ReactNode;
+  seoTitle?: string;
   subtitle?: string;
-  theme?: Theme;
+  theme?: ThemeColor;
   title: string;
 }
 
 const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   children,
+  className,
   heroImageClassName,
   heroImage,
+  seoTitle,
   subtitle,
-  theme = Theme.Dark,
+  theme = ThemeColor.Dark,
   title,
 }) => {
-  const isDark = theme === Theme.Dark;
-  const isLight = theme === Theme.Light;
+  const isDark = theme === ThemeColor.Dark;
+  const isLight = theme === ThemeColor.Light;
 
   return (
     <>
-      <SEO title={title} />
+      <SEO title={seoTitle ?? title} />
+
       <HeroImage
         className={heroImageClassName}
         contentClassName={clsx({ 'bg-darkPrimary': isDark && !heroImage, 'bg-lightPrimary': isLight && !heroImage })}
         image={heroImage}
       >
         <div className="flex flex-col items-center justify-between">
-          <Header theme={isDark ? Theme.Light : Theme.Dark} />
+          <Header className="w-full" theme={isDark ? ThemeColor.Light : ThemeColor.Dark} />
           <div className="flex flex-col items-center">
             {subtitle && (
               <>
-                <p className="text-center text-lightPrimary uppercase tracking-widest leading-none">{subtitle}</p>
-                <hr className="h-6 w-14 bg-lightSecondary mt-12 mb-13" />
+                <p className={clsx('text-center text-lightPrimary', globalStyles.textHeading)}>{subtitle}</p>
+                <Divider color={ThemeColor.Light} />
               </>
             )}
-            <h1 className="text-center text-lightPrimary font-normal font-stylized leading-none mb-0">{title}</h1>
+            <h1 className="text-h3 md:text-h1 text-center text-lightPrimary font-normal font-stylized">{title}</h1>
           </div>
         </div>
       </HeroImage>
-      <main>{children}</main>
+
+      <main className={className}>{children}</main>
+
       <Footer />
     </>
   );

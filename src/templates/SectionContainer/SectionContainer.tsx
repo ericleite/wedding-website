@@ -7,28 +7,22 @@
 import clsx from 'clsx';
 import React from 'react';
 
-import { Theme } from '../../types';
-import * as styles from './SectionContainer.module.css';
+import { ThemeColor } from '../../types';
 
 interface SectionContainerProps {
   className?: string;
-  theme?: Theme;
+  theme?: ThemeColor;
 }
 
 const SectionContainer: React.FC<React.PropsWithChildren<SectionContainerProps>> = ({
   children,
   className = 'place-items-stretch',
-  theme = Theme.Light,
+  theme = ThemeColor.Light,
 }) => {
-  const isDark = theme === Theme.Dark;
+  const isDark = theme === ThemeColor.Dark;
   return (
     <div
-      className={clsx(
-        className,
-        styles.container,
-        { 'bg-darkPrimary': isDark },
-        'grid gap-11 px-13 lg:px-0 lg:grid-cols-12 lg:gap-13',
-      )}
+      className={clsx('grid gap-11 px-13 lg:px-0 lg:grid-cols-12 lg:gap-13', { 'bg-darkPrimary': isDark }, className)}
     >
       {children}
     </div>

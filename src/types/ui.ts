@@ -8,7 +8,13 @@ export enum DeviceWidth {
   UHD1 = 3840,
 }
 
-export enum Theme {
+export enum ThemeColor {
   Dark,
   Light,
+}
+
+export enum ThemeSize {
+  Sm,
+  Md,
+  Lg,
 }

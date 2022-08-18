@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { PageProps } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -5,13 +6,14 @@ import React from 'react';
 
 import MountainOutlineSVG from '../assets/images/accents/mountain-outline.inline.svg';
 import * as globalStyles from '../assets/styles/global.module.css';
-import { Button } from '../components';
+import { Button, Divider } from '../components';
 import { PageLayout, SectionContainer } from '../templates';
-import { Routes, SiteData, Theme } from '../types';
+import { Routes, SiteData, ThemeColor, ThemeSize } from '../types';
 import * as indexStyles from './index.module.css';
 
 const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
   <PageLayout
+    className="space-y-15"
     heroImage={
       <StaticImage
         alt="Eric and Lauren with rock background"
@@ -24,8 +26,9 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
         src="../assets/images/heros/eric-and-lauren-in-cave.jpg"
       />
     }
-    heroImageClassName={indexStyles.heroImageContainer}
-    subtitle="The Wedding Celebration of"
+    heroImageClassName={clsx('mb-13 sm:mb-12 lg:mb-0', indexStyles.heroImageContainer)}
+    seoTitle=""
+    subtitle="The Wedding of"
     title="Eric &amp; Lauren"
   >
     <SectionContainer className="place-items-center">
@@ -44,17 +47,17 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
           <h3 className="text-center">
             Join <span className="lowercase">the</span> Celebration
           </h3>
-          <hr className="h-6 w-14 bg-darkTertiary mb-12" />
+          <Divider />
           <p className="text-center">
             Eric Leite and Lauren Dubose are getting married on the water&#39;s edge of the Dubose family residence,
             which sits at the base of the beautiful San Jacinto mountains near Palm Springs, California.
           </p>
         </div>
-        <div className="lg:grid lg:grid-cols-2 w-full space-y-13 lg:space-y-0">
+        <div className="md:grid md:grid-cols-2 w-full space-y-13 md:space-y-0">
           <div className="flex flex-col items-center">
-            <p className="font-bold uppercase tracking-widest leading-none">When</p>
-            <hr className="h-5 w-13 bg-darkTertiary mt-10 mb-11" />
-            <h5 className="text-center mb-0">
+            <p className={globalStyles.textHeading}>When</p>
+            <Divider size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
+            <h5 className="text-center">
               Saturday
               <br />
               March 4, 2023
@@ -63,9 +66,9 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
             </h5>
           </div>
           <div className="flex flex-col items-center">
-            <p className="font-bold uppercase tracking-widest leading-none">Where</p>
-            <hr className="h-5 w-13 bg-darkTertiary mt-10 mb-11" />
-            <h5 className="text-center mb-0">
+            <p className={globalStyles.textHeading}>Where</p>
+            <Divider size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
+            <h5 className="text-center">
               38402 Vista Del Sol
               <br />
               Rancho Mirage
@@ -97,10 +100,10 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
         />
       </section>
     </SectionContainer>
-    <SectionContainer className="relative overflow-hidden p-13 lg:p-15" theme={Theme.Dark}>
+    <SectionContainer className="relative overflow-hidden p-15" theme={ThemeColor.Dark}>
       <MountainOutlineSVG className="absolute bottom-0 w-full text-darkSecondary" />
-      <section className="z-10 col-span-full lg:col-start-6 lg:col-end-13">
-        <h2 className="text-center text-lightPrimary my-13 lg:my-15 lg:text-left lg:text-h1">
+      <section className="z-10 col-span-full">
+        <h2 className="text-center text-lightPrimary md:text-h1 md:my-15">
           Palm
           <br />
           Springs,
