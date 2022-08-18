@@ -49,24 +49,49 @@
   }
 
   .isDark & {
-    @apply text-darkPrimary;
+    @apply text-darkSecondary;
   }
 }
 
 .navToggleBar {
-  @apply bg-lightSecondary h-3 transition-all w-11;
+  @apply h-3 transition-all w-11;
+
+  .isLight & {
+    @apply bg-lightPrimary;
+  }
+
+  .isDark & {
+    @apply bg-darkPrimary;
+  }
 
   .isNavOpen & {
     @apply bg-darkSecondary;
   }
 }
 
+.navToggle {
+  .isNavOpen & {
+    &:hover .navToggleBar {
+      @apply bg-darkPrimary;
+    }
+  }
+
+  &:hover .navToggleBarTop {
+    @apply -translate-y-3;
+  }
+
+  &:hover .navToggleBarBottom {
+    @apply translate-y-3;
+  }
+}
+
 .navToggleBarTop {
   composes: navToggleBar;
 
-  .isNavOpen & {
-    transform-origin: 50% calc(100% + 0.317rem + 1px);
-    transform: rotate(45deg) translateY(calc(100% + 0.317rem));
+  .isNavOpen &,
+  .isNavOpen .navToggle:hover & {
+    transform-origin: 50% calc(100% + theme('spacing.6'));
+    transform: rotate(45deg) translateY(calc(100% + theme('spacing.6'))) translateX(1px);
   }
 }
 
@@ -82,8 +107,9 @@
 .navToggleBarBottom {
   composes: navToggleBar;
 
-  .isNavOpen & {
-    transform-origin: 50% calc(-1 * (100% + 0.317rem - 1px));
-    transform: rotate(-45deg) translateY(calc(-1 * (100% + 0.317rem)));
+  .isNavOpen &,
+  .isNavOpen .navToggle:hover & {
+    transform-origin: 50% calc(-1 * (100% + theme('spacing.6')));
+    transform: rotate(-45deg) translateY(calc(-1 * (100% + theme('spacing.6'))));
   }
 }
