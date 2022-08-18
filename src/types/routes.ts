@@ -3,5 +3,6 @@ export enum Routes {
   Accommodations = '/accommodations',
   OurStory = '/our-story',
   Registry = '/registry',
-  Rsvp = 'https://www.zola.com/wedding/eric-and-lauren/rsvp',
+  Rsvp = '/rsvp',
+  RsvpExternal = 'https://www.zola.com/wedding/eric-and-lauren/rsvp',
 }

@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ className, theme = Theme.Light }) => {
           Registry
         </Link>
         <span className={styles.divider}>|</span>
-        <OutboundLink className={styles.navLink} href={Routes.Rsvp} target="_blank">
+        <OutboundLink className={styles.navLink} href={Routes.RsvpExternal} target="_blank">
           RSVP
         </OutboundLink>
       </nav>

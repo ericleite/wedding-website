@@ -79,7 +79,7 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
             We can&#39;t wait to celebrate with you!
           </p>
           <p>
-            <OutboundLink className="border-none inline-block" href={Routes.Rsvp} target="_blank">
+            <OutboundLink className="border-none inline-block" href={Routes.RsvpExternal} target="_blank">
               <Button>RSVP</Button>
             </OutboundLink>
           </p>
