@@ -22,7 +22,11 @@ const SectionContainer: React.FC<React.PropsWithChildren<SectionContainerProps>>
   const isDark = theme === ThemeColor.Dark;
   return (
     <div
-      className={clsx('grid gap-11 px-13 lg:px-0 lg:grid-cols-12 lg:gap-13', { 'bg-darkPrimary': isDark }, className)}
+      className={clsx(
+        'grid gap-11 mx-auto px-13 lg:px-0 lg:grid-cols-12 lg:gap-13',
+        { 'bg-darkPrimary': isDark },
+        className,
+      )}
     >
       {children}
     </div>

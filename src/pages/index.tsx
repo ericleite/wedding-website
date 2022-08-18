@@ -30,8 +30,8 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
     subtitle="The Wedding of"
     title="Eric &amp; Lauren"
   >
-    <SectionContainer className="place-items-center">
-      <section className="hidden lg:block col-start-2 col-end-5">
+    <SectionContainer className="place-items-center max-w-prose 2xl:max-w-none">
+      <section className="hidden 2xl:block col-start-2 col-end-5">
         <StaticImage
           alt="Watercolor drawing of decorative flowers"
           placeholder="tracedSVG"
@@ -41,7 +41,7 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
           width={512}
         />
       </section>
-      <section className="col-span-full flex flex-col items-center space-y-13 lg:space-y-15 lg:col-start-5 lg:col-end-9">
+      <section className="col-span-full flex flex-col items-center space-y-13 2xl:space-y-15 2xl:col-start-5 2xl:col-end-9">
         <div className="flex flex-col items-center">
           <h3 className="text-center">
             Join <span className="lowercase">the</span> Celebration
@@ -89,7 +89,7 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
           </p>
         </div>
       </section>
-      <section className="hidden lg:block col-start-9 col-end-12">
+      <section className="hidden 2xl:block col-start-9 col-end-12">
         <StaticImage
           alt="Watercolor drawing of decorative flowers"
           placeholder="tracedSVG"

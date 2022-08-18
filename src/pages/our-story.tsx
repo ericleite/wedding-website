@@ -12,18 +12,18 @@ const OurStory: React.FC<PageProps> = () => (
     className="space-y-15 my-15"
     heroImage={
       <StaticImage
-        alt="Eric and Lauren with rock background"
+        alt="Eric and Lauren walking on the beach holding hands"
         breakpoints={[1920, 2560, 3840]}
         className={styles.heroImage}
         layout="fullWidth"
         loading="eager"
         placeholder="dominantColor"
         quality={80}
-        src="../assets/images/heros/eric-and-lauren-walking-up-stairs.jpg"
+        src="../assets/images/heros/eric-and-lauren-walking-on-beach-holding-hands.jpg"
       />
     }
     subtitle="How we found each other"
-    theme={ThemeColor.Dark}
+    theme={ThemeColor.Light}
     title="Our Story"
   >
     <SectionContainer>

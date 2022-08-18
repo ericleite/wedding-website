@@ -37,6 +37,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
 }) => {
   const isDark = theme === ThemeColor.Dark;
   const isLight = theme === ThemeColor.Light;
+  const complementaryTheme = isDark ? ThemeColor.Light : ThemeColor.Dark;
 
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -67,19 +68,32 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
         image={heroImage}
       >
         <div className="flex flex-col items-stretch justify-between min-h-0">
-          <Header
-            isNavOpen={isNavOpen}
-            onClickNavToggle={onClickNavToggle}
-            theme={isDark ? ThemeColor.Light : ThemeColor.Dark}
-          />
+          <Header isNavOpen={isNavOpen} onClickNavToggle={onClickNavToggle} theme={complementaryTheme} />
           <div className={clsx('flex-col items-center', isNavOpen ? 'hidden md:flex' : 'flex')}>
             {subtitle && (
               <>
-                <p className={clsx('text-center text-lightPrimary', globalStyles.textHeading)}>{subtitle}</p>
-                <Divider color={ThemeColor.Light} />
+                <p
+                  className={clsx(
+                    'text-center',
+                    globalStyles.textHeading,
+                    isDark && 'text-lightPrimary',
+                    isLight && 'text-darkPrimary',
+                  )}
+                >
+                  {subtitle}
+                </p>
+                <Divider color={complementaryTheme} />
               </>
             )}
-            <h1 className="text-h3 md:text-h1 text-center text-lightPrimary font-normal font-stylized">{title}</h1>
+            <h1
+              className={clsx(
+                'text-h3 sm:text-h2 md:text-h1 text-center font-normal font-stylized',
+                isDark && 'text-lightPrimary',
+                isLight && 'text-darkPrimary',
+              )}
+            >
+              {title}
+            </h1>
           </div>
         </div>
       </HeroImage>
