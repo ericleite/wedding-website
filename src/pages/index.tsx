@@ -17,7 +17,7 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
     heroImage={
       <StaticImage
         alt="Eric and Lauren with rock background"
-        breakpoints={[320, 428, 768, 1024, 1366, 1920, 2560, 3840]}
+        breakpoints={[1920, 2560, 3840]}
         className={globalStyles.heroImage}
         layout="fullWidth"
         loading="eager"
@@ -116,22 +116,3 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
 );
 
 export default Index;
-
-// In case we need to fetch some API:
-// export async function getServerData() {
-//   try {
-//     const res = await fetch(`https://dog.ceo/api/breed/shiba/images/random`);
-//     if (!res.ok) {
-//       throw new Error(`Response failed`);
-//     }
-//     return {
-//       props: await res.json(),
-//     };
-//   } catch (error) {
-//     return {
-//       headers: {},
-//       props: {},
-//       status: 500,
-//     };
-//   }
-// }

@@ -33,27 +33,12 @@ const Header: React.FC<HeaderProps> = ({ className, isNavOpen, onClickNavToggle,
     <button
       aria-controls={NAV_ID}
       aria-label="Navigation Menu Toggle"
-      className={clsx(
-        'absolute top-1/2 left-0 -translate-y-1/2 flex flex-col -mx-6 px-6 md:hidden',
-        isNavOpen ? 'py-10' : 'py-7',
-      )}
+      className="absolute top-1/2 left-0 -translate-y-1/2 flex flex-col -mx-6 px-6 py-7 md:hidden"
       onClick={onClickNavToggle}
     >
-      <span
-        className={clsx(
-          'w-11 h-3 transition-all',
-          isNavOpen ? 'bg-darkSecondary absolute top-10 -rotate-45' : 'bg-lightSecondary',
-        )}
-      />
-      <span
-        className={clsx('w-11 h-3 transition-all', isNavOpen ? 'bg-darkSecondary opacity-0' : 'bg-lightSecondary my-6')}
-      />
-      <span
-        className={clsx(
-          'w-11 h-3 transition-all',
-          isNavOpen ? 'bg-darkSecondary absolute top-10 rotate-45' : 'bg-lightSecondary',
-        )}
-      />
+      <span className={styles.navToggleBarTop} />
+      <span className={styles.navToggleBarMiddle} />
+      <span className={styles.navToggleBarBottom} />
     </button>
   );
 

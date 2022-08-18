@@ -54,3 +54,38 @@
     @apply text-darkPrimary;
   }
 }
+
+.navToggleBar {
+  @apply bg-lightSecondary h-3 transition-all w-11;
+
+  .isNavOpen & {
+    @apply bg-darkSecondary;
+  }
+}
+
+.navToggleBarTop {
+  composes: navToggleBar;
+
+  .isNavOpen & {
+    transform-origin: 50% calc(100% + 0.317rem + 1px);
+    transform: rotate(45deg) translateY(calc(100% + 0.317rem));
+  }
+}
+
+.navToggleBarMiddle {
+  composes: navToggleBar;
+  @apply my-6;
+
+  .isNavOpen & {
+    @apply opacity-0;
+  }
+}
+
+.navToggleBarBottom {
+  composes: navToggleBar;
+
+  .isNavOpen & {
+    transform-origin: 50% calc(-1 * (100% + 0.317rem - 1px));
+    transform: rotate(-45deg) translateY(calc(-1 * (100% + 0.317rem)));
+  }
+}
