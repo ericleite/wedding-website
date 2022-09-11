@@ -8,8 +8,7 @@ export interface ExpandableContentProps {
 const ExpandableContent: React.FC<React.PropsWithChildren<ExpandableContentProps>> = ({ children, className }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openContent = useCallback((e) => {
-    e.preventDefault();
+  const openContent = useCallback(() => {
     setIsOpen(true);
   }, []);
 
@@ -20,7 +19,13 @@ const ExpandableContent: React.FC<React.PropsWithChildren<ExpandableContentProps
         <>
           <div className="absolute top-0 w-full h-full bg-gradient-to-t from-white pointer-events-none" />
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex justify-center w-full bg-white">
-            <a className="border-none cursor-pointer py-4 text-small tracking-widest uppercase" onClick={openContent}>
+            <a
+              className="border-none cursor-pointer py-4 text-small tracking-widest uppercase"
+              onClick={(e) => {
+                e.preventDefault();
+                openContent();
+              }}
+            >
               + show more
             </a>
           </div>
