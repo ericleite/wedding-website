@@ -22,8 +22,8 @@ export const COLOR_MAP: Partial<Record<ThemeColor, string>> = Object.freeze({
 });
 
 export const SIZE_MAP: Partial<Record<ThemeSize, string>> = {
-  [ThemeSize.Sm]: 'text-hBase px-12 py-9',
-  [ThemeSize.Md]: 'text-hBase md:text-h6 px-14 py-10',
+  [ThemeSize.Sm]: 'text-small md:text-hBase px-11 py-8 md:px-12 md:py-9',
+  [ThemeSize.Md]: 'text-hBase md:text-h6 px-13 py-9 md:px-14 md:py-10',
 };
 
 const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
@@ -34,7 +34,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
   size = ThemeSize.Md,
 }) => {
   const classNames = clsx(
-    'border-5 font-bold rounded-md tracking-widest uppercase transition-colors',
+    'border-4 md:border-5 font-bold rounded-md tracking-widest uppercase transition-colors',
     COLOR_MAP[color],
     SIZE_MAP[size],
     className,

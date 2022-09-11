@@ -30,8 +30,8 @@ const Accommodations: React.FC<PageProps> = () => (
     subtitle="Getting to the venue"
     title="Travel &amp; Hotel"
   >
-    <SectionContainer className="place-items-center max-w-5xl">
-      <section className="col-span-4 relative">
+    <SectionContainer className="place-items-center max-w-lg lg:max-w-5xl">
+      <section className="col-span-4 relative hidden lg:block">
         <HorizontalFloralSVG className="text-maroonTertiary w-full m-auto" />
         <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-r from-transparent to-white opacity-75" />
       </section>
@@ -71,12 +71,12 @@ const Accommodations: React.FC<PageProps> = () => (
           </ButtonLink>
         </p>
       </section>
-      <section className="col-span-4 relative">
+      <section className="col-span-4 relative hidden lg:block">
         <HorizontalFloralSVG className="text-maroonTertiary w-full m-auto -scale-x-100" />
         <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-l from-transparent to-white opacity-75" />
       </section>
     </SectionContainer>
-    <SectionContainer className="place-items-center max-w-5xl">
+    <SectionContainer className="place-items-center max-w-lg lg:max-w-5xl" spacingClassName="gap-15 lg:gap-13">
       <section className="space-y-11 flex flex-col items-center col-span-4 text-center">
         <p className={globalStyles.textHeading}>Travel</p>
         <Divider size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
@@ -117,7 +117,7 @@ const Accommodations: React.FC<PageProps> = () => (
           </ButtonLink>
         </p>
       </section>
-      <section className="col-span-4 relative">
+      <section className="col-span-4 relative hidden lg:block">
         <VerticalFloralSVG className="text-maroonTertiary w-1/2 m-auto" />
         <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-transparent to-white opacity-75" />
       </section>
