@@ -1,11 +1,11 @@
 import { PageProps } from 'gatsby';
-import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import MountainOutlineSVG from '../assets/images/accents/mountain-outline.inline.svg';
+import VerticalFloralSVG from '../assets/images/accents/vertical-floral-with-blooms.inline.svg';
 import * as globalStyles from '../assets/styles/global.module.css';
-import { Button, Divider } from '../components';
+import { ButtonLink, Divider } from '../components';
 import { PageLayout, SectionContainer } from '../templates';
 import { Routes, SiteData, ThemeColor, ThemeSize } from '../types';
 import * as styles from './accommodations.module.css';
@@ -32,15 +32,9 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
     title="Eric &amp; Lauren"
   >
     <SectionContainer className="place-items-center max-w-prose 2xl:max-w-none">
-      <section className="hidden 2xl:block col-start-2 col-end-5">
-        <StaticImage
-          alt="Watercolor drawing of decorative flowers"
-          placeholder="tracedSVG"
-          quality={80}
-          src="../assets/images/accents/flowers-with-birds-of-paradise.jpeg"
-          style={{ transform: 'scaleX(-1)' }}
-          width={512}
-        />
+      <section className="hidden 2xl:block col-start-2 col-end-5 relative">
+        <VerticalFloralSVG className="text-maroonTertiary w-3/4 m-auto -scale-x-100" />
+        <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-transparent to-white opacity-75" />
       </section>
       <section className="col-span-full flex flex-col items-center space-y-13 2xl:space-y-15 2xl:col-start-5 2xl:col-end-9">
         <div className="flex flex-col items-center">
@@ -84,20 +78,15 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
             We can&#39;t wait to celebrate with you!
           </p>
           <p>
-            <OutboundLink className="border-none inline-block" href={Routes.RsvpExternal} target="_blank">
-              <Button>RSVP</Button>
-            </OutboundLink>
+            <ButtonLink href={Routes.RsvpExternal} outbound>
+              RSVP
+            </ButtonLink>
           </p>
         </div>
       </section>
-      <section className="hidden 2xl:block col-start-9 col-end-12">
-        <StaticImage
-          alt="Watercolor drawing of decorative flowers"
-          placeholder="tracedSVG"
-          quality={80}
-          src="../assets/images/accents/flowers-with-birds-of-paradise.jpeg"
-          width={512}
-        />
+      <section className="hidden 2xl:block col-start-9 col-end-12 relative">
+        <VerticalFloralSVG className="text-maroonTertiary w-3/4 m-auto" />
+        <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-transparent to-white opacity-75" />
       </section>
     </SectionContainer>
     <SectionContainer className="relative overflow-hidden p-15" theme={ThemeColor.Dark}>

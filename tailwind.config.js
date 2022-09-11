@@ -1,9 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
   theme: {
     borderWidth: {
       0: '0',

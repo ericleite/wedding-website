@@ -220,7 +220,7 @@ const OurStory: React.FC<PageProps> = () => {
       </SectionContainer>
       <SectionContainer className="py-11 lg:py-13 2xl:py-15 max-w-prose 2xl:max-w-none">
         <section className="col-span-full flex flex-col items-center 2xl:col-start-4 2xl:col-end-10">
-          <p className={clsx('text-center text-darkPrimary', globalStyles.textHeading)}>Our next chapter begins in</p>
+          <p className={clsx('text-center text-darkPrimary', globalStyles.textHeading)}>The next chapter begins in</p>
           <Divider />
         </section>
         <section className="col-span-full flex justify-between 2xl:col-start-4 2xl:col-end-10">

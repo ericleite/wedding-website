@@ -47,13 +47,5 @@ p + p {
 }
 
 a {
-  @apply border-b-5;
-  @apply border-darkSecondary;
-  @apply text-darkSecondary;
-  @apply transition-colors;
-}
-
-a:hover {
-  @apply border-darkTertiary;
-  @apply text-darkTertiary;
+  @apply border-b-5 border-darkSecondary text-darkSecondary transition-colors hover:border-darkTertiary hover:text-darkTertiary;
 }
