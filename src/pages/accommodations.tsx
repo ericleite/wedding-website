@@ -136,7 +136,7 @@ const Accommodations: React.FC<PageProps> = () => (
             We reccommend booking a room within our hotel block. We have reserved a limited number of rooms at a
             discounted rate on a first come, first serve basis.
           </p>
-          <p>March is a popular time to visit Palm Springs, so be sure to reserve accomodations before prices go up!</p>
+          <p>March is a popular time to visit Palm Springs, so be sure to book a room before prices go up!</p>
         </ExpandableContent>
         <p>
           <ButtonLink href="https://book.passkey.com/e/50383865" outbound size={ThemeSize.Sm}>
