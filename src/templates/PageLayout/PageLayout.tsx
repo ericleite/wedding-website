@@ -116,7 +116,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
       <div className="absolute bottom-11 flex justify-center w-full">
         <ScrollIcon
           onClick={() => {
-            window.scrollBy({ behavior: 'smooth', top: window.innerHeight });
+            window.scroll({ behavior: 'smooth', top: window.innerHeight });
           }}
           theme={theme}
         />
@@ -135,16 +135,14 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
         theme={theme}
       >
         <Header
-          className={clsx(
-            'absolute inset-0 md:static md:inset-auto',
-            !isNavOpen && 'pointer-events-none md:pointer-events-auto',
-          )}
+          className={clsx('absolute inset-0 md:hidden', !isNavOpen && 'pointer-events-none')}
           isNavOpen={isNavOpen}
           theme={complementaryTheme}
         />
         {monogram}
         <NavToggle className="absolute top-14 left-13" isNavOpen={isNavOpen} onClick={onClickNavToggle} theme={theme} />
       </HeroImage>
+      <Header className="hidden md:block md:sticky md:top-0 z-10" isNavOpen={isNavOpen} theme={complementaryTheme} />
       <main className={className}>{children}</main>
       <Footer showRsvp={showRsvp} />
     </>
