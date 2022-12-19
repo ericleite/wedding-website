@@ -1,19 +1,19 @@
 @keyframes slide_down_and_fade_out {
-  0%   { transform: translateY(0); opacity: 1; }
+  0%   { transform: translateY(0); opacity: 0; }
   25%  { opacity: 1; }
-  75%  { transform: translateY(.75em); opacity: 0; }
+  75%  { transform: translateY(.75rem); opacity: 0; }
   100% { transform: translateY(0); opacity: 0; }
 }
 
 .mouse {
-  @apply block relative h-13 w-11 border-2 rounded-2xl transition-colors;
+  @apply block relative h-12 w-10 border-2 rounded-2xl transition-colors;
 }
 
 .dot {
-  @apply block absolute left-1/2 h-5 w-5 top-8 rounded-full -ml-2 transition-colors;
+  @apply block absolute left-1/2 h-5 w-5 top-5 rounded-full -ml-2 transition-colors;
   transform-origin: top center;
   backface-visibility: hidden;
-  animation: slide_down_and_fade_out 2s ease-out infinite;
+  animation: slide_down_and_fade_out 3s ease-out infinite;
 }
 
 .isDark {
@@ -36,7 +36,7 @@
 
 .isLight {
   &.mouse {
-    @apply border-lightTertiary;
+    @apply border-lightSecondary;
 
     &:hover {
       @apply border-lightPrimary;
@@ -44,7 +44,7 @@
   }
 
   .dot {
-    @apply bg-lightTertiary;
+    @apply bg-lightSecondary;
   }
 
   &:hover .dot {
