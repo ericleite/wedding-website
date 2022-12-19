@@ -11,7 +11,7 @@ import resolveConfig from 'tailwindcss/resolveConfig';
 
 import tailwindConfig from '../../../tailwind.config.js';
 import * as globalStyles from '../../assets/styles/global.module.css';
-import { Divider, Footer, Header, HeroImage, NavToggle, SEO } from '../../components';
+import { Divider, Footer, Header, HeroImage, NavToggle, ScrollIcon, SEO } from '../../components';
 import { ThemeColor } from '../../types';
 import { Routes } from '../../types/routes';
 
@@ -86,7 +86,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   );
 
   const content = (
-    <div>
+    <div className="relative">
       <div className="relative top-1/3 -translate-y-1/2 flex flex-col items-center">
         {subtitle && (
           <>
@@ -112,6 +112,14 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
         >
           {title}
         </h1>
+      </div>
+      <div className="absolute bottom-11 flex justify-center w-full">
+        <ScrollIcon
+          onClick={() => {
+            window.scrollBy({ behavior: 'smooth', top: window.innerHeight });
+          }}
+          theme={theme}
+        />
       </div>
     </div>
   );

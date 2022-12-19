@@ -6,4 +6,5 @@ export * from './Footer';
 export * from './Header';
 export * from './HeroImage';
 export * from './NavToggle';
+export * from './ScrollIcon';
 export * from './SEO';
