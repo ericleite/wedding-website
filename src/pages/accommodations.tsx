@@ -23,7 +23,7 @@ const Accommodations: React.FC<PageProps> = () => (
         loading="eager"
         placeholder="dominantColor"
         quality={80}
-        src="../assets/images/heros/eric-and-lauren-at-sunset.png"
+        src="../assets/images/heros/eric-and-lauren-walking-in-front-of-joshua-tree.jpg"
       />
     }
     heroImageClassName={styles.heroImageContainer}

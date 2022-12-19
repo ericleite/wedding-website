@@ -1,24 +1,20 @@
-.monogramLink {
-  @apply border-none flex items-center font-serif transition-colors;
-
-  .isLight & {
-    @apply text-lightPrimary;
-  }
-
-  .isDark & {
-    @apply text-darkPrimary;
-  }
+.isDark {
+  @apply md:bg-darkPrimary;
 }
 
-.navLink {
+.isLight {
+  @apply md:bg-lightTertiary;
+}
+
+.link {
   @apply border-none opacity-0 -translate-x-full transition-all md:px-11 md:translate-x-0 md:opacity-100;
 
   &.isActive {
     @apply font-bold;
   }
 
-  .isLight & {
-    @apply text-lightSecondary;
+  .isDark & {
+    @apply text-lightTertiary;
 
     &:hover,
     &.isActive {
@@ -26,90 +22,35 @@
     }
   }
 
-  .isDark & {
+  .isLight & {
     @apply text-darkPrimary;
 
     &:hover,
     &.isActive {
-      @apply text-darkSecondary;
+      @apply text-darkTertiary;
     }
   }
 
   .isNavOpen & {
     @apply translate-x-0;
     @apply opacity-100;
+    @apply text-darkPrimary;
+
+    &:hover,
+    &.isActive {
+      @apply text-darkTertiary;
+    }
   }
 }
 
 .divider {
   @apply hidden pointer-events-none tracking-normal md:inline-block;
 
-  .isLight & {
-    @apply text-lightSecondary;
-  }
-
   .isDark & {
-    @apply text-darkSecondary;
+    @apply text-darkTertiary;
   }
-}
-
-.navToggleBar {
-  @apply h-3 transition-all w-11;
 
   .isLight & {
-    @apply bg-lightPrimary;
-  }
-
-  .isDark & {
-    @apply bg-darkPrimary;
-  }
-
-  .isNavOpen & {
-    @apply bg-darkSecondary;
-  }
-}
-
-.navToggle {
-  .isNavOpen & {
-    &:hover .navToggleBar {
-      @apply bg-darkPrimary;
-    }
-  }
-
-  &:hover .navToggleBarTop {
-    @apply -translate-y-3;
-  }
-
-  &:hover .navToggleBarBottom {
-    @apply translate-y-3;
-  }
-}
-
-.navToggleBarTop {
-  composes: navToggleBar;
-
-  .isNavOpen &,
-  .isNavOpen .navToggle:hover & {
-    transform-origin: 50% calc(100% + theme('spacing.6'));
-    transform: rotate(45deg) translateY(calc(100% + theme('spacing.6'))) translateX(1px);
-  }
-}
-
-.navToggleBarMiddle {
-  composes: navToggleBar;
-  @apply my-6;
-
-  .isNavOpen & {
-    @apply opacity-0;
-  }
-}
-
-.navToggleBarBottom {
-  composes: navToggleBar;
-
-  .isNavOpen &,
-  .isNavOpen .navToggle:hover & {
-    transform-origin: 50% calc(-1 * (100% + theme('spacing.6')));
-    transform: rotate(-45deg) translateY(calc(-1 * (100% + theme('spacing.6'))));
+    @apply text-darkTertiary; 
   }
 }

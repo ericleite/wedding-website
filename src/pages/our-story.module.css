@@ -1,3 +1,4 @@
 .heroImageContainer img {
-  object-position: 50% 50%;
+  object-position: 50% 70%;
+  filter: brightness(0.80);
 }

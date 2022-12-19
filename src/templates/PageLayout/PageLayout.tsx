@@ -5,13 +5,15 @@
  */
 
 import clsx from 'clsx';
+import { Link } from 'gatsby';
 import React, { useCallback, useEffect, useState } from 'react';
 import resolveConfig from 'tailwindcss/resolveConfig';
 
 import tailwindConfig from '../../../tailwind.config.js';
 import * as globalStyles from '../../assets/styles/global.module.css';
-import { Divider, Footer, Header, HeroImage, SEO } from '../../components';
+import { Divider, Footer, Header, HeroImage, NavToggle, SEO } from '../../components';
 import { ThemeColor } from '../../types';
+import { Routes } from '../../types/routes';
 
 const resolvedTailwindConfig = resolveConfig(tailwindConfig);
 
@@ -34,7 +36,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   seoTitle,
   showRsvp = true,
   subtitle,
-  theme = ThemeColor.Dark,
+  theme = ThemeColor.Light,
   title,
 }) => {
   const isDark = theme === ThemeColor.Dark;
@@ -60,48 +62,82 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
     };
   }, [isNavOpen]);
 
+  const monogram = (
+    <div className="absolute w-full top-13 flex justify-center">
+      <h4 className="text-h4 leading-none">
+        <Link
+          className={clsx(
+            'border-none flex items-center font-serif transition-colors',
+            isDark && !isNavOpen && 'text-darkTertiary hover:text-darkPrimary',
+            isLight && !isNavOpen && 'text-lightSecondary hover:text-lightPrimary',
+            isNavOpen && 'text-lightTertiary hover:text-darkTertiary',
+          )}
+          onClick={() => {
+            setIsNavOpen(false);
+          }}
+          to={Routes.Index}
+        >
+          <span>E</span>
+          <span className="text-h6 px-7">&amp;</span>
+          <span>L</span>
+        </Link>
+      </h4>
+    </div>
+  );
+
+  const content = (
+    <div>
+      <div className="relative top-1/3 -translate-y-1/2 flex flex-col items-center">
+        {subtitle && (
+          <>
+            <p
+              className={clsx(
+                'text-center',
+                globalStyles.textHeading,
+                isDark && 'text-darkPrimary',
+                isLight && 'text-lightPrimary',
+              )}
+            >
+              {subtitle}
+            </p>
+            <Divider color={isLight ? ThemeColor.ExtraLight : ThemeColor.Dark} />
+          </>
+        )}
+        <h1
+          className={clsx(
+            'text-h3 sm:text-h2 md:text-h1 text-center font-normal font-stylized',
+            isDark && 'text-darkPrimary',
+            isLight && 'text-lightPrimary',
+          )}
+        >
+          {title}
+        </h1>
+      </div>
+    </div>
+  );
+
   return (
     <>
       <SEO bodyAttributes={{ class: isNavOpen && 'overflow-hidden md:overflow-visible' }} title={seoTitle ?? title} />
-
       <HeroImage
-        className={clsx(isNavOpen && 'overflow-y-auto', heroImageClassName)}
+        className={clsx('relative', isNavOpen && 'overflow-y-auto', heroImageClassName)}
+        content={content}
         contentClassName={clsx({ 'bg-darkPrimary': isDark && !heroImage, 'bg-lightPrimary': isLight && !heroImage })}
         image={heroImage}
+        theme={theme}
       >
-        <div className="flex flex-col items-stretch justify-between min-h-0">
-          <Header isNavOpen={isNavOpen} onClickNavToggle={onClickNavToggle} theme={complementaryTheme} />
-          <div className={clsx('flex-col items-center', isNavOpen ? 'hidden md:flex' : 'flex')}>
-            {subtitle && (
-              <>
-                <p
-                  className={clsx(
-                    'text-center',
-                    globalStyles.textHeading,
-                    isDark && 'text-lightPrimary',
-                    isLight && 'text-darkPrimary',
-                  )}
-                >
-                  {subtitle}
-                </p>
-                <Divider color={complementaryTheme} />
-              </>
-            )}
-            <h1
-              className={clsx(
-                'text-h3 sm:text-h2 md:text-h1 text-center font-normal font-stylized',
-                isDark && 'text-lightPrimary',
-                isLight && 'text-darkPrimary',
-              )}
-            >
-              {title}
-            </h1>
-          </div>
-        </div>
+        <Header
+          className={clsx(
+            'absolute inset-0 md:static md:inset-auto',
+            !isNavOpen && 'pointer-events-none md:pointer-events-auto',
+          )}
+          isNavOpen={isNavOpen}
+          theme={complementaryTheme}
+        />
+        {monogram}
+        <NavToggle className="absolute top-14 left-13" isNavOpen={isNavOpen} onClick={onClickNavToggle} theme={theme} />
       </HeroImage>
-
       <main className={className}>{children}</main>
-
       <Footer showRsvp={showRsvp} />
     </>
   );

@@ -1,0 +1,56 @@
+.navToggleBar {
+  @apply h-3 transition-all w-11;
+
+  .isLight & {
+    @apply bg-lightSecondary;
+  }
+
+  .isLight:hover & {
+    @apply bg-lightPrimary;
+  }
+
+  .isDark & {
+    @apply bg-darkTertiary;
+  }
+
+  .isDark:hover & {
+    @apply bg-darkPrimary;
+  }
+
+  .isNavOpen & {
+    @apply bg-lightTertiary;
+  }
+
+  .isNavOpen:hover & {
+    @apply bg-darkTertiary;
+  }
+}
+
+.navToggleBarTop {
+  composes: navToggleBar;
+
+  .isNavOpen &,
+  .isNavOpen:hover & {
+    transform-origin: 50% calc(100% + theme('spacing.6'));
+    transform: rotate(45deg) translateY(calc(100% + theme('spacing.6'))) translateX(1px);
+  }
+}
+
+.navToggleBarMiddle {
+  composes: navToggleBar;
+  @apply my-6;
+
+  .isNavOpen & {
+    @apply opacity-0;
+  }
+}
+
+.navToggleBarBottom {
+  composes: navToggleBar;
+
+  .isNavOpen &,
+  .isNavOpen:hover & {
+    transform-origin: 50% calc(-1 * (100% + theme('spacing.6')));
+    transform: rotate(-45deg) translateY(calc(-1 * (100% + theme('spacing.6')))) translateX(-1px);
+  }
+}

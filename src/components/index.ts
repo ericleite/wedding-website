@@ -5,4 +5,5 @@ export * from './ExpandableContent';
 export * from './Footer';
 export * from './Header';
 export * from './HeroImage';
+export * from './NavToggle';
 export * from './SEO';

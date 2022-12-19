@@ -34,7 +34,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
   size = ThemeSize.Md,
 }) => {
   const classNames = clsx(
-    'border-4 md:border-5 font-bold rounded-md tracking-widest uppercase transition-colors',
+    'border-2 md:border-3 font-bold tracking-widest uppercase transition-colors',
     COLOR_MAP[color],
     SIZE_MAP[size],
     className,

@@ -4,5 +4,6 @@
 }
 
 .textHeading {
-  @apply text-hBase md:text-h6 font-bold tracking-widest uppercase;
+  @apply text-hBase font-bold tracking-widest uppercase;
+  @apply md:text-h6;
 }
