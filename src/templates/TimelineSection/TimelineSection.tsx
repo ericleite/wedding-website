@@ -42,7 +42,7 @@ const TimelineSection: React.FC<TimelineSectionProps> = ({
       )}
     >
       <h5 className="mb-8 lg:mb-9">{title}</h5>
-      <h6 className="font-stylized mb-10 lg:mb-11">{date}</h6>
+      <h6 className="text-darkTertiary font-stylized mb-10 lg:mb-11">{date}</h6>
       {body}
     </div>
   </section>

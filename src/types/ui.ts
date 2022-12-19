@@ -11,6 +11,7 @@ export enum DeviceWidth {
 export enum ThemeColor {
   Dark,
   Light,
+  ExtraLight,
   Gold,
   Maroon,
 }

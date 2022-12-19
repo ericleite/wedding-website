@@ -21,7 +21,7 @@ const Registry: React.FC<PageProps> = () => {
           loading="eager"
           placeholder="dominantColor"
           quality={80}
-          src="../assets/images/heros/eric-and-lauren-sitting-together-on-ledge.jpg"
+          src="../assets/images/heros/eric-and-lauren-in-front-of-rocks.jpg"
         />
       }
       heroImageClassName={styles.heroImageContainer}

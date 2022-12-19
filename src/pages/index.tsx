@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { PageProps } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
@@ -8,7 +9,7 @@ import * as globalStyles from '../assets/styles/global.module.css';
 import { ButtonLink, Divider } from '../components';
 import { PageLayout, SectionContainer } from '../templates';
 import { Routes, SiteData, ThemeColor, ThemeSize } from '../types';
-import * as styles from './accommodations.module.css';
+import * as styles from './index.module.css';
 
 const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
   <PageLayout
@@ -22,7 +23,7 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
         loading="eager"
         placeholder="dominantColor"
         quality={80}
-        src="../assets/images/heros/eric-and-lauren-in-cave.jpg"
+        src="../assets/images/heros/eric-and-lauren-between-joshua-trees.jpg"
       />
     }
     heroImageClassName={styles.heroImageContainer}
@@ -41,7 +42,7 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
           <h3 className="text-center">
             Join <span className="lowercase">the</span> Celebration
           </h3>
-          <Divider />
+          <Divider color={ThemeColor.Light} />
           <p className="text-center">
             Eric Leite and Lauren Dubose are getting married on the water&#39;s edge of the Dubose family residence,
             which sits at the base of the beautiful San Jacinto mountains near Palm Springs, California.
@@ -49,8 +50,8 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
         </div>
         <div className="sm:grid sm:grid-cols-2 w-full space-y-13 sm:space-y-0">
           <div className="flex flex-col items-center">
-            <p className={globalStyles.textHeading}>When</p>
-            <Divider size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
+            <p className={clsx(globalStyles.textHeading, 'text-darkTertiary')}>When</p>
+            <Divider color={ThemeColor.Light} size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
             <h5 className="text-center">
               Saturday
               <br />
@@ -60,8 +61,8 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
             </h5>
           </div>
           <div className="flex flex-col items-center">
-            <p className={globalStyles.textHeading}>Where</p>
-            <Divider size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
+            <p className={clsx(globalStyles.textHeading, 'text-darkTertiary')}>Where</p>
+            <Divider color={ThemeColor.Light} size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
             <h5 className="text-center">
               38402 Vista Del Sol
               <br />

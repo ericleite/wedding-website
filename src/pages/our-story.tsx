@@ -9,7 +9,6 @@ import { WEDDING_START_DATE } from '../constants';
 import { useCountdownTimer } from '../hooks';
 import { PageLayout, SectionContainer, TimelineSection } from '../templates';
 import { TimelineSectionOrientation } from '../templates/TimelineSection';
-import { ThemeColor } from '../types';
 import * as styles from './our-story.module.css';
 
 const OurStory: React.FC<PageProps> = () => {
@@ -27,12 +26,11 @@ const OurStory: React.FC<PageProps> = () => {
           loading="eager"
           placeholder="dominantColor"
           quality={80}
-          src="../assets/images/heros/eric-and-lauren-walking-on-beach-holding-hands.jpg"
+          src="../assets/images/heros/eric-and-lauren-on-a-road.jpg"
         />
       }
       heroImageClassName={styles.heroImageContainer}
       subtitle="A match made in Florida"
-      theme={ThemeColor.Light}
       title="Our Story"
     >
       <SectionContainer className="max-w-prose 2xl:max-w-none">

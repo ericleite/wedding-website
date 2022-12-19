@@ -1,19 +1,46 @@
 import clsx from 'clsx';
 import React from 'react';
 
+import { ThemeColor } from '../../types';
 import * as styles from './HeroImage.module.css';
 
 interface HeroImageProps {
   className?: string;
+  content: React.ReactNode;
   contentClassName?: string;
+  contentContainerClassName?: string;
   image: React.ReactNode;
+  theme?: ThemeColor;
 }
 
-const HeroImage: React.FC<HeroImageProps> = ({ children, className, contentClassName, image }) => {
+const HeroImage: React.FC<HeroImageProps> = ({
+  children,
+  className,
+  content,
+  contentClassName,
+  contentContainerClassName,
+  image,
+  theme = ThemeColor.Dark,
+}) => {
+  const isDark = theme === ThemeColor.Dark;
+  const isLight = theme === ThemeColor.Light;
+
   return (
-    <div className={clsx('grid w-full h-screen', className)}>
-      {image}
-      <div className={clsx(styles.content, contentClassName)}>{children}</div>
+    <div className={clsx('flex flex-col w-full h-screen', className)}>
+      <div className={clsx('grid grow min-h-0', contentContainerClassName)}>
+        {image}
+        <div
+          className={clsx(
+            styles.content,
+            isDark && 'border-darkPrimary',
+            isLight && 'border-lightPrimary',
+            contentClassName,
+          )}
+        >
+          {content}
+        </div>
+      </div>
+      {children}
     </div>
   );
 };
