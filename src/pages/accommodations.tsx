@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { PageProps } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -36,7 +37,7 @@ const Accommodations: React.FC<PageProps> = () => (
         <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-r from-transparent to-white opacity-75" />
       </section>
       <section className="space-y-11 flex flex-col items-center col-span-4 text-center">
-        <p className={globalStyles.textHeading}>Venue</p>
+        <p className={clsx(globalStyles.textHeading, 'text-darkTertiary')}>Venue</p>
         <Divider size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
         <h5>
           38402 Vista Del Sol
@@ -78,7 +79,7 @@ const Accommodations: React.FC<PageProps> = () => (
     </SectionContainer>
     <SectionContainer className="place-items-center max-w-lg lg:max-w-5xl" spacingClassName="gap-15 lg:gap-13">
       <section className="space-y-11 flex flex-col items-center col-span-4 text-center">
-        <p className={globalStyles.textHeading}>Travel</p>
+        <p className={clsx(globalStyles.textHeading, 'text-darkTertiary')}>Travel</p>
         <Divider size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
         <h5>
           Palm Springs
@@ -122,7 +123,7 @@ const Accommodations: React.FC<PageProps> = () => (
         <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-transparent to-white opacity-75" />
       </section>
       <section className="space-y-11 flex flex-col items-center col-span-4 text-center">
-        <p className={globalStyles.textHeading}>Lodging</p>
+        <p className={clsx(globalStyles.textHeading, 'text-darkTertiary')}>Lodging</p>
         <Divider size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
         <h5>
           The Westin
