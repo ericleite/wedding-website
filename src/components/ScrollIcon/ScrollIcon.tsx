@@ -17,10 +17,15 @@ const ScrollIcon: React.FC<ScrollIconProps> = ({ className, onClick, theme = The
   return (
     <button
       aria-label="Scroll down to view more"
-      className={clsx(styles.mouse, isDark && styles.isDark, isLight && styles.isLight, className)}
+      className={clsx('px-6', isDark && styles.isDark, isLight && styles.isLight, className)}
       onClick={onClick}
     >
-      <span className={styles.dot} />
+      <svg className={styles.icon} fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M6.34317 7.75732L4.92896 9.17154L12 16.2426L19.0711 9.17157L17.6569 7.75735L12 13.4142L6.34317 7.75732Z"
+          fill="currentColor"
+        />
+      </svg>
     </button>
   );
 };
