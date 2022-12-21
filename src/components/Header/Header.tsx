@@ -48,19 +48,23 @@ const Header: React.FC<HeaderProps> = ({ className, isNavOpen, theme = ThemeColo
         id={HEADER_NAV_ID}
       >
         <Link activeClassName={styles.isActive} className={styles.link} to={Routes.OurStory}>
-          Our Story
+          <span>Our Story</span>
+          <span className={styles.linkDot} />
         </Link>
         <span className={styles.divider}>|</span>
         <Link activeClassName={styles.isActive} className={styles.link} to={Routes.Accommodations}>
-          Travel &amp; Hotel
+          <span>Travel &amp; Hotel</span>
+          <span className={styles.linkDot} />
         </Link>
         <span className={styles.divider}>|</span>
         <Link activeClassName={styles.isActive} className={styles.link} to={Routes.Registry}>
-          Registry
+          <span>Registry</span>
+          <span className={styles.linkDot} />
         </Link>
         <span className={styles.divider}>|</span>
         <OutboundLink className={styles.link} href={Routes.RsvpExternal} target="_blank">
-          RSVP
+          <span>RSVP</span>
+          <span className={styles.linkDot} />
         </OutboundLink>
       </nav>
     </header>
