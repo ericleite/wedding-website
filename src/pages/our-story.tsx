@@ -24,7 +24,7 @@ const OurStory: React.FC<PageProps> = () => {
           className={globalStyles.heroImage}
           layout="fullWidth"
           loading="eager"
-          placeholder="dominantColor"
+          placeholder="tracedSVG"
           quality={80}
           src="../assets/images/heros/eric-and-lauren-on-a-road.jpg"
         />

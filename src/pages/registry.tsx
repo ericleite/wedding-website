@@ -19,7 +19,7 @@ const Registry: React.FC<PageProps> = () => {
           className={globalStyles.heroImage}
           layout="fullWidth"
           loading="eager"
-          placeholder="dominantColor"
+          placeholder="tracedSVG"
           quality={80}
           src="../assets/images/heros/eric-and-lauren-in-front-of-rocks.jpg"
         />
