@@ -9,6 +9,10 @@
 .link {
   @apply flex flex-col items-center space-y-6 border-none opacity-0 -translate-x-full transition-all md:px-11 md:translate-x-0 md:opacity-100;
 
+  .dot {
+    @apply hidden w-6 h-6 bg-lightPrimary rounded-full;
+  }
+
   .isDark & {
     @apply text-lightTertiary;
 
@@ -30,8 +34,8 @@
   &.isActive {
     @apply font-bold;
 
-    .linkDot {
-      @apply hidden w-6 h-6 bg-lightPrimary rounded-full md:block;
+    .dot {
+      @apply bg-lightPrimary md:block;
     }
   }
 

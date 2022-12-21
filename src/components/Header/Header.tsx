@@ -49,22 +49,22 @@ const Header: React.FC<HeaderProps> = ({ className, isNavOpen, theme = ThemeColo
       >
         <Link activeClassName={styles.isActive} className={styles.link} to={Routes.OurStory}>
           <span>Our Story</span>
-          <span className={styles.linkDot} />
+          <span className={styles.dot} />
         </Link>
         <span className={styles.divider}>|</span>
         <Link activeClassName={styles.isActive} className={styles.link} to={Routes.Accommodations}>
           <span>Travel &amp; Hotel</span>
-          <span className={styles.linkDot} />
+          <span className={styles.dot} />
         </Link>
         <span className={styles.divider}>|</span>
         <Link activeClassName={styles.isActive} className={styles.link} to={Routes.Registry}>
           <span>Registry</span>
-          <span className={styles.linkDot} />
+          <span className={styles.dot} />
         </Link>
         <span className={styles.divider}>|</span>
         <OutboundLink className={styles.link} href={Routes.RsvpExternal} target="_blank">
           <span>RSVP</span>
-          <span className={styles.linkDot} />
+          <span className={styles.dot} />
         </OutboundLink>
       </nav>
     </header>

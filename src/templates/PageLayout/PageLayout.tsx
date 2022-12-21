@@ -113,7 +113,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
           {title}
         </h1>
       </div>
-      <div className="absolute bottom-11 flex justify-center w-full">
+      <div className="absolute bottom-10 flex justify-center w-full md:bottom-11">
         <ScrollIcon
           onClick={() => {
             window.scroll({ behavior: 'smooth', top: window.innerHeight });
