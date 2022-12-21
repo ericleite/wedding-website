@@ -9,15 +9,15 @@ export enum DeviceWidth {
 }
 
 export enum ThemeColor {
-  Dark,
-  Light,
-  ExtraLight,
-  Gold,
-  Maroon,
+  Dark = 'dark',
+  Light = 'light',
+  ExtraLight = 'extraLight',
+  Gold = 'gold',
+  Maroon = 'maroon',
 }
 
 export enum ThemeSize {
-  Sm,
-  Md,
-  Lg,
+  Sm = 'sm',
+  Md = 'md',
+  Lg = 'lg',
 }

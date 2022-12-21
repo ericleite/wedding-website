@@ -63,7 +63,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   }, [isNavOpen]);
 
   const monogram = (
-    <div className="absolute w-full top-13 flex justify-center">
+    <div className="absolute w-full top-[12.5%] -translate-y-1/2 flex justify-center">
       <h4 className="text-h4 leading-none">
         <Link
           className={clsx(
@@ -140,7 +140,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
           theme={complementaryTheme}
         />
         {monogram}
-        <NavToggle className="absolute top-14 left-13" isNavOpen={isNavOpen} onClick={onClickNavToggle} theme={theme} />
+        <NavToggle className="absolute top-13 left-13" isNavOpen={isNavOpen} onClick={onClickNavToggle} theme={theme} />
       </HeroImage>
       <Header className="hidden md:block md:sticky md:top-0 z-10" isNavOpen={isNavOpen} theme={complementaryTheme} />
       <main className={className}>{children}</main>

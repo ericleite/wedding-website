@@ -41,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({ className, isNavOpen, theme = ThemeColo
       {navBackgroundLayer}
       <nav
         className={clsx(
-          'mt-16 break-words flex flex-col space-y-11 text-h5 tracking-widest uppercase',
+          'mt-18 break-words flex flex-col space-y-11 text-h5 tracking-widest uppercase',
           'md:mt-0 md:flex-row md:flex-wrap md:justify-center md:text-base md:space-y-0',
           !isNavOpen && 'pointer-events-none md:pointer-events-auto',
         )}

@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 
-import { ThemeColor } from '../../types';
+import { ThemeColor } from '../../../types';
 import * as styles from './ScrollIcon.module.css';
 
 interface ScrollIconProps {
