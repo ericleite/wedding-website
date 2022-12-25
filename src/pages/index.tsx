@@ -16,7 +16,7 @@ const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
     className="space-y-15 mt-15"
     heroImage={
       <StaticImage
-        alt="Eric and Lauren with rock background"
+        alt="Eric and Lauren between two Joshua Trees"
         breakpoints={[1920, 2560, 3840]}
         className={globalStyles.heroImage}
         layout="fullWidth"

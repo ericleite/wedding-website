@@ -19,7 +19,7 @@ const OurStory: React.FC<PageProps> = () => {
       className="space-y-15 my-15"
       heroImage={
         <StaticImage
-          alt="Eric and Lauren walking on the beach holding hands"
+          alt="Eric and Lauren walking down a road together"
           breakpoints={[1920, 2560, 3840]}
           className={globalStyles.heroImage}
           layout="fullWidth"

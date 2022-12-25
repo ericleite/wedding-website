@@ -14,7 +14,7 @@ const Registry: React.FC<PageProps> = () => {
       className="space-y-15 my-15"
       heroImage={
         <StaticImage
-          alt="Eric and Lauren sitting together on a ledge"
+          alt="Eric and Lauren in front of rocks"
           breakpoints={[1920, 2560, 3840]}
           className={globalStyles.heroImage}
           layout="fullWidth"

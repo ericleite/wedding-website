@@ -17,7 +17,7 @@ const Accommodations: React.FC<PageProps> = () => (
     className="space-y-15 my-15"
     heroImage={
       <StaticImage
-        alt="Eric and Lauren holding hands on a pier"
+        alt="Eric and Lauren walking in front of Joshua Tree"
         breakpoints={[1920, 2560, 3840]}
         className={globalStyles.heroImage}
         layout="fullWidth"
