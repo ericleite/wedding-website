@@ -11,7 +11,7 @@ const Registry: React.FC<PageProps> = () => {
   const scriptId = useRef(Math.random().toString());
   return (
     <PageLayout
-      className="space-y-15 my-15"
+      className="bg-white space-y-15 py-15"
       heroImage={
         <StaticImage
           alt="Eric and Lauren in front of rocks"

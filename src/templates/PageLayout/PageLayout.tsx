@@ -126,7 +126,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
 
   return (
     <>
-      <SEO bodyAttributes={{ class: isNavOpen && 'overflow-hidden md:overflow-visible' }} title={seoTitle ?? title} />
+      <SEO bodyAttributes={{ class: isNavOpen && 'overflow-hidden lg:overflow-visible' }} title={seoTitle ?? title} />
       <HeroImage
         className={clsx('relative', isNavOpen && 'overflow-y-auto', heroImageClassName)}
         content={content}
@@ -135,14 +135,14 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
         theme={theme}
       >
         <Header
-          className={clsx('absolute inset-0 md:hidden', !isNavOpen && 'pointer-events-none')}
+          className={clsx('absolute inset-0 lg:hidden', !isNavOpen && 'pointer-events-none')}
           isNavOpen={isNavOpen}
           theme={complementaryTheme}
         />
         {monogram}
         <NavToggle className="absolute top-13 left-13" isNavOpen={isNavOpen} onClick={onClickNavToggle} theme={theme} />
       </HeroImage>
-      <Header className="hidden md:block md:sticky md:top-0 z-10" isNavOpen={isNavOpen} theme={complementaryTheme} />
+      <Header className="hidden lg:block lg:sticky lg:top-0 z-10" isNavOpen={isNavOpen} theme={complementaryTheme} />
       <main className={className}>{children}</main>
       <Footer showRsvp={showRsvp} />
     </>

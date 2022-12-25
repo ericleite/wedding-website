@@ -21,7 +21,7 @@ const NavToggle: React.FC<NavToggleProps> = ({ className, isNavOpen, onClick, th
       aria-controls={HEADER_NAV_ID}
       aria-label="Navigation Menu Toggle"
       className={clsx(
-        'flex flex-col px-6 -mx-6 py-7 -my-7 md:hidden',
+        'flex flex-col px-6 -mx-6 py-7 -my-7 lg:hidden',
         isDark && styles.isDark,
         isLight && styles.isLight,
         isNavOpen && styles.isNavOpen,

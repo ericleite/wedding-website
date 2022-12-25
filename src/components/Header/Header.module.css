@@ -1,13 +1,13 @@
 .isDark {
-  @apply md:bg-darkPrimary;
+  @apply lg:bg-darkPrimary;
 }
 
 .isLight {
-  @apply md:bg-lightTertiary;
+  @apply lg:bg-lightTertiary;
 }
 
 .link {
-  @apply flex flex-col items-center space-y-6 border-none opacity-0 -translate-x-full transition-all md:px-11 md:translate-x-0 md:opacity-100;
+  @apply flex flex-col items-center space-y-6 border-none opacity-0 -translate-x-full transition-all lg:px-11 lg:translate-x-0 lg:opacity-100;
 
   .dot {
     @apply hidden w-6 h-6 bg-lightPrimary rounded-full;
@@ -35,7 +35,7 @@
     @apply font-bold;
 
     .dot {
-      @apply bg-lightPrimary md:block;
+      @apply bg-lightPrimary lg:block;
     }
   }
 
@@ -52,7 +52,7 @@
 }
 
 .divider {
-  @apply hidden pointer-events-none tracking-normal md:inline-block;
+  @apply hidden pointer-events-none tracking-normal lg:inline-block;
 
   .isDark & {
     @apply text-darkTertiary;

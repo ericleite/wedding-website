@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ className, isNavOpen, theme = ThemeColo
 
   const navBackgroundLayer = (
     <div
-      className={clsx('fixed top-0 w-full h-full bg-lightPrimary transition-all md:hidden', {
+      className={clsx('fixed top-0 w-full h-full bg-lightPrimary transition-all lg:hidden', {
         '-left-full': !isNavOpen,
         'left-0': isNavOpen,
       })}
@@ -31,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({ className, isNavOpen, theme = ThemeColo
     <header
       className={clsx(
         'p-13',
-        'md:p-10',
+        'lg:p-10',
         isDark && styles.isDark,
         isLight && styles.isLight,
         isNavOpen && styles.isNavOpen,
@@ -42,13 +42,18 @@ const Header: React.FC<HeaderProps> = ({ className, isNavOpen, theme = ThemeColo
       <nav
         className={clsx(
           'mt-18 break-words flex flex-col space-y-11 text-h5 tracking-widest uppercase',
-          'md:mt-0 md:flex-row md:flex-wrap md:justify-center md:text-base md:space-y-0',
-          !isNavOpen && 'pointer-events-none md:pointer-events-auto',
+          'lg:mt-0 lg:flex-row lg:flex-wrap lg:justify-center lg:text-base lg:space-y-0',
+          !isNavOpen && 'pointer-events-none lg:pointer-events-auto',
         )}
         id={HEADER_NAV_ID}
       >
         <Link activeClassName={styles.isActive} className={styles.link} to={Routes.OurStory}>
           <span>Our Story</span>
+          <span className={styles.dot} />
+        </Link>
+        <span className={styles.divider}>|</span>
+        <Link activeClassName={styles.isActive} className={styles.link} to={Routes.Schedule}>
+          <span>Schedule</span>
           <span className={styles.dot} />
         </Link>
         <span className={styles.divider}>|</span>

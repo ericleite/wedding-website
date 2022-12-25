@@ -17,8 +17,8 @@ const ExpandableContent: React.FC<React.PropsWithChildren<ExpandableContentProps
       {children}
       {!isOpen && (
         <>
-          <div className="absolute top-0 w-full h-full bg-gradient-to-t from-white pointer-events-none" />
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex justify-center w-full bg-white">
+          <div className="absolute top-0 w-full h-full bg-gradient-to-t from-sand pointer-events-none" />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex justify-center w-full bg-sand">
             <a
               className="border-none cursor-pointer py-4 text-small tracking-widest uppercase"
               onClick={(e) => {

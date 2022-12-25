@@ -30,6 +30,7 @@ module.exports = {
         maroonPrimary: '#270506',
         maroonSecondary: '#540B0E',
         maroonTertiary: '#7F4749',
+        sand: '#FFF9EF',
       },
       fontFamily: {
         sans: ['Montserrat', ...defaultTheme.fontFamily.sans],

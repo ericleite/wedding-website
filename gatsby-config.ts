@@ -38,7 +38,7 @@ const config: GatsbyConfig = {
     {
       options: {
         icon: 'static/favicon.svg',
-        theme_color: `#540B0E`,
+        theme_color: `#667F8C`,
       },
       resolve: 'gatsby-plugin-manifest',
     },

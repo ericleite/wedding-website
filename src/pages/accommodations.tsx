@@ -34,7 +34,7 @@ const Accommodations: React.FC<PageProps> = () => (
     <SectionContainer className="place-items-center max-w-lg lg:max-w-5xl">
       <section className="col-span-4 relative hidden lg:block">
         <HorizontalFloralSVG className="text-maroonTertiary w-full m-auto" />
-        <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-r from-transparent to-white opacity-75" />
+        <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-r from-transparent to-sand opacity-75" />
       </section>
       <section className="space-y-11 flex flex-col items-center col-span-4 text-center">
         <p className={clsx(globalStyles.textHeading, 'text-darkTertiary')}>Venue</p>
@@ -49,7 +49,7 @@ const Accommodations: React.FC<PageProps> = () => (
         <ExpandableContent>
           <p>
             The ceremony and reception will take place at the Dubose family home. While there will be ample event space,
-            parking in the area is limited, so we reccommend taking an{' '}
+            parking in the area is limited, so we recommend taking an{' '}
             <OutboundLink
               href="https://m.uber.com/ul/?action=setPickup&client_id=3b4rZI9Lz4yYq9Ok7Idwd1_-fSQD83ib&pickup=my_location&dropoff[formatted_address]=38402%20Vista%20Del%20Sol%2C%20Rancho%20Mirage%2C%20CA%2092270%2C%20USA&dropoff[latitude]=33.767641&dropoff[longitude]=-116.396104"
               target="_blank"
@@ -74,7 +74,7 @@ const Accommodations: React.FC<PageProps> = () => (
       </section>
       <section className="col-span-4 relative hidden lg:block">
         <HorizontalFloralSVG className="text-maroonTertiary w-full m-auto -scale-x-100" />
-        <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-l from-transparent to-white opacity-75" />
+        <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-l from-transparent to-sand opacity-75" />
       </section>
     </SectionContainer>
     <SectionContainer className="place-items-center max-w-lg lg:max-w-5xl" spacingClassName="gap-15 lg:gap-13">
@@ -90,7 +90,7 @@ const Accommodations: React.FC<PageProps> = () => (
         </h5>
         <ExpandableContent>
           <p>
-            We reccommend flying directly into{' '}
+            We recommend flying directly into{' '}
             <OutboundLink href="http://skipl.ag/88q31" target="_blank">
               PSP
             </OutboundLink>
@@ -120,7 +120,7 @@ const Accommodations: React.FC<PageProps> = () => (
       </section>
       <section className="col-span-4 relative hidden lg:block">
         <VerticalFloralSVG className="text-maroonTertiary w-1/2 m-auto" />
-        <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-transparent to-white opacity-75" />
+        <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-transparent to-sand opacity-75" />
       </section>
       <section className="space-y-11 flex flex-col items-center col-span-4 text-center">
         <p className={clsx(globalStyles.textHeading, 'text-darkTertiary')}>Lodging</p>
@@ -134,7 +134,7 @@ const Accommodations: React.FC<PageProps> = () => (
         </h5>
         <ExpandableContent>
           <p>
-            We reccommend booking a room within our hotel block. We have reserved a limited number of rooms at a
+            We recommend booking a room within our hotel block. We have reserved a limited number of rooms at a
             discounted rate on a first come, first serve basis.
           </p>
           <p>March is a popular time to visit Palm Springs, so be sure to book a room before prices go up!</p>
