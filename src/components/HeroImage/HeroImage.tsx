@@ -26,7 +26,7 @@ const HeroImage: React.FC<PropsWithChildren<HeroImageProps>> = ({
   const isLight = theme === ThemeColor.Light;
 
   return (
-    <div className={clsx('flex flex-col w-full h-screen min-h-[667px] z-10', className)}>
+    <div className={clsx('flex flex-col w-full h-screen min-h-[667px] z-30', className)}>
       <div className={clsx('grid grow min-h-0', contentContainerClassName)}>
         {image}
         <div

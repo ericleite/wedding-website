@@ -76,7 +76,7 @@ const SEO: React.FC<PropsWithChildren<SEOProps>> = ({ children, description = ''
     <>
       <title>{metaTitle}</title>
       {defaultMeta.concat(meta).map((metaProps) => (
-        <meta key={metaProps.name} {...metaProps} />
+        <meta key={metaProps.name || metaProps.property} {...metaProps} />
       ))}
       {children}
     </>
