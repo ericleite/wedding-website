@@ -21,7 +21,7 @@ const Index: React.FC<PageProps<SiteData>> = () => (
         className={globalStyles.heroImage}
         layout="fullWidth"
         loading="eager"
-        placeholder="tracedSVG"
+        placeholder="dominantColor"
         quality={80}
         src="../assets/images/heros/eric-and-lauren-between-joshua-trees.jpg"
       />

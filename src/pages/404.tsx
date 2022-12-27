@@ -18,7 +18,7 @@ const NotFoundPage = () => {
           className={globalStyles.heroImage}
           layout="fullWidth"
           loading="eager"
-          placeholder="tracedSVG"
+          placeholder="dominantColor"
           quality={80}
           src="../assets/images/heros/eve-on-mountain-looking-confused.jpg"
         />

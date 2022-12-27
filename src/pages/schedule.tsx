@@ -21,7 +21,7 @@ const Schedule: React.FC<PageProps> = () => {
           className={globalStyles.heroImage}
           layout="fullWidth"
           loading="eager"
-          placeholder="tracedSVG"
+          placeholder="dominantColor"
           quality={80}
           src="../assets/images/heros/eric-and-lauren-holding-hands-in-front-of-cactus-and-rocks.jpg"
         />

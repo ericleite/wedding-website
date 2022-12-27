@@ -22,7 +22,7 @@ const Accommodations: React.FC<PageProps> = () => (
         className={globalStyles.heroImage}
         layout="fullWidth"
         loading="eager"
-        placeholder="tracedSVG"
+        placeholder="dominantColor"
         quality={80}
         src="../assets/images/heros/eric-and-lauren-walking-in-front-of-joshua-tree.jpg"
       />
