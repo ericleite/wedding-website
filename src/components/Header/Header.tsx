@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { Link } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
-import React from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 
 import { Routes, ThemeColor } from '../../types';
 import * as styles from './Header.module.css';
@@ -18,6 +18,38 @@ const Header: React.FC<HeaderProps> = ({ className, isNavOpen, theme = ThemeColo
   const isDark = theme === ThemeColor.Dark;
   const isLight = theme === ThemeColor.Light;
 
+  const headerRef = useRef<HTMLElement>(null);
+
+  const [isStuck, setIsStuck] = useState<boolean>(false);
+  const [unstuckPosition, setUnstuckPosition] = useState<number>();
+
+  useLayoutEffect(() => {
+    function handleScroll() {
+      if (headerRef.current && typeof unstuckPosition !== 'undefined') {
+        const isStuck = window.scrollY >= unstuckPosition;
+        setIsStuck(isStuck);
+      }
+    }
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [unstuckPosition]);
+
+  useLayoutEffect(() => {
+    function handleResize() {
+      if (headerRef.current && headerRef.current.offsetTop > 0) {
+        setUnstuckPosition(headerRef.current.offsetTop);
+      }
+    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const navBackgroundLayer = (
     <div
       className={clsx('fixed top-0 w-full h-full bg-lightPrimary transition-all lg:hidden', {
@@ -29,12 +61,14 @@ const Header: React.FC<HeaderProps> = ({ className, isNavOpen, theme = ThemeColo
 
   return (
     <header
+      ref={headerRef}
       className={clsx(
-        'p-13',
-        'lg:p-10',
+        'absolute inset-0 p-13',
+        'lg:static lg:inset-auto lg:inset-x-0 lg:p-10',
         isDark && styles.isDark,
         isLight && styles.isLight,
         isNavOpen && styles.isNavOpen,
+        isStuck && styles.isStuck,
         className,
       )}
     >
@@ -49,27 +83,22 @@ const Header: React.FC<HeaderProps> = ({ className, isNavOpen, theme = ThemeColo
       >
         <Link activeClassName={styles.isActive} className={styles.link} to={Routes.OurStory}>
           <span>Our Story</span>
-          <span className={styles.dot} />
         </Link>
         <span className={styles.divider}>|</span>
         <Link activeClassName={styles.isActive} className={styles.link} to={Routes.Schedule}>
           <span>Schedule</span>
-          <span className={styles.dot} />
         </Link>
         <span className={styles.divider}>|</span>
         <Link activeClassName={styles.isActive} className={styles.link} to={Routes.Accommodations}>
           <span>Travel &amp; Hotel</span>
-          <span className={styles.dot} />
         </Link>
         <span className={styles.divider}>|</span>
         <Link activeClassName={styles.isActive} className={styles.link} to={Routes.Registry}>
           <span>Registry</span>
-          <span className={styles.dot} />
         </Link>
         <span className={styles.divider}>|</span>
         <OutboundLink className={styles.link} href={Routes.RsvpExternal} target="_blank">
           <span>RSVP</span>
-          <span className={styles.dot} />
         </OutboundLink>
       </nav>
     </header>

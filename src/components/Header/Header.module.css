@@ -6,12 +6,13 @@
   @apply lg:bg-lightTertiary;
 }
 
-.link {
-  @apply flex flex-col items-center space-y-6 border-none opacity-0 -translate-x-full transition-all lg:px-11 lg:translate-x-0 lg:opacity-100;
+.isStuck {
+  @apply lg:fixed lg:top-0;
+}
 
-  .dot {
-    @apply hidden w-6 h-6 bg-lightPrimary rounded-full;
-  }
+.link {
+  @apply flex flex-col items-center text-center space-y-6 border-none opacity-0 -translate-x-full transition-all;
+  @apply lg:px-11 lg:translate-x-0 lg:opacity-100;
 
   .isDark & {
     @apply text-lightTertiary;
@@ -33,10 +34,6 @@
 
   &.isActive {
     @apply font-bold;
-
-    .dot {
-      @apply bg-lightPrimary lg:block;
-    }
   }
 
   .isNavOpen & {

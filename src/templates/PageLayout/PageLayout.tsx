@@ -55,7 +55,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
         setIsNavOpen(false);
       }
     }
-    const navOpenMediaQueryList = matchMedia(`(min-width: ${resolvedTailwindConfig.theme.screens.md})`);
+    const navOpenMediaQueryList = matchMedia(`(min-width: ${resolvedTailwindConfig.theme.screens.lg})`);
     navOpenMediaQueryList.addEventListener('change', handleMatchMedia);
     return () => {
       navOpenMediaQueryList.removeEventListener('change', handleMatchMedia);
@@ -135,14 +135,13 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
         theme={theme}
       >
         <Header
-          className={clsx('absolute inset-0 lg:hidden', !isNavOpen && 'pointer-events-none')}
+          className={clsx(!isNavOpen && 'pointer-events-none')}
           isNavOpen={isNavOpen}
           theme={complementaryTheme}
         />
         {monogram}
         <NavToggle className="absolute top-13 left-13" isNavOpen={isNavOpen} onClick={onClickNavToggle} theme={theme} />
       </HeroImage>
-      <Header className="hidden lg:block lg:sticky lg:top-0 z-10" isNavOpen={isNavOpen} theme={complementaryTheme} />
       <main className={className}>{children}</main>
       <Footer showRsvp={showRsvp} />
     </>

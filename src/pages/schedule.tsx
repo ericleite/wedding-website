@@ -28,7 +28,7 @@ const Schedule: React.FC<PageProps> = () => {
       }
       heroImageClassName={styles.heroImageContainer}
       showRsvp={false}
-      subtitle="Play by play for the big day"
+      subtitle="Let the adventure begin"
       title="Schedule"
     >
       <SectionContainer className="justify-items-stretch max-w-5xl 2xl:max-w-none">
