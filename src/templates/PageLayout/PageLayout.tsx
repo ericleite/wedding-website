@@ -50,16 +50,24 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   }, []);
 
   useEffect(() => {
-    function handleMatchMedia() {
+    if (isNavOpen) {
+      document.body.classList.add('overflow-hidden');
+      document.body.classList.add('lg:overflow-visible');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove('lg:overflow-visible');
+    }
+
+    function closeNav() {
       if (isNavOpen) {
         setIsNavOpen(false);
       }
     }
-    const lgBreakpoint = resolvedTailwindConfig?.theme?.screens?.lg;
-    const navOpenMediaQueryList = matchMedia(`(min-width: ${lgBreakpoint})`);
-    navOpenMediaQueryList.addEventListener('change', handleMatchMedia);
+    const closeBreakpoint = resolvedTailwindConfig?.theme?.screens?.lg;
+    const navOpenMediaQueryList = matchMedia(`(min-width: ${closeBreakpoint})`);
+    navOpenMediaQueryList.addEventListener('change', closeNav);
     return () => {
-      navOpenMediaQueryList.removeEventListener('change', handleMatchMedia);
+      navOpenMediaQueryList.removeEventListener('change', closeNav);
     };
   }, [isNavOpen]);
 
