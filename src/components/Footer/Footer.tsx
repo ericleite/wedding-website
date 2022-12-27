@@ -11,7 +11,7 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ showRsvp }) => (
-  <footer>
+  <footer className="bg-lightTertiary">
     {showRsvp && (
       <section className="flex flex-col items-center bg-darkPrimary py-15 px-13">
         <p className={clsx('text-center text-lightPrimary', globalStyles.textHeading)}>
@@ -27,7 +27,7 @@ const Footer: React.FC<FooterProps> = ({ showRsvp }) => (
         </p>
       </section>
     )}
-    <section className="flex justify-center p-11 lg:p-12 text-center">
+    <section className="flex justify-center p-11 lg:p-12 text-center text-darkTertiary">
       © {new Date().getFullYear()} | Eric Leite and Lauren Dubose
     </section>
   </footer>
