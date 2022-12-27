@@ -28,7 +28,7 @@ const Footer: React.FC<FooterProps> = ({ showRsvp }) => (
       </section>
     )}
     <section className="flex justify-center p-11 lg:p-12 text-center">
-      © {new Date().getFullYear()} &middot; Eric Leite and Lauren Dubose
+      © {new Date().getFullYear()} | Eric Leite and Lauren Dubose
     </section>
   </footer>
 );
