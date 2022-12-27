@@ -13,7 +13,7 @@ import * as styles from './schedule.module.css';
 const Schedule: React.FC<PageProps> = () => {
   return (
     <PageLayout
-      className="space-y-15 mt-15"
+      className="space-y-15 my-15"
       heroImage={
         <StaticImage
           alt="Eric and Lauren"
@@ -27,7 +27,6 @@ const Schedule: React.FC<PageProps> = () => {
         />
       }
       heroImageClassName={styles.heroImageContainer}
-      showRsvp={false}
       subtitle="Let the adventure begin"
       title="Schedule"
     >
@@ -128,11 +127,6 @@ const Schedule: React.FC<PageProps> = () => {
               </div>
             </div>
           </div>
-        </section>
-      </SectionContainer>
-      <SectionContainer theme={ThemeColor.Dark}>
-        <section className="col-span-full p-15">
-          <h3 className="text-center text-lightPrimary">FAQ</h3>
         </section>
       </SectionContainer>
     </PageLayout>
