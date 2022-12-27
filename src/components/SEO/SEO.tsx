@@ -5,20 +5,22 @@
  */
 
 import { graphql, useStaticQuery } from 'gatsby';
-import React from 'react';
-import { Helmet, HelmetProps } from 'react-helmet';
+import React, { PropsWithChildren } from 'react';
 
 import { SiteData } from '../../types';
 
+type Meta = Array<JSX.IntrinsicElements['meta']>;
+
 interface SEOProps {
-  bodyAttributes?: HelmetProps['bodyAttributes'];
   description?: string;
   lang?: string;
   meta?: Array<JSX.IntrinsicElements['meta']>;
   title?: string;
 }
 
-const SEO: React.FC<SEOProps> = ({ bodyAttributes, description = '', lang = 'en', meta = [], title }) => {
+const DEFAULT_META: Meta = [];
+
+const SEO: React.FC<PropsWithChildren<SEOProps>> = ({ children, description = '', meta = DEFAULT_META, title }) => {
   const { site }: SiteData = useStaticQuery(
     graphql`
       query {
@@ -34,8 +36,8 @@ const SEO: React.FC<SEOProps> = ({ bodyAttributes, description = '', lang = 'en'
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const metaTitle = title || site.siteMetadata.title;
-  const defaultMeta = [
+  const metaTitle = title ? `${site.siteMetadata.title} | ${title}` : site.siteMetadata.title;
+  const defaultMeta: Meta = [
     {
       content: metaDescription,
       name: `description`,
@@ -61,25 +63,23 @@ const SEO: React.FC<SEOProps> = ({ bodyAttributes, description = '', lang = 'en'
       name: `twitter:creator`,
     },
     {
-      content: title,
+      content: metaTitle,
       name: `twitter:title`,
     },
     {
       content: metaDescription,
       name: `twitter:description`,
     },
-  ] as Array<JSX.IntrinsicElements['meta']>;
+  ];
 
   return (
-    <Helmet
-      bodyAttributes={bodyAttributes}
-      htmlAttributes={{
-        lang,
-      }}
-      meta={defaultMeta.concat(meta)}
-      title={metaTitle}
-      titleTemplate={title ? `${site.siteMetadata.title} | %s` : undefined}
-    />
+    <>
+      <title>{metaTitle}</title>
+      {defaultMeta.concat(meta).map((metaProps) => (
+        <meta key={metaProps.name} {...metaProps} />
+      ))}
+      {children}
+    </>
   );
 };
 

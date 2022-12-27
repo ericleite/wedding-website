@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 
 import { ThemeColor } from '../../types';
 import * as styles from './HeroImage.module.css';
@@ -13,7 +13,7 @@ interface HeroImageProps {
   theme?: ThemeColor;
 }
 
-const HeroImage: React.FC<HeroImageProps> = ({
+const HeroImage: React.FC<PropsWithChildren<HeroImageProps>> = ({
   children,
   className,
   content,

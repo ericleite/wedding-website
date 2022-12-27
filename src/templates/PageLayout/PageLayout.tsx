@@ -55,7 +55,8 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
         setIsNavOpen(false);
       }
     }
-    const navOpenMediaQueryList = matchMedia(`(min-width: ${resolvedTailwindConfig.theme.screens.lg})`);
+    const lgBreakpoint = resolvedTailwindConfig?.theme?.screens?.lg;
+    const navOpenMediaQueryList = matchMedia(`(min-width: ${lgBreakpoint})`);
     navOpenMediaQueryList.addEventListener('change', handleMatchMedia);
     return () => {
       navOpenMediaQueryList.removeEventListener('change', handleMatchMedia);
@@ -125,8 +126,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   );
 
   return (
-    <>
-      <SEO bodyAttributes={{ class: isNavOpen && 'overflow-hidden lg:overflow-visible' }} title={seoTitle ?? title} />
+    <SEO title={seoTitle ?? title}>
       <HeroImage
         className={clsx('relative', isNavOpen && 'overflow-y-auto', heroImageClassName)}
         content={content}
@@ -144,7 +144,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
       </HeroImage>
       <main className={className}>{children}</main>
       <Footer showRsvp={showRsvp} />
-    </>
+    </SEO>
   );
 };
 

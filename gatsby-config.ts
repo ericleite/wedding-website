@@ -2,14 +2,10 @@ import 'dotenv/config';
 
 import type { GatsbyConfig } from 'gatsby';
 
-const shouldAnalyzeBundle = process.env.ANALYZE_BUNDLE;
-
 const config: GatsbyConfig = {
   plugins: [
     'gatsby-plugin-postcss',
     'gatsby-plugin-image',
-    'gatsby-plugin-mdx',
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     'gatsby-transformer-sharp',
     `gatsby-plugin-gatsby-cloud`,
@@ -49,14 +45,6 @@ const config: GatsbyConfig = {
         },
       },
       resolve: `gatsby-plugin-sharp`,
-    },
-    shouldAnalyzeBundle && {
-      options: {
-        analyzerMode: `static`,
-        openAnalyzer: false,
-        reportFilename: `_bundle.html`,
-      },
-      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
     },
     {
       options: {

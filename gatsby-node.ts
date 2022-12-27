@@ -1,6 +1,8 @@
+import type { GatsbyNode } from 'gatsby';
+
 import redirects from './redirects';
 
-const createPages = async ({ actions }) => {
+export const createPages: GatsbyNode['createPages'] = async ({ actions }) => {
   const { createRedirect } = actions;
 
   redirects.forEach(({ fromPath, toPath }) => {
@@ -11,5 +13,3 @@ const createPages = async ({ actions }) => {
     });
   });
 };
-
-export { createPages };
