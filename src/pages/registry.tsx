@@ -21,7 +21,7 @@ const Registry: React.FC<PageProps> = () => {
           loading="eager"
           placeholder="tracedSVG"
           quality={80}
-          src="../assets/images/heros/eric-and-lauren-in-front-of-rocks.jpg"
+          src="../assets/images/heros/eric-and-lauren-standing-in-front-of-rocks.jpg"
         />
       }
       heroImageClassName={styles.heroImageContainer}

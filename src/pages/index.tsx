@@ -11,7 +11,7 @@ import { PageLayout, SectionContainer } from '../templates';
 import { Routes, SiteData, ThemeColor, ThemeSize } from '../types';
 import * as styles from './index.module.css';
 
-const Index: React.FC<PageProps<SiteData>> = ({ data }) => (
+const Index: React.FC<PageProps<SiteData>> = () => (
   <PageLayout
     className="space-y-15 mt-15"
     heroImage={
