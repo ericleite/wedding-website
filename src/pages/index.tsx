@@ -105,13 +105,13 @@ const Index: React.FC<PageProps<SiteData>> = () => {
         <MountainOutlineSVG className="absolute bottom-0 w-full text-darkSecondary" />
         <section className="z-10 col-span-full">
           <h2 className="text-center text-lightPrimary md:text-h1 md:my-15">
-            <AnimatedText delay={300} hasStarted={locationSectionAnimationStarted}>
+            <AnimatedText delay={150} hasStarted={locationSectionAnimationStarted}>
               Palm
             </AnimatedText>
-            <AnimatedText delay={450} hasStarted={locationSectionAnimationStarted}>
+            <AnimatedText delay={300} hasStarted={locationSectionAnimationStarted}>
               Springs,
             </AnimatedText>
-            <AnimatedText delay={600} hasStarted={locationSectionAnimationStarted}>
+            <AnimatedText delay={450} hasStarted={locationSectionAnimationStarted}>
               CA
             </AnimatedText>
           </h2>

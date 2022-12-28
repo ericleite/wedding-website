@@ -11,7 +11,7 @@ import resolveConfig from 'tailwindcss/resolveConfig';
 
 import tailwindConfig from '../../../tailwind.config.js';
 import * as globalStyles from '../../assets/styles/global.module.css';
-import { Divider, Footer, Header, HeroImage, NavToggle, ScrollIcon, SEO } from '../../components';
+import { AnimatedText, Divider, Footer, Header, HeroImage, NavToggle, ScrollIcon, SEO } from '../../components';
 import { ThemeColor } from '../../types';
 import { Routes } from '../../types/routes';
 
@@ -107,7 +107,9 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
                 isLight && 'text-lightPrimary',
               )}
             >
-              {subtitle}
+              <AnimatedText delay={300} selfStartOptions={{ threshold: 0 }}>
+                {subtitle}
+              </AnimatedText>
             </p>
             <Divider color={isLight ? ThemeColor.ExtraLight : ThemeColor.Dark} />
           </>
@@ -119,7 +121,9 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
             isLight && 'text-lightPrimary',
           )}
         >
-          {title}
+          <AnimatedText delay={500} duration={1000} selfStartOptions={{ threshold: 0 }}>
+            {title}
+          </AnimatedText>
         </h1>
       </div>
       <div className="absolute bottom-10 flex justify-center w-full md:bottom-11">
