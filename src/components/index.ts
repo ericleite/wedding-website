@@ -7,6 +7,7 @@ export * from './ExpandableContent';
 export * from './Footer';
 export * from './Header';
 export * from './HeroImage';
+export * from './icons/ChevronDownIcon';
 export * from './icons/ScrollIcon';
 export * from './NavToggle';
 export * from './SEO';

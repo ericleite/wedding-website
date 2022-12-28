@@ -121,7 +121,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
             isLight && 'text-lightPrimary',
           )}
         >
-          <AnimatedText delay={500} duration={1000} selfStartOptions={{ threshold: 0 }}>
+          <AnimatedText delay={subtitle ? 500 : 300} duration={1000} selfStartOptions={{ threshold: 0 }}>
             {title}
           </AnimatedText>
         </h1>

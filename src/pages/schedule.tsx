@@ -78,7 +78,7 @@ const Schedule: React.FC<PageProps> = () => {
                   attire="Cocktail"
                   location="Dubose Residence"
                   locationHref="https://goo.gl/maps/1ByJ2GznuMhSXiaJ7"
-                  name="Ceremony"
+                  name="“Unplugged” Ceremony"
                   start={new Date('2023-03-04T16:30:00.000-08:00')}
                   stop={new Date('2023-03-04T17:00:00.000-08:00')}
                 />
