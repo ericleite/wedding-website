@@ -3,8 +3,8 @@ import React from 'react';
 
 import * as globalStyles from '../../assets/styles/global.module.css';
 import { Routes, ThemeSize } from '../../types';
+import { AnimatedDivider } from '../AnimatedDivider';
 import { ButtonLink } from '../ButtonLink';
-import { Divider } from '../Divider';
 
 interface FooterProps {
   showRsvp?: boolean;
@@ -19,7 +19,7 @@ const Footer: React.FC<FooterProps> = ({ showRsvp }) => (
           <br />
           please take a moment to RSVP!
         </p>
-        <Divider spacing={ThemeSize.Lg} />
+        <AnimatedDivider spacing={ThemeSize.Lg} />
         <p>
           <ButtonLink href={Routes.RsvpExternal} outbound>
             RSVP

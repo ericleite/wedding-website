@@ -3,7 +3,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import * as globalStyles from '../assets/styles/global.module.css';
-import { Divider } from '../components';
+import { AnimatedDivider } from '../components';
 import { PageLayout, SectionContainer } from '../templates';
 import * as styles from './404.module.css';
 
@@ -29,7 +29,7 @@ const NotFoundPage = () => {
       <SectionContainer>
         <section className="col-span-full flex flex-col items-center">
           <h3 className="text-center">Uh oh!</h3>
-          <Divider />
+          <AnimatedDivider />
           <p className="text-center">Looks like there&#8217;s no page that matches the current URL.</p>
           <p className="text-center">
             Please double check the URL or <Link to="/">click here</Link> to go home.

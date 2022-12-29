@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import * as globalStyles from '../assets/styles/global.module.css';
-import { Divider } from '../components';
+import { AnimatedDivider } from '../components';
 import { WEDDING_START_DATE } from '../constants';
 import { useCountdownTimer } from '../hooks';
 import { PageLayout, SectionContainer, TimelineSection } from '../templates';
@@ -36,7 +36,7 @@ const OurStory: React.FC<PageProps> = () => {
       <SectionContainer className="max-w-prose 2xl:max-w-none">
         <section className="col-span-full flex flex-col items-center 2xl:col-start-4 2xl:col-end-10">
           <h3 className="text-center">Once upon a time...</h3>
-          <Divider />
+          <AnimatedDivider />
         </section>
         <section className="col-span-full relative 2xl:col-start-4 2xl:col-end-10">
           <div className="hidden 2xl:block absolute top-12 left-1/2 bottom-0 -translate-x-1/2 w-2 bg-lightSecondary" />
@@ -219,7 +219,7 @@ const OurStory: React.FC<PageProps> = () => {
       <SectionContainer className="py-11 lg:py-13 2xl:py-15 max-w-prose 2xl:max-w-none">
         <section className="col-span-full flex flex-col items-center 2xl:col-start-4 2xl:col-end-10">
           <p className={clsx('text-center text-darkPrimary', globalStyles.textHeading)}>The next chapter begins in</p>
-          <Divider />
+          <AnimatedDivider />
         </section>
         <section className="col-span-full flex justify-between 2xl:col-start-4 2xl:col-end-10">
           <div className="flex flex-col items-center">

@@ -7,7 +7,7 @@ import React from 'react';
 import HorizontalFloralSVG from '../assets/images/accents/horizontal-floral.inline.svg';
 import VerticalFloralSVG from '../assets/images/accents/vertical-floral-main.inline.svg';
 import * as globalStyles from '../assets/styles/global.module.css';
-import { ButtonLink, Divider, ExpandableContent } from '../components';
+import { AnimatedDivider, ButtonLink, ExpandableContent } from '../components';
 import { PageLayout, SectionContainer } from '../templates';
 import { ThemeSize } from '../types';
 import * as styles from './accommodations.module.css';
@@ -38,7 +38,7 @@ const Accommodations: React.FC<PageProps> = () => (
       </section>
       <section className="space-y-11 flex flex-col items-center col-span-4 text-center">
         <p className={clsx(globalStyles.textHeading, 'text-darkTertiary')}>Venue</p>
-        <Divider size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
+        <AnimatedDivider size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
         <h5>
           38402 Vista Del Sol
           <br />
@@ -80,7 +80,7 @@ const Accommodations: React.FC<PageProps> = () => (
     <SectionContainer className="place-items-center max-w-lg lg:max-w-5xl" spacingClassName="gap-15 lg:gap-13">
       <section className="space-y-11 flex flex-col items-center col-span-4 text-center">
         <p className={clsx(globalStyles.textHeading, 'text-darkTertiary')}>Travel</p>
-        <Divider size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
+        <AnimatedDivider size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
         <h5>
           Palm Springs
           <br />
@@ -124,7 +124,7 @@ const Accommodations: React.FC<PageProps> = () => (
       </section>
       <section className="space-y-11 flex flex-col items-center col-span-4 text-center">
         <p className={clsx(globalStyles.textHeading, 'text-darkTertiary')}>Lodging</p>
-        <Divider size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
+        <AnimatedDivider size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
         <h5>
           The Westin
           <br />

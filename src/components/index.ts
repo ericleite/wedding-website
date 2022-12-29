@@ -1,3 +1,4 @@
+export * from './AnimatedDivider';
 export * from './AnimatedText';
 export * from './Button';
 export * from './ButtonLink';

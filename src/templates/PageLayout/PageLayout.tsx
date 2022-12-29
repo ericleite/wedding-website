@@ -12,9 +12,9 @@ import resolveConfig from 'tailwindcss/resolveConfig';
 import tailwindConfig from '../../../tailwind.config.js';
 import * as globalStyles from '../../assets/styles/global.module.css';
 import {
+  AnimatedDivider,
   AnimatedText,
   AnimationType,
-  Divider,
   Footer,
   Header,
   HeroImage,
@@ -123,7 +123,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
                 {subtitle}
               </AnimatedText>
             </p>
-            <Divider color={isLight ? ThemeColor.ExtraLight : ThemeColor.Dark} />
+            <AnimatedDivider color={isLight ? ThemeColor.ExtraLight : ThemeColor.Dark} delay={500} />
           </>
         )}
         <h1

@@ -7,7 +7,7 @@ import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'react-
 import MountainOutlineSVG from '../assets/images/accents/mountain-outline.inline.svg';
 import VerticalFloralSVG from '../assets/images/accents/vertical-floral-with-blooms.inline.svg';
 import * as globalStyles from '../assets/styles/global.module.css';
-import { AnimatedText, ButtonLink, ChevronDownIcon, Divider } from '../components';
+import { AnimatedDivider, AnimatedText, ButtonLink, ChevronDownIcon } from '../components';
 import { useIntersectionObserver } from '../hooks';
 import { PageLayout, SectionContainer } from '../templates';
 import { Routes, SiteData, ThemeColor, ThemeSize } from '../types';
@@ -55,7 +55,7 @@ const Index: React.FC<PageProps<SiteData>> = () => {
             <h3 className="text-center">
               Join <span className="lowercase">the</span> Celebration
             </h3>
-            <Divider color={ThemeColor.Light} />
+            <AnimatedDivider color={ThemeColor.Light} />
             <p className="text-center">
               Eric Leite and Lauren Dubose are getting married on the water&#39;s edge of the Dubose family residence,
               which sits at the base of the beautiful San Jacinto mountains near Palm Springs, California.
@@ -64,7 +64,7 @@ const Index: React.FC<PageProps<SiteData>> = () => {
           <div className="sm:grid sm:grid-cols-2 w-full space-y-13 sm:space-y-0">
             <div className="flex flex-col items-center">
               <p className={clsx(globalStyles.textHeading, 'text-darkTertiary')}>When</p>
-              <Divider color={ThemeColor.Light} size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
+              <AnimatedDivider color={ThemeColor.Light} size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
               <h5 className="text-center">
                 Saturday
                 <br />
@@ -75,7 +75,7 @@ const Index: React.FC<PageProps<SiteData>> = () => {
             </div>
             <div className="flex flex-col items-center">
               <p className={clsx(globalStyles.textHeading, 'text-darkTertiary')}>Where</p>
-              <Divider color={ThemeColor.Light} size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
+              <AnimatedDivider color={ThemeColor.Light} size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
               <h5 className="text-center">
                 38402 Vista Del Sol
                 <br />
@@ -123,7 +123,7 @@ const Index: React.FC<PageProps<SiteData>> = () => {
         <section className="col-span-full flex flex-col items-center space-y-13 2xl:space-y-15 2xl:col-start-5 2xl:col-end-9">
           <div className="flex flex-col items-center">
             <h3 className="text-center">Questions & Answers</h3>
-            <Divider color={ThemeColor.Light} />
+            <AnimatedDivider color={ThemeColor.Light} />
           </div>
         </section>
         <section className="col-span-full w-full text-left">

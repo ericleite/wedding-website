@@ -1,13 +1,14 @@
 import clsx from 'clsx';
-import React from 'react';
+import React, { CSSProperties, forwardRef } from 'react';
 
 import { ThemeColor, ThemeSize } from '../../types';
 
-interface DividerProps {
+export interface DividerProps {
   className?: string;
   color?: ThemeColor;
   size?: ThemeSize;
   spacing?: ThemeSize;
+  style?: CSSProperties;
 }
 
 export const COLOR_MAP: Partial<Record<ThemeColor, string>> = {
@@ -28,11 +29,16 @@ export const SPACING_MAP: Partial<Record<ThemeSize, string>> = {
   [ThemeSize.Lg]: 'mt-11 mb-12 lg:mt-12 lg:mb-13',
 };
 
-const Divider: React.FC<React.PropsWithChildren<DividerProps>> = ({
-  className,
-  color = ThemeColor.Dark,
-  size = ThemeSize.Md,
-  spacing = ThemeSize.Md,
-}) => <hr className={clsx('border-0', COLOR_MAP[color], SIZE_MAP[size], SPACING_MAP[spacing], className)} />;
+const Divider = forwardRef<HTMLHRElement, React.PropsWithChildren<DividerProps>>(
+  ({ className, color = ThemeColor.Dark, size = ThemeSize.Md, spacing = ThemeSize.Md, style }, ref) => (
+    <hr
+      ref={ref}
+      className={clsx('border-0', COLOR_MAP[color], SIZE_MAP[size], SPACING_MAP[spacing], className)}
+      style={style}
+    />
+  ),
+);
+
+Divider.displayName = 'Divider';
 
 export default Divider;

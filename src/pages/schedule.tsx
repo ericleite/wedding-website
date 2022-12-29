@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import * as globalStyles from '../assets/styles/global.module.css';
-import { Divider } from '../components';
+import { AnimatedDivider } from '../components';
 import { EventDetails } from '../components/EventDetails';
 import { PageLayout, SectionContainer } from '../templates';
 import { ThemeColor, ThemeSize } from '../types';
@@ -33,13 +33,13 @@ const Schedule: React.FC<PageProps> = () => {
       <SectionContainer className="justify-items-stretch max-w-5xl 2xl:max-w-none">
         <section className="col-span-full flex flex-col items-center">
           <h3 className="text-center">Event Schedule</h3>
-          <Divider color={ThemeColor.Light} />
+          <AnimatedDivider color={ThemeColor.Light} />
         </section>
         <section className="col-span-full flex flex-col items-center">
           <div className="w-full space-y-13 sm:grid sm:grid-cols-3 sm:space-y-0 sm:gap-11 lg:gap-13">
             <div className="flex flex-col items-center">
               <p className={clsx(globalStyles.textHeading, 'text-darkTertiary')}>Friday</p>
-              <Divider color={ThemeColor.Light} size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
+              <AnimatedDivider color={ThemeColor.Light} size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
               <div className="space-y-12">
                 <EventDetails
                   attendees="Wedding Party"
@@ -63,7 +63,7 @@ const Schedule: React.FC<PageProps> = () => {
             </div>
             <div className="flex flex-col items-center">
               <p className={clsx(globalStyles.textHeading, 'text-darkTertiary')}>Saturday</p>
-              <Divider color={ThemeColor.Light} size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
+              <AnimatedDivider color={ThemeColor.Light} size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
               <div className="space-y-12">
                 <EventDetails
                   attendees="Westin Guests"
@@ -113,7 +113,7 @@ const Schedule: React.FC<PageProps> = () => {
             </div>
             <div className="flex flex-col items-center">
               <p className={clsx(globalStyles.textHeading, 'text-darkTertiary')}>Sunday</p>
-              <Divider color={ThemeColor.Light} size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
+              <AnimatedDivider color={ThemeColor.Light} size={ThemeSize.Sm} spacing={ThemeSize.Sm} />
               <div className="space-y-12">
                 <EventDetails
                   attendees="All Guests"
