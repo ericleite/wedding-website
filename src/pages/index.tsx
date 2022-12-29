@@ -8,10 +8,10 @@ import MountainOutlineSVG from '../assets/images/accents/mountain-outline.inline
 import VerticalFloralSVG from '../assets/images/accents/vertical-floral-with-blooms.inline.svg';
 import * as globalStyles from '../assets/styles/global.module.css';
 import { AnimatedDivider, AnimatedText, ButtonLink, ChevronDownIcon, SEO } from '../components';
+import { FAQ } from '../content';
 import { useIntersectionObserver } from '../hooks';
 import { PageLayout, SectionContainer } from '../templates';
 import { Routes, SiteData, ThemeColor, ThemeSize } from '../types';
-import { FAQ } from './content';
 import * as styles from './index.module.css';
 
 const Index: React.FC<PageProps<SiteData>> = () => {

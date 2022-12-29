@@ -1,7 +1,7 @@
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import React from 'react';
 
-import { Routes } from '../types/routes';
+import { Routes } from './types/routes';
 
 export const FAQ = [
   {
