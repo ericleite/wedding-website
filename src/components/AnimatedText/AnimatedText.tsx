@@ -27,7 +27,7 @@ export default function AnimatedText({
   duration = 700,
   hasTriggered,
 }: PropsWithChildren<AnimatedTextProps>) {
-  const rootRef = useRef<HTMLSpanElement>(null);
+  const triggerRef = useRef<HTMLSpanElement>(null);
 
   const [hasAutoTriggered, setHasAutoTriggered] = useState(false);
 
@@ -37,7 +37,7 @@ export default function AnimatedText({
     }
   }, [hasTriggered]);
 
-  useIntersectionObserver(rootRef, autoTriggerAnimation, autoTriggerOptions);
+  useIntersectionObserver(triggerRef, autoTriggerAnimation, autoTriggerOptions);
 
   let rootClassName = '';
   let preAnimatedClassName = '';
@@ -56,7 +56,7 @@ export default function AnimatedText({
   }
 
   return (
-    <span ref={rootRef} className={clsx(className, rootClassName)}>
+    <span ref={triggerRef} className={clsx(className, rootClassName)}>
       <span
         className={clsx(
           styles.wrapper,

@@ -1,5 +1,3 @@
 .content {
   grid-area: 1/1;
-  @apply relative grid place-content-stretch min-h-0 m-10 p-10 border-2;
-  @apply lg:m-11 lg:p-11;
 }

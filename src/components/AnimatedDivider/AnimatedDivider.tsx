@@ -17,7 +17,7 @@ export default function AnimatedDivider({
   options,
   ...dividerProps
 }: AnimatedDividerProps) {
-  const rootRef = useRef<HTMLHRElement>(null);
+  const triggerRef = useRef<HTMLHRElement>(null);
 
   const [hasTriggered, setHasTriggered] = useState(false);
 
@@ -25,12 +25,12 @@ export default function AnimatedDivider({
     setHasTriggered(true);
   }, []);
 
-  useIntersectionObserver(rootRef, autoTriggerAnimation, options);
+  useIntersectionObserver(triggerRef, autoTriggerAnimation, options);
 
   return (
     <Divider
       {...dividerProps}
-      ref={rootRef}
+      ref={triggerRef}
       className={clsx(dividerProps?.className, styles.divider, !hasTriggered && '!w-0')}
       style={{ transitionDelay: `${delay}ms`, transitionDuration: `${duration}ms` }}
     />
