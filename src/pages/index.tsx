@@ -55,7 +55,7 @@ const Index: React.FC<PageProps<SiteData>> = () => {
             <h3 className="text-center">
               Join <span className="lowercase">the</span> Celebration
             </h3>
-            <AnimatedDivider color={ThemeColor.Light} />
+            <AnimatedDivider color={ThemeColor.Light} size={ThemeSize.Lg} />
             <p className="text-center">
               Eric Leite and Lauren Dubose are getting married on the water&#39;s edge of the Dubose family residence,
               which sits at the base of the beautiful San Jacinto mountains near Palm Springs, California.
@@ -123,7 +123,7 @@ const Index: React.FC<PageProps<SiteData>> = () => {
         <section className="col-span-full flex flex-col items-center space-y-13 2xl:space-y-15 2xl:col-start-5 2xl:col-end-9">
           <div className="flex flex-col items-center">
             <h3 className="text-center">Questions & Answers</h3>
-            <AnimatedDivider color={ThemeColor.Light} />
+            <AnimatedDivider color={ThemeColor.Light} size={ThemeSize.Lg} />
           </div>
         </section>
         <section className="col-span-full w-full text-left">

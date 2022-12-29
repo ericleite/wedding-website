@@ -5,6 +5,7 @@ import React from 'react';
 import * as globalStyles from '../assets/styles/global.module.css';
 import { AnimatedDivider } from '../components';
 import { PageLayout, SectionContainer } from '../templates';
+import { ThemeSize } from '../types';
 import * as styles from './404.module.css';
 
 const NotFoundPage = () => {
@@ -29,7 +30,7 @@ const NotFoundPage = () => {
       <SectionContainer>
         <section className="col-span-full flex flex-col items-center">
           <h3 className="text-center">Uh oh!</h3>
-          <AnimatedDivider />
+          <AnimatedDivider size={ThemeSize.Lg} />
           <p className="text-center">Looks like there&#8217;s no page that matches the current URL.</p>
           <p className="text-center">
             Please double check the URL or <Link to="/">click here</Link> to go home.

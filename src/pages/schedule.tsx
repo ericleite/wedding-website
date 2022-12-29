@@ -33,7 +33,7 @@ const Schedule: React.FC<PageProps> = () => {
       <SectionContainer className="justify-items-stretch max-w-5xl 2xl:max-w-none">
         <section className="col-span-full flex flex-col items-center">
           <h3 className="text-center">Event Schedule</h3>
-          <AnimatedDivider color={ThemeColor.Light} />
+          <AnimatedDivider color={ThemeColor.Light} size={ThemeSize.Lg} />
         </section>
         <section className="col-span-full flex flex-col items-center">
           <div className="w-full space-y-13 sm:grid sm:grid-cols-3 sm:space-y-0 sm:gap-11 lg:gap-13">

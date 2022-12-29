@@ -9,6 +9,7 @@ import { WEDDING_START_DATE } from '../constants';
 import { useCountdownTimer } from '../hooks';
 import { PageLayout, SectionContainer, TimelineSection } from '../templates';
 import { TimelineSectionOrientation } from '../templates/TimelineSection';
+import { ThemeSize } from '../types';
 import * as styles from './our-story.module.css';
 
 const OurStory: React.FC<PageProps> = () => {
@@ -36,7 +37,7 @@ const OurStory: React.FC<PageProps> = () => {
       <SectionContainer className="max-w-prose 2xl:max-w-none">
         <section className="col-span-full flex flex-col items-center 2xl:col-start-4 2xl:col-end-10">
           <h3 className="text-center">Once upon a time...</h3>
-          <AnimatedDivider />
+          <AnimatedDivider size={ThemeSize.Lg} />
         </section>
         <section className="col-span-full relative 2xl:col-start-4 2xl:col-end-10">
           <div className="hidden 2xl:block absolute top-12 left-1/2 bottom-0 -translate-x-1/2 w-2 bg-lightSecondary" />
