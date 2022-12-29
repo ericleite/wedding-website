@@ -11,7 +11,17 @@ import resolveConfig from 'tailwindcss/resolveConfig';
 
 import tailwindConfig from '../../../tailwind.config.js';
 import * as globalStyles from '../../assets/styles/global.module.css';
-import { AnimatedText, Divider, Footer, Header, HeroImage, NavToggle, ScrollIcon, SEO } from '../../components';
+import {
+  AnimatedText,
+  AnimationType,
+  Divider,
+  Footer,
+  Header,
+  HeroImage,
+  NavToggle,
+  ScrollIcon,
+  SEO,
+} from '../../components';
 import { ThemeColor } from '../../types';
 import { Routes } from '../../types/routes';
 
@@ -74,22 +84,24 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   const monogram = (
     <div className="absolute w-full top-[12.5%] -translate-y-1/2 flex justify-center">
       <h4 className="text-h4 leading-none">
-        <Link
-          className={clsx(
-            'border-none flex items-center font-serif transition-colors',
-            isDark && !isNavOpen && 'text-darkTertiary hover:text-darkPrimary',
-            isLight && !isNavOpen && 'text-lightSecondary hover:text-lightPrimary',
-            isNavOpen && 'text-lightTertiary hover:text-darkTertiary',
-          )}
-          onClick={() => {
-            setIsNavOpen(false);
-          }}
-          to={Routes.Index}
-        >
-          <span>E</span>
-          <span className="text-h6 px-7">&amp;</span>
-          <span>L</span>
-        </Link>
+        <AnimatedText animationType={AnimationType.FadeIn} autoTriggerOptions={{ threshold: 0 }} delay={1200}>
+          <Link
+            className={clsx(
+              'border-none flex items-center font-serif transition-colors',
+              isDark && !isNavOpen && 'text-darkTertiary hover:text-darkPrimary',
+              isLight && !isNavOpen && 'text-lightSecondary hover:text-lightPrimary',
+              isNavOpen && 'text-lightTertiary hover:text-darkTertiary',
+            )}
+            onClick={() => {
+              setIsNavOpen(false);
+            }}
+            to={Routes.Index}
+          >
+            <span>E</span>
+            <span className="text-h6 px-7">&amp;</span>
+            <span>L</span>
+          </Link>
+        </AnimatedText>
       </h4>
     </div>
   );
@@ -107,7 +119,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
                 isLight && 'text-lightPrimary',
               )}
             >
-              <AnimatedText delay={300} selfStartOptions={{ threshold: 0 }}>
+              <AnimatedText autoTriggerOptions={{ threshold: 0 }} delay={300}>
                 {subtitle}
               </AnimatedText>
             </p>
@@ -121,7 +133,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
             isLight && 'text-lightPrimary',
           )}
         >
-          <AnimatedText delay={subtitle ? 500 : 300} duration={1000} selfStartOptions={{ threshold: 0 }}>
+          <AnimatedText autoTriggerOptions={{ threshold: 0 }} delay={subtitle ? 500 : 300} duration={1000}>
             {title}
           </AnimatedText>
         </h1>

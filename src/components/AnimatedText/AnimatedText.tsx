@@ -4,36 +4,65 @@ import React, { PropsWithChildren, useCallback, useRef, useState } from 'react';
 import { useIntersectionObserver } from '../../hooks';
 import * as styles from './AnimatedText.module.css';
 
+export enum AnimationType {
+  FadeIn,
+  SlideIn,
+}
+
 interface AnimatedTextProps {
+  animationType?: AnimationType;
+  autoTriggerOptions?: IntersectionObserverInit;
+  className?: string;
   delay?: number;
   duration?: number;
-  hasStarted?: boolean;
-  selfStartOptions?: IntersectionObserverInit;
+  hasTriggered?: boolean;
 }
 
 export default function AnimatedText({
+  animationType = AnimationType.SlideIn,
+  autoTriggerOptions,
   children,
+  className,
   delay = 0,
   duration = 700,
-  hasStarted,
-  selfStartOptions,
+  hasTriggered,
 }: PropsWithChildren<AnimatedTextProps>) {
   const rootRef = useRef<HTMLSpanElement>(null);
 
-  const [hasSelfStarted, setHasSelfStarted] = useState(false);
+  const [hasAutoTriggered, setHasAutoTriggered] = useState(false);
 
-  const startAnimation = useCallback(() => {
-    if (typeof hasStarted === 'undefined') {
-      setHasSelfStarted(true);
+  const autoTriggerAnimation = useCallback(() => {
+    if (typeof hasTriggered === 'undefined') {
+      setHasAutoTriggered(true);
     }
-  }, [hasStarted]);
+  }, [hasTriggered]);
 
-  useIntersectionObserver(rootRef, startAnimation, selfStartOptions);
+  useIntersectionObserver(rootRef, autoTriggerAnimation, autoTriggerOptions);
+
+  let rootClassName = '';
+  let preAnimatedClassName = '';
+  let animatedClassName = '';
+
+  switch (animationType) {
+    case AnimationType.FadeIn:
+      preAnimatedClassName = 'opacity-0';
+      animatedClassName = 'opacity-100';
+      break;
+    case AnimationType.SlideIn:
+      rootClassName = 'block overflow-hidden px-[0.15em]';
+      preAnimatedClassName = 'translate-y-full';
+      animatedClassName = 'translate-y-0';
+      break;
+  }
 
   return (
-    <span ref={rootRef} className="block overflow-hidden px-[0.15em]">
+    <span ref={rootRef} className={clsx(className, rootClassName)}>
       <span
-        className={clsx(styles.wrapper, !(hasStarted || hasSelfStarted) && 'translate-y-full')}
+        className={clsx(
+          styles.wrapper,
+          !(hasTriggered || hasAutoTriggered) && preAnimatedClassName,
+          (hasTriggered || hasAutoTriggered) && animatedClassName,
+        )}
         style={{ transitionDelay: `${delay}ms`, transitionDuration: `${duration}ms` }}
       >
         {children}

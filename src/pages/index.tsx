@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import { PageProps } from 'gatsby';
-import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import { StaticImage } from 'gatsby-plugin-image';
 import React, { useCallback, useRef, useState } from 'react';
 import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'react-headless-accordion';
@@ -12,60 +11,8 @@ import { AnimatedText, ButtonLink, ChevronDownIcon, Divider } from '../component
 import { useIntersectionObserver } from '../hooks';
 import { PageLayout, SectionContainer } from '../templates';
 import { Routes, SiteData, ThemeColor, ThemeSize } from '../types';
+import { FAQ } from './content';
 import * as styles from './index.module.css';
-
-const FAQ = [
-  {
-    answer: (
-      <>
-        <p>
-          We&#39;d love to see you there, but we understand if you can&#39;t make it. We will be providing a live stream
-          of the ceremony for you to watch from anywhere.
-        </p>
-        <p>
-          <b>
-            Please{' '}
-            <OutboundLink href={Routes.RsvpExternal} target="_blank">
-              RSVP
-            </OutboundLink>{' '}
-            even if you are not planning to attend.
-          </b>{' '}
-          This will help us get an accurate guest count for our vendors.
-        </p>
-      </>
-    ),
-    question: <>What if I can&#39;t make it?</>,
-  },
-  {
-    answer: (
-      <p>
-        We will be providing transportation shuttles for guests staying at the Westin. If you are not staying at the
-        Westin, we recommend that you call an Uber or Lyft as there will be limited parking space available at the
-        venue.
-      </p>
-    ),
-    question: <>How do I get to the wedding venue?</>,
-  },
-  {
-    answer: (
-      <p>
-        We will be having an &ldquo;unplugged&rdquo; ceremony so that we can relish the moment as it happens. Our
-        professional photographer and videographer will capture every moment of the ceremony for you. We would be happy
-        to share these photos with you upon request!
-      </p>
-    ),
-    question: <>Can I take pictures during the ceremony?</>,
-  },
-  {
-    answer: (
-      <p>
-        Please describe your dietary restriction in the RSVP form when you submit your RSVP and we will do our best to
-        accommodate your request.
-      </p>
-    ),
-    question: <>I have dietary restrictions/allergies. What&#39;s the best way to let you know?</>,
-  },
-];
 
 const Index: React.FC<PageProps<SiteData>> = () => {
   const locationSectionRef = useRef<HTMLDivElement>(null);
@@ -160,13 +107,13 @@ const Index: React.FC<PageProps<SiteData>> = () => {
         <MountainOutlineSVG className="absolute bottom-0 w-full text-darkSecondary" />
         <section className="z-10 col-span-full">
           <h2 className="text-center text-lightPrimary md:text-h1 md:my-15">
-            <AnimatedText delay={150} hasStarted={locationSectionAnimationStarted}>
+            <AnimatedText delay={150} hasTriggered={locationSectionAnimationStarted}>
               Palm
             </AnimatedText>
-            <AnimatedText delay={350} hasStarted={locationSectionAnimationStarted}>
+            <AnimatedText delay={350} hasTriggered={locationSectionAnimationStarted}>
               Springs,
             </AnimatedText>
-            <AnimatedText delay={550} hasStarted={locationSectionAnimationStarted}>
+            <AnimatedText delay={550} hasTriggered={locationSectionAnimationStarted}>
               CA
             </AnimatedText>
           </h2>
@@ -180,20 +127,20 @@ const Index: React.FC<PageProps<SiteData>> = () => {
           </div>
         </section>
         <section className="col-span-full w-full text-left">
-          <Accordion className="space-y-12">
+          <Accordion className="space-y-11">
             {FAQ.map(({ question, answer }, index) => (
               <AccordionItem key={index}>
                 {({ open }: { open: boolean }) => (
                   <div className="flex flex-col space">
                     <AccordionHeader>
-                      <h5 className="flex justify-between items-center text-left normal-case space-x-10">
+                      <h6 className="flex justify-between items-center text-left normal-case space-x-10">
                         <span>{question}</span>
                         <ChevronDownIcon
                           className={clsx('w-12 h-12 flex-shrink-0 transition-transform', open && '-rotate-180')}
                         />
-                      </h5>
+                      </h6>
                     </AccordionHeader>
-                    <AccordionBody className="mt-7">{answer}</AccordionBody>
+                    <AccordionBody className="mt-10">{answer}</AccordionBody>
                   </div>
                 )}
               </AccordionItem>

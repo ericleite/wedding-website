@@ -1,4 +1,4 @@
 .wrapper {
-  transition-property: transform;
+  transition-property: transform, opacity;
   @apply inline-block ease-out;
 }
