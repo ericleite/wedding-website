@@ -6,7 +6,7 @@ export const useIntersectionObserver = (
   callback: (observer: IntersectionObserver) => void,
   options: IntersectionObserverInit = {},
 ) => {
-  const { threshold = 0.5 } = options;
+  const { threshold = 0.4 } = options;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
