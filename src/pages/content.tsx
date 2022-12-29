@@ -38,9 +38,9 @@ export const FAQ = [
   {
     answer: (
       <p>
-        We will be having an &ldquo;unplugged&rdquo; ceremony so that we can relish the moment as it happens. Our
+        We will be having an &ldquo;unplugged&rdquo; ceremony so that we can all relish the moment as it happens. Our
         professional photographer and videographer will capture every moment of the ceremony for you. We would be happy
-        to share these photos with you upon request!
+        to share their photos with you upon request!
       </p>
     ),
     question: <>Can I take pictures during the ceremony?</>,
