@@ -7,11 +7,11 @@ import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'react-
 import MountainOutlineSVG from '../assets/images/accents/mountain-outline.inline.svg';
 import VerticalFloralSVG from '../assets/images/accents/vertical-floral-with-blooms.inline.svg';
 import * as globalStyles from '../assets/styles/global.module.css';
-import { AnimatedDivider, AnimatedText, ButtonLink, ChevronDownIcon, SEO } from '../components';
+import { AnimatedDivider, AnimatedText, ChevronDownIcon, SEO } from '../components';
 import { FAQ } from '../content';
 import { useIntersectionObserver } from '../hooks';
 import { PageLayout, SectionContainer } from '../templates';
-import { Routes, SiteData, ThemeColor, ThemeSize } from '../types';
+import { SiteData, ThemeColor, ThemeSize } from '../types';
 import * as styles from './index.module.css';
 
 const Index: React.FC<PageProps<SiteData>> = () => {
@@ -40,7 +40,6 @@ const Index: React.FC<PageProps<SiteData>> = () => {
         />
       }
       heroImageClassName={styles.heroImageContainer}
-      showRsvp={false}
       subtitle="The Wedding of"
       title="Eric &amp; Lauren"
     >
@@ -83,18 +82,6 @@ const Index: React.FC<PageProps<SiteData>> = () => {
                 CA 92270
               </h5>
             </div>
-          </div>
-          <div className="text-center">
-            <p>
-              Don&#39;t forget to RSVP and leave us a song request for the dance floor too!
-              <br />
-              We can&#39;t wait to celebrate with you!
-            </p>
-            <p>
-              <ButtonLink href={Routes.RsvpExternal} outbound>
-                RSVP
-              </ButtonLink>
-            </p>
           </div>
         </section>
         <section className="hidden 2xl:block col-start-9 col-end-12 relative">
