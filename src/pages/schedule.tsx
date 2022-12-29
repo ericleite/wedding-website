@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import * as globalStyles from '../assets/styles/global.module.css';
-import { AnimatedDivider } from '../components';
+import { AnimatedDivider, SEO } from '../components';
 import { EventDetails } from '../components/EventDetails';
 import { PageLayout, SectionContainer } from '../templates';
 import { ThemeColor, ThemeSize } from '../types';
@@ -134,3 +134,5 @@ const Schedule: React.FC<PageProps> = () => {
 };
 
 export default Schedule;
+
+export const Head = () => <SEO title="Schedule" />;

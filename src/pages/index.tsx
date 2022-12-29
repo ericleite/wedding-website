@@ -7,7 +7,7 @@ import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'react-
 import MountainOutlineSVG from '../assets/images/accents/mountain-outline.inline.svg';
 import VerticalFloralSVG from '../assets/images/accents/vertical-floral-with-blooms.inline.svg';
 import * as globalStyles from '../assets/styles/global.module.css';
-import { AnimatedDivider, AnimatedText, ButtonLink, ChevronDownIcon } from '../components';
+import { AnimatedDivider, AnimatedText, ButtonLink, ChevronDownIcon, SEO } from '../components';
 import { useIntersectionObserver } from '../hooks';
 import { PageLayout, SectionContainer } from '../templates';
 import { Routes, SiteData, ThemeColor, ThemeSize } from '../types';
@@ -40,7 +40,6 @@ const Index: React.FC<PageProps<SiteData>> = () => {
         />
       }
       heroImageClassName={styles.heroImageContainer}
-      seoTitle="Our Wedding"
       showRsvp={false}
       subtitle="The Wedding of"
       title="Eric &amp; Lauren"
@@ -153,3 +152,5 @@ const Index: React.FC<PageProps<SiteData>> = () => {
 };
 
 export default Index;
+
+export const Head = () => <SEO title="Our Wedding" />;

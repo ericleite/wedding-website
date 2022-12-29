@@ -3,7 +3,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import * as globalStyles from '../assets/styles/global.module.css';
-import { AnimatedDivider } from '../components';
+import { AnimatedDivider, SEO } from '../components';
 import { PageLayout, SectionContainer } from '../templates';
 import { ThemeSize } from '../types';
 import * as styles from './404.module.css';
@@ -42,3 +42,5 @@ const NotFoundPage = () => {
 };
 
 export default NotFoundPage;
+
+export const Head = () => <SEO title="Page Not Found" />;

@@ -20,7 +20,7 @@ interface SEOProps {
 
 const DEFAULT_META: Meta = [];
 
-const SEO: React.FC<PropsWithChildren<SEOProps>> = ({ children, description = '', meta = DEFAULT_META, title }) => {
+const SEO: React.FC<PropsWithChildren<SEOProps>> = ({ children, description, meta = DEFAULT_META, title }) => {
   const { site }: SiteData = useStaticQuery(
     graphql`
       query {

@@ -77,7 +77,7 @@ const config: GatsbyConfig = {
   ].filter(Boolean) as GatsbyConfig['plugins'],
   siteMetadata: {
     author: `@ericleite`,
-    description: `We joyfully request your company as we state our vows and join in marriage in the presence of family and friends.`,
+    description: `Join the celebration as Eric Leite and Lauren Dubose say “I do” in stylish Palm Springs, California.`,
     siteUrl: `https://ericandlauren.love`,
     title: `Eric & Lauren`,
   },

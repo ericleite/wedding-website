@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import * as globalStyles from '../assets/styles/global.module.css';
-import { AnimatedDivider } from '../components';
+import { AnimatedDivider, SEO } from '../components';
 import { WEDDING_START_DATE } from '../constants';
 import { useCountdownTimer } from '../hooks';
 import { PageLayout, SectionContainer, TimelineSection } from '../templates';
@@ -246,3 +246,5 @@ const OurStory: React.FC<PageProps> = () => {
 };
 
 export default OurStory;
+
+export const Head = () => <SEO title="Our Story" />;

@@ -3,7 +3,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React, { useRef } from 'react';
 
 import * as globalStyles from '../assets/styles/global.module.css';
-import { ButtonLink } from '../components';
+import { ButtonLink, SEO } from '../components';
 import { PageLayout, SectionContainer } from '../templates';
 import * as styles from './registry.module.css';
 
@@ -45,3 +45,5 @@ const Registry: React.FC<PageProps> = () => {
 };
 
 export default Registry;
+
+export const Head = () => <SEO title="Registry" />;

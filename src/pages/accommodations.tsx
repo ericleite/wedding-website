@@ -8,6 +8,7 @@ import HorizontalFloralSVG from '../assets/images/accents/horizontal-floral.inli
 import VerticalFloralSVG from '../assets/images/accents/vertical-floral-main.inline.svg';
 import * as globalStyles from '../assets/styles/global.module.css';
 import { AnimatedDivider, ButtonLink, ExpandableContent } from '../components';
+import SEO from '../components/SEO/SEO';
 import { PageLayout, SectionContainer } from '../templates';
 import { ThemeSize } from '../types';
 import * as styles from './accommodations.module.css';
@@ -29,7 +30,7 @@ const Accommodations: React.FC<PageProps> = () => (
     }
     heroImageClassName={styles.heroImageContainer}
     subtitle="Getting to the venue"
-    title="Travel &amp; Hotel"
+    title="Travel & Hotel"
   >
     <SectionContainer className="place-items-center max-w-lg lg:max-w-5xl">
       <section className="col-span-4 relative hidden lg:block">
@@ -150,3 +151,5 @@ const Accommodations: React.FC<PageProps> = () => (
 );
 
 export default Accommodations;
+
+export const Head = () => <SEO title="Travel & Hotel" />;

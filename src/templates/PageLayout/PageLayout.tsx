@@ -20,7 +20,6 @@ import {
   HeroImage,
   NavToggle,
   ScrollIcon,
-  SEO,
 } from '../../components';
 import { ThemeColor } from '../../types';
 import { Routes } from '../../types/routes';
@@ -31,7 +30,6 @@ interface PageLayoutProps {
   className?: string;
   heroImageClassName?: string;
   heroImage?: React.ReactNode;
-  seoTitle?: string;
   showRsvp?: boolean;
   subtitle?: string;
   theme?: ThemeColor;
@@ -43,7 +41,6 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   className,
   heroImageClassName,
   heroImage,
-  seoTitle,
   showRsvp = true,
   subtitle,
   theme = ThemeColor.Light,
@@ -150,7 +147,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   );
 
   return (
-    <SEO title={seoTitle ?? title}>
+    <>
       <HeroImage
         className={clsx('relative', isNavOpen && 'overflow-y-auto', heroImageClassName)}
         content={content}
@@ -168,7 +165,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
       </HeroImage>
       <main className={className}>{children}</main>
       <Footer showRsvp={showRsvp} />
-    </SEO>
+    </>
   );
 };
 
