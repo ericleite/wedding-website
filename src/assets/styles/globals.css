@@ -40,11 +40,11 @@ h5 {
 }
 
 h6 {
-  @apply text-base md:text-h6;
+  @apply text-h6;
 }
 
 p + p {
-  @apply mt-11;
+  @apply mt-10;
 }
 
 a {
