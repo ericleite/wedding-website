@@ -11,28 +11,6 @@ const config: GatsbyConfig = {
     `gatsby-plugin-gatsby-cloud`,
     {
       options: {
-        enableListener: true,
-        mode: 'render-blocking',
-        preconnect: [`https://fonts.gstatic.com`],
-        web: [
-          {
-            file: `https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&display=swap`,
-            name: `Playfair Display`,
-          },
-          {
-            file: `https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap`,
-            name: `Great Vibes`,
-          },
-          {
-            file: `https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap`,
-            name: `Montserrat`,
-          },
-        ],
-      },
-      resolve: `gatsby-omni-font-loader`,
-    },
-    {
-      options: {
         icon: 'static/favicon.svg',
         theme_color: `#667F8C`,
       },
