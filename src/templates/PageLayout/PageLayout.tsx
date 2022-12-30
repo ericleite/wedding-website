@@ -81,7 +81,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   const monogram = (
     <div className="absolute w-full top-[12.5%] -translate-y-1/2 flex justify-center">
       <h4 className="text-h4 leading-none">
-        <AnimatedText animationType={AnimationType.FadeIn} autoTriggerOptions={{ threshold: 0 }} delay={1200}>
+        <AnimatedText animationType={AnimationType.FadeIn} autoTriggerOptions={{ threshold: 0 }} delay={1400}>
           <Link
             className={clsx(
               'border-none flex items-center font-serif transition-colors',
@@ -116,11 +116,11 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
                 isLight && 'text-lightPrimary',
               )}
             >
-              <AnimatedText autoTriggerOptions={{ threshold: 0 }} delay={300}>
+              <AnimatedText autoTriggerOptions={{ threshold: 0 }} delay={500}>
                 {subtitle}
               </AnimatedText>
             </p>
-            <AnimatedDivider color={isLight ? ThemeColor.ExtraLight : ThemeColor.Dark} delay={500} />
+            <AnimatedDivider color={isLight ? ThemeColor.ExtraLight : ThemeColor.Dark} delay={700} />
           </>
         )}
         <h1
@@ -130,7 +130,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
             isLight && 'text-lightPrimary',
           )}
         >
-          <AnimatedText autoTriggerOptions={{ threshold: 0 }} delay={subtitle ? 500 : 300} duration={1000}>
+          <AnimatedText autoTriggerOptions={{ threshold: 0 }} delay={subtitle ? 700 : 500} duration={1000}>
             {title}
           </AnimatedText>
         </h1>

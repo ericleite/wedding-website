@@ -50,23 +50,15 @@ const HeroImage: React.FC<PropsWithChildren<HeroImageProps>> = ({
           {/* Top border */}
           <div
             className={clsx(
-              'w-full h-1 top-0 transition-[width] origin-left',
+              'w-full h-2 top-0 left-0 transition-[width] origin-left delay-100',
               animatedBorderSharedStyles,
               !hasTriggered && '!w-0',
-            )}
-          />
-          {/* Right border */}
-          <div
-            className={clsx(
-              'w-1 h-full top-0 right-0 delay-1000 transition-[height] origin-top',
-              animatedBorderSharedStyles,
-              !hasTriggered && '!h-0',
             )}
           />
           {/* Bottom border */}
           <div
             className={clsx(
-              'w-full h-1 right-0 bottom-0 transition-[width] origin-right',
+              'w-full h-2 bottom-0 right-0 transition-[width] origin-right delay-100',
               animatedBorderSharedStyles,
               !hasTriggered && '!w-0',
             )}
@@ -74,7 +66,15 @@ const HeroImage: React.FC<PropsWithChildren<HeroImageProps>> = ({
           {/* Left border */}
           <div
             className={clsx(
-              'w-1 h-full bottom-0 left-0 delay-1000 transition-[height] origin-bottom',
+              'w-2 h-full bottom-0 left-0 transition-[height] origin-bottom delay-[1100ms]',
+              animatedBorderSharedStyles,
+              !hasTriggered && '!h-0',
+            )}
+          />
+          {/* Right border */}
+          <div
+            className={clsx(
+              'w-2 h-full top-0 right-0 transition-[height] origin-top delay-[1100ms]',
               animatedBorderSharedStyles,
               !hasTriggered && '!h-0',
             )}
