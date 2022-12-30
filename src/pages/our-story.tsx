@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { PageProps } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
@@ -41,7 +40,7 @@ const OurStory: React.FC<PageProps> = () => {
         </section>
         <section className="col-span-full relative 2xl:col-start-4 2xl:col-end-10">
           <div className="hidden 2xl:block absolute top-12 left-1/2 bottom-0 -translate-x-1/2 w-2 bg-lightSecondary" />
-          <div className="flex flex-col space-y-13 lg:space-y-15">
+          <div className="flex flex-col space-y-13 lg:space-y-15 2xl:space-y-17">
             <TimelineSection
               body={
                 <p>
@@ -219,25 +218,25 @@ const OurStory: React.FC<PageProps> = () => {
       </SectionContainer>
       <SectionContainer className="py-11 lg:py-13 2xl:py-15 max-w-prose 2xl:max-w-none">
         <section className="col-span-full flex flex-col items-center 2xl:col-start-4 2xl:col-end-10">
-          <p className={clsx('text-center text-darkPrimary', globalStyles.textHeading)}>The next chapter begins in</p>
+          <h3 className="text-center">Let the next chapter begin</h3>
           <AnimatedDivider />
-        </section>
-        <section className="col-span-full flex justify-between 2xl:col-start-4 2xl:col-end-10">
-          <div className="flex flex-col items-center">
-            <h3 className="text-maroonTertiary">{days}</h3>
-            <h6>Days</h6>
-          </div>
-          <div className="flex flex-col items-center">
-            <h3 className="text-maroonTertiary">{hours}</h3>
-            <h6>Hours</h6>
-          </div>
-          <div className="flex flex-col items-center">
-            <h3 className="text-maroonTertiary">{minutes}</h3>
-            <h6>Minutes</h6>
-          </div>
-          <div className="flex flex-col items-center">
-            <h3 className="text-maroonTertiary">{seconds}</h3>
-            <h6>Seconds</h6>
+          <div className="flex justify-center space-x-11 md:space-x-13 lg:space-x-15">
+            <div className="flex flex-col items-center">
+              <h3 className="text-maroonTertiary">{days}</h3>
+              <h6>Days</h6>
+            </div>
+            <div className="flex flex-col items-center">
+              <h3 className="text-maroonTertiary">{hours}</h3>
+              <h6>Hours</h6>
+            </div>
+            <div className="flex flex-col items-center">
+              <h3 className="text-maroonTertiary">{minutes}</h3>
+              <h6>Minutes</h6>
+            </div>
+            <div className="flex flex-col items-center">
+              <h3 className="text-maroonTertiary">{seconds}</h3>
+              <h6>Seconds</h6>
+            </div>
           </div>
         </section>
       </SectionContainer>

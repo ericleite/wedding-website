@@ -50,6 +50,10 @@ module.exports = {
       hBase: ['1rem', 1.3125],
       small: ['0.75rem', 1.3125],
     },
+    screens: {
+      ...defaultTheme.screens,
+      xs: '480px',
+    },
     spacing: {
       // Typography scale can be found here:
       // https://type-scale.com/?size=16&scale=1.333&text=This%20is%20a%20heading&font=Playfair%20Display&fontweight=600&bodyfont=Montserrat&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false

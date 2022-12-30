@@ -32,7 +32,7 @@ export default function EventDetails({
 
   return (
     <div className="text-center">
-      <h6 className="mb-8">{name}</h6>
+      <h6 className="mb-8 text-h6">{name}</h6>
       <div className="space-y-0">
         <p className="font-bold">
           {start &&

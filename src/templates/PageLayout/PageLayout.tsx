@@ -105,7 +105,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
 
   const content = (
     <div className="relative">
-      <div className="relative top-1/3 -translate-y-1/2 flex flex-col items-center">
+      <div className="relative top-1/4 flex flex-col items-center">
         {subtitle && (
           <>
             <p

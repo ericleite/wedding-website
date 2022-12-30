@@ -5,7 +5,6 @@ import React, { useCallback, useRef, useState } from 'react';
 import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'react-headless-accordion';
 
 import MountainOutlineSVG from '../assets/images/accents/mountain-outline.inline.svg';
-import VerticalFloralSVG from '../assets/images/accents/vertical-floral-with-blooms.inline.svg';
 import * as globalStyles from '../assets/styles/global.module.css';
 import { AnimatedDivider, AnimatedText, ChevronDownIcon, SEO } from '../components';
 import { FAQ } from '../content';
@@ -43,12 +42,8 @@ const Index: React.FC<PageProps<SiteData>> = () => {
       subtitle="The Wedding of"
       title="Eric &amp; Lauren"
     >
-      <SectionContainer className="place-items-center max-w-prose 2xl:max-w-none">
-        <section className="hidden 2xl:block col-start-2 col-end-5 relative">
-          <VerticalFloralSVG className="text-maroonTertiary w-3/4 m-auto -scale-x-100" />
-          <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-transparent to-white opacity-75" />
-        </section>
-        <section className="col-span-full flex flex-col items-center space-y-13 2xl:space-y-15 2xl:col-start-5 2xl:col-end-9">
+      <SectionContainer className="place-items-center max-w-prose">
+        <section className="col-span-full flex flex-col items-center space-y-13 2xl:space-y-15">
           <div className="flex flex-col items-center">
             <h3 className="text-center">
               Join <span className="lowercase">the</span> Celebration
@@ -84,10 +79,6 @@ const Index: React.FC<PageProps<SiteData>> = () => {
             </div>
           </div>
         </section>
-        <section className="hidden 2xl:block col-start-9 col-end-12 relative">
-          <VerticalFloralSVG className="text-maroonTertiary w-3/4 m-auto" />
-          <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-transparent to-white opacity-75" />
-        </section>
       </SectionContainer>
       <SectionContainer ref={locationSectionRef} className="relative overflow-hidden p-15" theme={ThemeColor.Dark}>
         <MountainOutlineSVG className="absolute bottom-0 w-full text-darkSecondary" />
@@ -105,14 +96,12 @@ const Index: React.FC<PageProps<SiteData>> = () => {
           </h2>
         </section>
       </SectionContainer>
-      <SectionContainer className="place-items-center max-w-prose 2xl:max-w-none">
-        <section className="col-span-full flex flex-col items-center space-y-13 2xl:space-y-15 2xl:col-start-5 2xl:col-end-9">
+      <SectionContainer className="place-items-center max-w-prose">
+        <section className="col-span-full flex flex-col items-center space-y-13 2xl:space-y-15">
           <div className="flex flex-col items-center">
             <h3 className="text-center">Questions & Answers</h3>
             <AnimatedDivider color={ThemeColor.Light} size={ThemeSize.Lg} />
           </div>
-        </section>
-        <section className="col-span-full w-full text-left">
           <Accordion className="space-y-11">
             {FAQ.map(({ question, answer }, index) => (
               <AccordionItem key={index}>
@@ -123,7 +112,7 @@ const Index: React.FC<PageProps<SiteData>> = () => {
                         <span>{question}</span>
                         <ChevronDownIcon
                           className={clsx(
-                            'w-11 h-11 md:w-12 md:h-12 flex-shrink-0 transition-transform',
+                            'w-11 h-11 sm:w-12 sm:h-12 flex-shrink-0 transition-transform',
                             open && '-rotate-180',
                           )}
                         />

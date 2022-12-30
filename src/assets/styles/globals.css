@@ -40,7 +40,7 @@ h5 {
 }
 
 h6 {
-  @apply text-h6;
+  @apply text-hBase xs:text-h6;
 }
 
 p + p {
