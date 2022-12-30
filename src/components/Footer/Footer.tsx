@@ -27,7 +27,7 @@ const Footer: React.FC<FooterProps> = ({ showRsvp }) => (
         </p>
       </section>
     )}
-    <section className="flex justify-center p-11 text-small md:text-base text-center text-darkTertiary">
+    <section className="flex justify-center p-11 text-small md:text-base text-center">
       © {new Date().getFullYear()} | Eric Leite and Lauren Dubose
     </section>
   </footer>
