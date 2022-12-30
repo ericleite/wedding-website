@@ -156,7 +156,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
         theme={theme}
       >
         <Header
-          className={clsx(!isNavOpen && 'pointer-events-none')}
+          className={clsx('flex-shrink-0', !isNavOpen && 'pointer-events-none')}
           isNavOpen={isNavOpen}
           theme={complementaryTheme}
         />
