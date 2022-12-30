@@ -44,7 +44,12 @@ const HeroImage: React.FC<PropsWithChildren<HeroImageProps>> = ({
         {image}
         <div
           ref={triggerRef}
-          className={clsx('relative grid place-content-stretch min-h-0 m-10 lg:m-11', styles.content, contentClassName)}
+          className={clsx(
+            'relative grid place-content-stretch min-h-0 m-10 p-10',
+            'lg:m-11 lg:p-11',
+            styles.content,
+            contentClassName,
+          )}
         >
           {content}
           {/* Top border */}
