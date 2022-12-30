@@ -161,7 +161,12 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
           theme={complementaryTheme}
         />
         {monogram}
-        <NavToggle className="absolute top-13 left-13" isNavOpen={isNavOpen} onClick={onClickNavToggle} theme={theme} />
+        <NavToggle
+          className="absolute top-13 right-13"
+          isNavOpen={isNavOpen}
+          onClick={onClickNavToggle}
+          theme={theme}
+        />
       </HeroImage>
       <main className={className}>{children}</main>
       <Footer showRsvp={showRsvp} />

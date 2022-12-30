@@ -53,8 +53,8 @@ const Header: React.FC<HeaderProps> = ({ className, isNavOpen, theme = ThemeColo
   const navBackgroundLayer = (
     <div
       className={clsx('fixed top-0 w-full h-full bg-lightPrimary transition-all lg:hidden', {
-        '-left-full': !isNavOpen,
-        'left-0': isNavOpen,
+        '-right-full': !isNavOpen,
+        'right-0': isNavOpen,
       })}
     />
   );
@@ -63,7 +63,7 @@ const Header: React.FC<HeaderProps> = ({ className, isNavOpen, theme = ThemeColo
     <header
       ref={headerRef}
       className={clsx(
-        'absolute inset-0 p-13',
+        'absolute inset-0 p-13 overflow-hidden',
         'lg:static lg:inset-auto lg:inset-x-0 lg:p-10',
         isDark && styles.isDark,
         isLight && styles.isLight,
