@@ -122,7 +122,10 @@ const Index: React.FC<PageProps<SiteData>> = () => {
                       <h6 className="flex justify-between items-center text-left normal-case space-x-10">
                         <span>{question}</span>
                         <ChevronDownIcon
-                          className={clsx('w-12 h-12 flex-shrink-0 transition-transform', open && '-rotate-180')}
+                          className={clsx(
+                            'w-11 h-11 md:w-12 md:h-12 flex-shrink-0 transition-transform',
+                            open && '-rotate-180',
+                          )}
                         />
                       </h6>
                     </AccordionHeader>
