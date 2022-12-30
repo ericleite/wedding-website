@@ -39,7 +39,7 @@ const HeroImage: React.FC<PropsWithChildren<HeroImageProps>> = ({
   useIntersectionObserver(triggerRef, autoTriggerAnimation, { threshold: 0 });
 
   return (
-    <div className={clsx('flex flex-col w-full h-screen min-h-[667px] z-30', className)}>
+    <div className={clsx('flex flex-col w-full h-full min-h-[667px] z-30', className)}>
       <div className={clsx('grid grow min-h-0', contentContainerClassName)}>
         {image}
         <div
