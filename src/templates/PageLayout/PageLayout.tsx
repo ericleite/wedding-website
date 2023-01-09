@@ -28,7 +28,7 @@ const resolvedTailwindConfig = resolveConfig(tailwindConfig);
 interface PageLayoutProps {
   className?: string;
   heroImageClassName?: string;
-  heroImageLoaded: boolean;
+  heroImageLoaded?: boolean;
   heroImage?: React.ReactNode;
   showRsvp?: boolean;
   subtitle?: string;
@@ -41,7 +41,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   className,
   heroImage,
   heroImageClassName,
-  heroImageLoaded,
+  heroImageLoaded = false,
   showRsvp = true,
   subtitle,
   theme = ThemeColor.Light,

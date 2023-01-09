@@ -24,10 +24,7 @@ const Index: React.FC<PageProps<SiteData>> = () => {
   }, []);
   useIntersectionObserver(locationSectionRef, startLocationSectionAnimations);
 
-  const {
-    setHeroImageLoaded,
-    state: { heroImageLoaded },
-  } = useAppState();
+  const { setHeroImageLoaded, state } = useAppState();
   const setHomeHeroImageLoaded = useCallback(() => {
     setHeroImageLoaded(InternalRoute.Home);
   }, [setHeroImageLoaded]);
@@ -49,7 +46,7 @@ const Index: React.FC<PageProps<SiteData>> = () => {
         />
       }
       heroImageClassName={styles.heroImageContainer}
-      heroImageLoaded={heroImageLoaded[InternalRoute.Home]}
+      heroImageLoaded={state?.heroImageLoaded[InternalRoute.Home]}
       subtitle="The Wedding of"
       title="Eric &amp; Lauren"
     >

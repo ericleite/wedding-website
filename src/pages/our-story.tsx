@@ -15,10 +15,7 @@ import * as styles from './our-story.module.css';
 const OurStory: React.FC<PageProps> = () => {
   const { days, hours, minutes, seconds } = useCountdownTimer(WEDDING_START_DATE);
 
-  const {
-    setHeroImageLoaded,
-    state: { heroImageLoaded },
-  } = useAppState();
+  const { setHeroImageLoaded, state } = useAppState();
   const setOurStoryHeroImageLoaded = useCallback(() => {
     setHeroImageLoaded(InternalRoute.OurStory);
   }, [setHeroImageLoaded]);
@@ -40,7 +37,7 @@ const OurStory: React.FC<PageProps> = () => {
         />
       }
       heroImageClassName={styles.heroImageContainer}
-      heroImageLoaded={heroImageLoaded[InternalRoute.OurStory]}
+      heroImageLoaded={state?.heroImageLoaded[InternalRoute.OurStory]}
       subtitle="A match made in Florida"
       title="Our Story"
     >

@@ -12,10 +12,7 @@ import * as styles from './registry.module.css';
 const Registry: React.FC<PageProps> = () => {
   const scriptId = useRef(Math.random().toString());
 
-  const {
-    setHeroImageLoaded,
-    state: { heroImageLoaded },
-  } = useAppState();
+  const { setHeroImageLoaded, state } = useAppState();
   const setRegistryHeroImageLoaded = useCallback(() => {
     setHeroImageLoaded(InternalRoute.Registry);
   }, [setHeroImageLoaded]);
@@ -37,7 +34,7 @@ const Registry: React.FC<PageProps> = () => {
         />
       }
       heroImageClassName={styles.heroImageContainer}
-      heroImageLoaded={heroImageLoaded[InternalRoute.Registry]}
+      heroImageLoaded={state?.heroImageLoaded[InternalRoute.Registry]}
       title="Registry"
     >
       <SectionContainer>

@@ -47,12 +47,12 @@ export function AppStateProvider({ children }: AppStateProviderProps) {
 export function useAppState() {
   const context = useContext(AppStateContext);
   if (context === undefined) {
-    throw new Error('useAppState must be used within an AppStateProvider');
+    console.warn('useAppState must be used within an AppStateProvider');
   }
 
   const setHeroImageLoaded = useCallback(
     (route: InternalRoute) => {
-      context.dispatch({ payload: { route }, type: ActionType.HeroImageLoaded });
+      context?.dispatch({ payload: { route }, type: ActionType.HeroImageLoaded });
     },
     [context],
   );

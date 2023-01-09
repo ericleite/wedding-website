@@ -15,10 +15,7 @@ import { InternalRoute, ThemeSize } from '../types';
 import * as styles from './accommodations.module.css';
 
 const Accommodations: React.FC<PageProps> = () => {
-  const {
-    setHeroImageLoaded,
-    state: { heroImageLoaded },
-  } = useAppState();
+  const { setHeroImageLoaded, state } = useAppState();
   const setAccommodationsHeroImageLoaded = useCallback(() => {
     setHeroImageLoaded(InternalRoute.Accommodations);
   }, [setHeroImageLoaded]);
@@ -40,7 +37,7 @@ const Accommodations: React.FC<PageProps> = () => {
         />
       }
       heroImageClassName={styles.heroImageContainer}
-      heroImageLoaded={heroImageLoaded[InternalRoute.Accommodations]}
+      heroImageLoaded={state?.heroImageLoaded[InternalRoute.Accommodations]}
       subtitle="Getting to the venue"
       title="Travel & Hotel"
     >

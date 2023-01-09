@@ -10,10 +10,7 @@ import { InternalRoute, ThemeSize } from '../types';
 import * as styles from './404.module.css';
 
 const NotFoundPage = () => {
-  const {
-    setHeroImageLoaded,
-    state: { heroImageLoaded },
-  } = useAppState();
+  const { setHeroImageLoaded, state } = useAppState();
   const setNotFoundHeroImageLoaded = useCallback(() => {
     setHeroImageLoaded(InternalRoute.NotFound);
   }, [setHeroImageLoaded]);
@@ -35,7 +32,7 @@ const NotFoundPage = () => {
         />
       }
       heroImageClassName={styles.heroImageContainer}
-      heroImageLoaded={heroImageLoaded[InternalRoute.NotFound]}
+      heroImageLoaded={state?.heroImageLoaded[InternalRoute.NotFound]}
       title="Page Not Found"
     >
       <SectionContainer>

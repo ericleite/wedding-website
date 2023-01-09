@@ -12,10 +12,7 @@ import { InternalRoute, ThemeColor, ThemeSize } from '../types';
 import * as styles from './schedule.module.css';
 
 const Schedule: React.FC<PageProps> = () => {
-  const {
-    setHeroImageLoaded,
-    state: { heroImageLoaded },
-  } = useAppState();
+  const { setHeroImageLoaded, state } = useAppState();
   const setScheduleHeroImageLoaded = useCallback(() => {
     setHeroImageLoaded(InternalRoute.Schedule);
   }, [setHeroImageLoaded]);
@@ -37,7 +34,7 @@ const Schedule: React.FC<PageProps> = () => {
         />
       }
       heroImageClassName={styles.heroImageContainer}
-      heroImageLoaded={heroImageLoaded[InternalRoute.Schedule]}
+      heroImageLoaded={state?.heroImageLoaded[InternalRoute.Schedule]}
       subtitle="Let the adventure begin"
       title="Schedule"
     >
