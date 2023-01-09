@@ -1,16 +1,25 @@
 import clsx from 'clsx';
 import { PageProps } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import * as globalStyles from '../assets/styles/global.module.css';
 import { AnimatedDivider, SEO } from '../components';
 import { EventDetails } from '../components/EventDetails';
+import { useAppState } from '../contexts';
 import { PageLayout, SectionContainer } from '../templates';
-import { ThemeColor, ThemeSize } from '../types';
+import { InternalRoute, ThemeColor, ThemeSize } from '../types';
 import * as styles from './schedule.module.css';
 
 const Schedule: React.FC<PageProps> = () => {
+  const {
+    setPageLoaded,
+    state: { pageLoaded },
+  } = useAppState();
+  const setSchedulePageLoaded = useCallback(() => {
+    setPageLoaded(InternalRoute.Schedule);
+  }, [setPageLoaded]);
+
   return (
     <PageLayout
       className="space-y-15 my-15"
@@ -21,12 +30,14 @@ const Schedule: React.FC<PageProps> = () => {
           className={globalStyles.heroImage}
           layout="fullWidth"
           loading="eager"
-          placeholder="dominantColor"
+          onLoad={setSchedulePageLoaded}
+          placeholder="none"
           quality={80}
           src="../assets/images/heros/eric-and-lauren-holding-hands-in-front-of-cactus-and-rocks.jpg"
         />
       }
       heroImageClassName={styles.heroImageContainer}
+      heroImageLoaded={pageLoaded[InternalRoute.Schedule]}
       subtitle="Let the adventure begin"
       title="Schedule"
     >

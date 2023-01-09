@@ -1,14 +1,23 @@
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import * as globalStyles from '../assets/styles/global.module.css';
 import { AnimatedDivider, SEO } from '../components';
+import { useAppState } from '../contexts';
 import { PageLayout, SectionContainer } from '../templates';
-import { ThemeSize } from '../types';
+import { InternalRoute, ThemeSize } from '../types';
 import * as styles from './404.module.css';
 
 const NotFoundPage = () => {
+  const {
+    setPageLoaded,
+    state: { pageLoaded },
+  } = useAppState();
+  const setNotFoundPageLoaded = useCallback(() => {
+    setPageLoaded(InternalRoute.NotFound);
+  }, [setPageLoaded]);
+
   return (
     <PageLayout
       className="my-15"
@@ -19,12 +28,14 @@ const NotFoundPage = () => {
           className={globalStyles.heroImage}
           layout="fullWidth"
           loading="eager"
-          placeholder="dominantColor"
+          onLoad={setNotFoundPageLoaded}
+          placeholder="none"
           quality={80}
           src="../assets/images/heros/eve-on-mountain-looking-confused.jpg"
         />
       }
       heroImageClassName={styles.heroImageContainer}
+      heroImageLoaded={pageLoaded[InternalRoute.NotFound]}
       title="Page Not Found"
     >
       <SectionContainer>

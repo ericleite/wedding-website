@@ -21,14 +21,14 @@ import {
   NavToggle,
   ScrollIcon,
 } from '../../components';
-import { ThemeColor } from '../../types';
-import { Routes } from '../../types/routes';
+import { InternalRoute, ThemeColor } from '../../types';
 
 const resolvedTailwindConfig = resolveConfig(tailwindConfig);
 
 interface PageLayoutProps {
   className?: string;
   heroImageClassName?: string;
+  heroImageLoaded: boolean;
   heroImage?: React.ReactNode;
   showRsvp?: boolean;
   subtitle?: string;
@@ -39,8 +39,9 @@ interface PageLayoutProps {
 const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   children,
   className,
-  heroImageClassName,
   heroImage,
+  heroImageClassName,
+  heroImageLoaded,
   showRsvp = true,
   subtitle,
   theme = ThemeColor.Light,
@@ -81,7 +82,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   const monogram = (
     <div className="absolute w-full top-[12.5%] -translate-y-1/2 flex justify-center">
       <h4 className="text-h4 leading-none">
-        <AnimatedText animationType={AnimationType.FadeIn} autoTriggerOptions={{ threshold: 0 }} delay={1400}>
+        <AnimatedText animationType={AnimationType.FadeIn} delay={1400} hasTriggered={heroImageLoaded}>
           <Link
             className={clsx(
               'border-none flex items-center font-serif transition-colors',
@@ -92,7 +93,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
             onClick={() => {
               setIsNavOpen(false);
             }}
-            to={Routes.Index}
+            to={InternalRoute.Home}
           >
             <span>E</span>
             <span className="text-h6 px-7">&amp;</span>
@@ -116,11 +117,15 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
                 isLight && 'text-lightPrimary',
               )}
             >
-              <AnimatedText autoTriggerOptions={{ threshold: 0 }} delay={500}>
+              <AnimatedText delay={500} hasTriggered={heroImageLoaded}>
                 {subtitle}
               </AnimatedText>
             </p>
-            <AnimatedDivider color={isLight ? ThemeColor.ExtraLight : ThemeColor.Dark} delay={700} />
+            <AnimatedDivider
+              color={isLight ? ThemeColor.ExtraLight : ThemeColor.Dark}
+              delay={700}
+              hasTriggered={heroImageLoaded}
+            />
           </>
         )}
         <h1
@@ -130,7 +135,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
             isLight && 'text-lightPrimary',
           )}
         >
-          <AnimatedText autoTriggerOptions={{ threshold: 0 }} delay={subtitle ? 700 : 500} duration={1000}>
+          <AnimatedText delay={subtitle ? 700 : 500} duration={1000} hasTriggered={heroImageLoaded}>
             {title}
           </AnimatedText>
         </h1>
@@ -153,6 +158,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
         content={content}
         contentClassName={clsx({ 'bg-darkPrimary': isDark && !heroImage, 'bg-lightPrimary': isLight && !heroImage })}
         image={heroImage}
+        imageLoaded={heroImageLoaded}
         theme={theme}
       >
         <Header

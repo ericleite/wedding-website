@@ -6,32 +6,36 @@ import { Divider, DividerProps } from '../Divider';
 import * as styles from './AnimatedDivider.module.css';
 
 interface AnimatedDividerProps extends DividerProps {
+  autoTriggerOptions?: IntersectionObserverInit;
   delay?: number;
   duration?: number;
-  options?: IntersectionObserverInit;
+  hasTriggered?: boolean;
 }
 
 export default function AnimatedDivider({
+  autoTriggerOptions,
   delay = 300,
   duration = 700,
-  options,
+  hasTriggered,
   ...dividerProps
 }: AnimatedDividerProps) {
   const triggerRef = useRef<HTMLHRElement>(null);
 
-  const [hasTriggered, setHasTriggered] = useState(false);
+  const [hasAutoTriggered, setHasAutoTriggered] = useState(false);
 
   const autoTriggerAnimation = useCallback(() => {
-    setHasTriggered(true);
-  }, []);
+    if (typeof hasTriggered === 'undefined') {
+      setHasAutoTriggered(true);
+    }
+  }, [hasTriggered]);
 
-  useIntersectionObserver(triggerRef, autoTriggerAnimation, options);
+  useIntersectionObserver(triggerRef, autoTriggerAnimation, autoTriggerOptions);
 
   return (
     <Divider
       {...dividerProps}
       ref={triggerRef}
-      className={clsx(dividerProps?.className, styles.divider, !hasTriggered && '!w-0')}
+      className={clsx(dividerProps?.className, styles.divider, !(hasTriggered || hasAutoTriggered) && '!w-0')}
       style={{ transitionDelay: `${delay}ms`, transitionDuration: `${duration}ms` }}
     />
   );

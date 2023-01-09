@@ -1,7 +1,7 @@
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import React from 'react';
 
-import { Routes } from './types/routes';
+import { ExternalRoute } from './types';
 
 export const FAQ = [
   {
@@ -14,7 +14,7 @@ export const FAQ = [
         <p>
           <b>
             Please{' '}
-            <OutboundLink href={Routes.RsvpExternal} target="_blank">
+            <OutboundLink href={ExternalRoute.Rsvp} target="_blank">
               RSVP
             </OutboundLink>{' '}
             even if you are not planning to attend.

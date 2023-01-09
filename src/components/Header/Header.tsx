@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import React, { useLayoutEffect, useRef, useState } from 'react';
 
-import { Routes, ThemeColor } from '../../types';
+import { ExternalRoute, InternalRoute, ThemeColor } from '../../types';
 import * as styles from './Header.module.css';
 
 export const HEADER_NAV_ID = 'navigation';
@@ -81,23 +81,23 @@ const Header: React.FC<HeaderProps> = ({ className, isNavOpen, theme = ThemeColo
         )}
         id={HEADER_NAV_ID}
       >
-        <Link activeClassName={styles.isActive} className={styles.link} to={Routes.OurStory}>
+        <Link activeClassName={styles.isActive} className={styles.link} to={InternalRoute.OurStory}>
           <span>Our Story</span>
         </Link>
         <span className={styles.divider}>|</span>
-        <Link activeClassName={styles.isActive} className={styles.link} to={Routes.Schedule}>
+        <Link activeClassName={styles.isActive} className={styles.link} to={InternalRoute.Schedule}>
           <span>Schedule</span>
         </Link>
         <span className={styles.divider}>|</span>
-        <Link activeClassName={styles.isActive} className={styles.link} to={Routes.Accommodations}>
+        <Link activeClassName={styles.isActive} className={styles.link} to={InternalRoute.Accommodations}>
           <span>Travel &amp; Hotel</span>
         </Link>
         <span className={styles.divider}>|</span>
-        <Link activeClassName={styles.isActive} className={styles.link} to={Routes.Registry}>
+        <Link activeClassName={styles.isActive} className={styles.link} to={InternalRoute.Registry}>
           <span>Registry</span>
         </Link>
         <span className={styles.divider}>|</span>
-        <OutboundLink className={styles.link} href={Routes.RsvpExternal} target="_blank">
+        <OutboundLink className={styles.link} href={ExternalRoute.Rsvp} target="_blank">
           <span>RSVP</span>
         </OutboundLink>
       </nav>

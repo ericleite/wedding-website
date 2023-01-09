@@ -8,9 +8,10 @@ import MountainOutlineSVG from '../assets/images/accents/mountain-outline.inline
 import * as globalStyles from '../assets/styles/global.module.css';
 import { AnimatedDivider, AnimatedText, ChevronDownIcon, SEO } from '../components';
 import { FAQ } from '../content';
+import { useAppState } from '../contexts';
 import { useIntersectionObserver } from '../hooks';
 import { PageLayout, SectionContainer } from '../templates';
-import { SiteData, ThemeColor, ThemeSize } from '../types';
+import { InternalRoute, SiteData, ThemeColor, ThemeSize } from '../types';
 import * as styles from './index.module.css';
 
 const Index: React.FC<PageProps<SiteData>> = () => {
@@ -23,6 +24,14 @@ const Index: React.FC<PageProps<SiteData>> = () => {
   }, []);
   useIntersectionObserver(locationSectionRef, startLocationSectionAnimations);
 
+  const {
+    setPageLoaded,
+    state: { pageLoaded },
+  } = useAppState();
+  const setHomePageLoaded = useCallback(() => {
+    setPageLoaded(InternalRoute.Home);
+  }, [setPageLoaded]);
+
   return (
     <PageLayout
       className="space-y-15 my-15"
@@ -33,12 +42,14 @@ const Index: React.FC<PageProps<SiteData>> = () => {
           className={globalStyles.heroImage}
           layout="fullWidth"
           loading="eager"
-          placeholder="dominantColor"
+          onLoad={setHomePageLoaded}
+          placeholder="none"
           quality={80}
           src="../assets/images/heros/eric-and-lauren-between-joshua-trees.jpg"
         />
       }
       heroImageClassName={styles.heroImageContainer}
+      heroImageLoaded={pageLoaded[InternalRoute.Home]}
       subtitle="The Wedding of"
       title="Eric &amp; Lauren"
     >

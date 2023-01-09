@@ -1,14 +1,25 @@
 import { PageProps, Script } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import React, { useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 
 import * as globalStyles from '../assets/styles/global.module.css';
 import { ButtonLink, SEO } from '../components';
+import { useAppState } from '../contexts';
 import { PageLayout, SectionContainer } from '../templates';
+import { InternalRoute } from '../types';
 import * as styles from './registry.module.css';
 
 const Registry: React.FC<PageProps> = () => {
   const scriptId = useRef(Math.random().toString());
+
+  const {
+    setPageLoaded,
+    state: { pageLoaded },
+  } = useAppState();
+  const setRegistryPageLoaded = useCallback(() => {
+    setPageLoaded(InternalRoute.Registry);
+  }, [setPageLoaded]);
+
   return (
     <PageLayout
       className="bg-white space-y-15 py-15"
@@ -19,12 +30,14 @@ const Registry: React.FC<PageProps> = () => {
           className={globalStyles.heroImage}
           layout="fullWidth"
           loading="eager"
-          placeholder="dominantColor"
+          onLoad={setRegistryPageLoaded}
+          placeholder="none"
           quality={80}
           src="../assets/images/heros/eric-and-lauren-standing-in-front-of-rocks.jpg"
         />
       }
       heroImageClassName={styles.heroImageContainer}
+      heroImageLoaded={pageLoaded[InternalRoute.Registry]}
       title="Registry"
     >
       <SectionContainer>

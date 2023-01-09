@@ -8,11 +8,25 @@ export enum DeviceWidth {
   UHD1 = 3840,
 }
 
+export enum InternalRoute {
+  Accommodations = '/accommodations',
+  Home = '/',
+  NotFound = '/404',
+  OurStory = '/our-story',
+  Registry = '/registry',
+  Rsvp = '/rsvp',
+  Schedule = '/schedule',
+}
+
+export enum ExternalRoute {
+  Rsvp = 'https://www.zola.com/wedding/eric-and-lauren/rsvp',
+}
+
 export enum ThemeColor {
   Dark = 'dark',
-  Light = 'light',
   ExtraLight = 'extraLight',
   Gold = 'gold',
+  Light = 'light',
   Maroon = 'maroon',
 }
 

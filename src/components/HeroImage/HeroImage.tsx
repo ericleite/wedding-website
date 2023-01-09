@@ -11,6 +11,7 @@ interface HeroImageProps {
   contentClassName?: string;
   contentContainerClassName?: string;
   image: React.ReactNode;
+  imageLoaded: boolean;
   theme?: ThemeColor;
 }
 
@@ -21,6 +22,7 @@ const HeroImage: React.FC<PropsWithChildren<HeroImageProps>> = ({
   contentClassName,
   contentContainerClassName,
   image,
+  imageLoaded,
   theme = ThemeColor.Dark,
 }) => {
   const isDark = theme === ThemeColor.Dark;
@@ -37,6 +39,8 @@ const HeroImage: React.FC<PropsWithChildren<HeroImageProps>> = ({
     setHasTriggered(true);
   }, []);
   useIntersectionObserver(triggerRef, autoTriggerAnimation, { threshold: 0 });
+
+  const animationHasNotStarted = !(imageLoaded || hasTriggered);
 
   return (
     <div className={clsx('flex flex-col w-full h-full min-h-[667px] z-30', className)}>
@@ -57,7 +61,7 @@ const HeroImage: React.FC<PropsWithChildren<HeroImageProps>> = ({
             className={clsx(
               'w-full h-2 top-0 left-0 transition-[width] origin-left delay-100',
               animatedBorderSharedStyles,
-              !hasTriggered && '!w-0',
+              animationHasNotStarted && '!w-0',
             )}
           />
           {/* Bottom border */}
@@ -65,7 +69,7 @@ const HeroImage: React.FC<PropsWithChildren<HeroImageProps>> = ({
             className={clsx(
               'w-full h-2 bottom-0 right-0 transition-[width] origin-right delay-100',
               animatedBorderSharedStyles,
-              !hasTriggered && '!w-0',
+              animationHasNotStarted && '!w-0',
             )}
           />
           {/* Left border */}
@@ -73,7 +77,7 @@ const HeroImage: React.FC<PropsWithChildren<HeroImageProps>> = ({
             className={clsx(
               'w-2 h-full bottom-0 left-0 transition-[height] origin-bottom delay-[1100ms]',
               animatedBorderSharedStyles,
-              !hasTriggered && '!h-0',
+              animationHasNotStarted && '!h-0',
             )}
           />
           {/* Right border */}
@@ -81,7 +85,7 @@ const HeroImage: React.FC<PropsWithChildren<HeroImageProps>> = ({
             className={clsx(
               'w-2 h-full top-0 right-0 transition-[height] origin-top delay-[1100ms]',
               animatedBorderSharedStyles,
-              !hasTriggered && '!h-0',
+              animationHasNotStarted && '!h-0',
             )}
           />
         </div>

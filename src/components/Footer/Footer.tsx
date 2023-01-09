@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 
 import * as globalStyles from '../../assets/styles/global.module.css';
-import { Routes, ThemeSize } from '../../types';
+import { ExternalRoute, ThemeSize } from '../../types';
 import { AnimatedDivider } from '../AnimatedDivider';
 import { ButtonLink } from '../ButtonLink';
 
@@ -21,7 +21,7 @@ const Footer: React.FC<FooterProps> = ({ showRsvp }) => (
         </p>
         <AnimatedDivider spacing={ThemeSize.Lg} />
         <p>
-          <ButtonLink href={Routes.RsvpExternal} outbound>
+          <ButtonLink href={ExternalRoute.Rsvp} outbound>
             RSVP
           </ButtonLink>
         </p>

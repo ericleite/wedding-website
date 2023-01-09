@@ -13,4 +13,13 @@ import '@fontsource/playfair-display/600-italic.css';
 import '@fontsource/playfair-display/600.css';
 import './src/assets/styles/globals.css';
 
+import type { GatsbySSR } from 'gatsby';
+import React from 'react';
+
+import { AppStateProvider } from './src/contexts';
+
+export const wrapRootElement: GatsbySSR['wrapRootElement'] = ({ element }) => (
+  <AppStateProvider>{element}</AppStateProvider>
+);
+
 // TODO: Add route transition animations

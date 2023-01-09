@@ -1,18 +1,27 @@
 import { PageProps } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import * as globalStyles from '../assets/styles/global.module.css';
 import { AnimatedDivider, SEO } from '../components';
 import { WEDDING_START_DATE } from '../constants';
+import { useAppState } from '../contexts';
 import { useCountdownTimer } from '../hooks';
 import { PageLayout, SectionContainer, TimelineSection } from '../templates';
 import { TimelineSectionOrientation } from '../templates/TimelineSection';
-import { ThemeSize } from '../types';
+import { InternalRoute, ThemeSize } from '../types';
 import * as styles from './our-story.module.css';
 
 const OurStory: React.FC<PageProps> = () => {
   const { days, hours, minutes, seconds } = useCountdownTimer(WEDDING_START_DATE);
+
+  const {
+    setPageLoaded,
+    state: { pageLoaded },
+  } = useAppState();
+  const setOurStoryPageLoaded = useCallback(() => {
+    setPageLoaded(InternalRoute.OurStory);
+  }, [setPageLoaded]);
 
   return (
     <PageLayout
@@ -24,12 +33,14 @@ const OurStory: React.FC<PageProps> = () => {
           className={globalStyles.heroImage}
           layout="fullWidth"
           loading="eager"
-          placeholder="dominantColor"
+          onLoad={setOurStoryPageLoaded}
+          placeholder="none"
           quality={80}
           src="../assets/images/heros/eric-and-lauren-on-a-road.jpg"
         />
       }
       heroImageClassName={styles.heroImageContainer}
+      heroImageLoaded={pageLoaded[InternalRoute.OurStory]}
       subtitle="A match made in Florida"
       title="Our Story"
     >

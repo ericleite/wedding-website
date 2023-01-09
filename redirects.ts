@@ -1,8 +1,8 @@
-import { Routes } from './src/types/routes';
+import { ExternalRoute, InternalRoute } from './src/types';
 
 export default [
   {
-    fromPath: Routes.Rsvp,
-    toPath: Routes.RsvpExternal,
+    fromPath: InternalRoute.Rsvp,
+    toPath: ExternalRoute.Rsvp,
   },
 ];
