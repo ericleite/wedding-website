@@ -11,12 +11,12 @@ import * as styles from './404.module.css';
 
 const NotFoundPage = () => {
   const {
-    setPageLoaded,
-    state: { pageLoaded },
+    setHeroImageLoaded,
+    state: { heroImageLoaded },
   } = useAppState();
-  const setNotFoundPageLoaded = useCallback(() => {
-    setPageLoaded(InternalRoute.NotFound);
-  }, [setPageLoaded]);
+  const setNotFoundHeroImageLoaded = useCallback(() => {
+    setHeroImageLoaded(InternalRoute.NotFound);
+  }, [setHeroImageLoaded]);
 
   return (
     <PageLayout
@@ -28,14 +28,14 @@ const NotFoundPage = () => {
           className={globalStyles.heroImage}
           layout="fullWidth"
           loading="eager"
-          onLoad={setNotFoundPageLoaded}
+          onLoad={setNotFoundHeroImageLoaded}
           placeholder="none"
           quality={80}
           src="../assets/images/heros/eve-on-mountain-looking-confused.jpg"
         />
       }
       heroImageClassName={styles.heroImageContainer}
-      heroImageLoaded={pageLoaded[InternalRoute.NotFound]}
+      heroImageLoaded={heroImageLoaded[InternalRoute.NotFound]}
       title="Page Not Found"
     >
       <SectionContainer>

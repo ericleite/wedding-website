@@ -25,12 +25,12 @@ const Index: React.FC<PageProps<SiteData>> = () => {
   useIntersectionObserver(locationSectionRef, startLocationSectionAnimations);
 
   const {
-    setPageLoaded,
-    state: { pageLoaded },
+    setHeroImageLoaded,
+    state: { heroImageLoaded },
   } = useAppState();
-  const setHomePageLoaded = useCallback(() => {
-    setPageLoaded(InternalRoute.Home);
-  }, [setPageLoaded]);
+  const setHomeHeroImageLoaded = useCallback(() => {
+    setHeroImageLoaded(InternalRoute.Home);
+  }, [setHeroImageLoaded]);
 
   return (
     <PageLayout
@@ -42,14 +42,14 @@ const Index: React.FC<PageProps<SiteData>> = () => {
           className={globalStyles.heroImage}
           layout="fullWidth"
           loading="eager"
-          onLoad={setHomePageLoaded}
+          onLoad={setHomeHeroImageLoaded}
           placeholder="none"
           quality={80}
           src="../assets/images/heros/eric-and-lauren-between-joshua-trees.jpg"
         />
       }
       heroImageClassName={styles.heroImageContainer}
-      heroImageLoaded={pageLoaded[InternalRoute.Home]}
+      heroImageLoaded={heroImageLoaded[InternalRoute.Home]}
       subtitle="The Wedding of"
       title="Eric &amp; Lauren"
     >

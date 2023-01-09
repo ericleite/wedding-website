@@ -16,12 +16,12 @@ import * as styles from './accommodations.module.css';
 
 const Accommodations: React.FC<PageProps> = () => {
   const {
-    setPageLoaded,
-    state: { pageLoaded },
+    setHeroImageLoaded,
+    state: { heroImageLoaded },
   } = useAppState();
-  const setAccommodationsPageLoaded = useCallback(() => {
-    setPageLoaded(InternalRoute.Accommodations);
-  }, [setPageLoaded]);
+  const setAccommodationsHeroImageLoaded = useCallback(() => {
+    setHeroImageLoaded(InternalRoute.Accommodations);
+  }, [setHeroImageLoaded]);
 
   return (
     <PageLayout
@@ -33,14 +33,14 @@ const Accommodations: React.FC<PageProps> = () => {
           className={globalStyles.heroImage}
           layout="fullWidth"
           loading="eager"
-          onLoad={setAccommodationsPageLoaded}
+          onLoad={setAccommodationsHeroImageLoaded}
           placeholder="none"
           quality={80}
           src="../assets/images/heros/eric-and-lauren-walking-in-front-of-joshua-tree.jpg"
         />
       }
       heroImageClassName={styles.heroImageContainer}
-      heroImageLoaded={pageLoaded[InternalRoute.Accommodations]}
+      heroImageLoaded={heroImageLoaded[InternalRoute.Accommodations]}
       subtitle="Getting to the venue"
       title="Travel & Hotel"
     >

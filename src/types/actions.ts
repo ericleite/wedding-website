@@ -1,10 +1,10 @@
 import { InternalRoute } from './ui';
 
 export enum ActionType {
-  PageLoaded,
+  HeroImageLoaded,
 }
 
-export type PageLoadedAction = {
-  type: ActionType.PageLoaded;
+export type HeroImageLoadedAction = {
+  type: ActionType.HeroImageLoaded;
   payload: { route: InternalRoute };
 };

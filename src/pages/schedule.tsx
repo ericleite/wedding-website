@@ -13,12 +13,12 @@ import * as styles from './schedule.module.css';
 
 const Schedule: React.FC<PageProps> = () => {
   const {
-    setPageLoaded,
-    state: { pageLoaded },
+    setHeroImageLoaded,
+    state: { heroImageLoaded },
   } = useAppState();
-  const setSchedulePageLoaded = useCallback(() => {
-    setPageLoaded(InternalRoute.Schedule);
-  }, [setPageLoaded]);
+  const setScheduleHeroImageLoaded = useCallback(() => {
+    setHeroImageLoaded(InternalRoute.Schedule);
+  }, [setHeroImageLoaded]);
 
   return (
     <PageLayout
@@ -30,14 +30,14 @@ const Schedule: React.FC<PageProps> = () => {
           className={globalStyles.heroImage}
           layout="fullWidth"
           loading="eager"
-          onLoad={setSchedulePageLoaded}
+          onLoad={setScheduleHeroImageLoaded}
           placeholder="none"
           quality={80}
           src="../assets/images/heros/eric-and-lauren-holding-hands-in-front-of-cactus-and-rocks.jpg"
         />
       }
       heroImageClassName={styles.heroImageContainer}
-      heroImageLoaded={pageLoaded[InternalRoute.Schedule]}
+      heroImageLoaded={heroImageLoaded[InternalRoute.Schedule]}
       subtitle="Let the adventure begin"
       title="Schedule"
     >

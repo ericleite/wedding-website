@@ -16,12 +16,12 @@ const OurStory: React.FC<PageProps> = () => {
   const { days, hours, minutes, seconds } = useCountdownTimer(WEDDING_START_DATE);
 
   const {
-    setPageLoaded,
-    state: { pageLoaded },
+    setHeroImageLoaded,
+    state: { heroImageLoaded },
   } = useAppState();
-  const setOurStoryPageLoaded = useCallback(() => {
-    setPageLoaded(InternalRoute.OurStory);
-  }, [setPageLoaded]);
+  const setOurStoryHeroImageLoaded = useCallback(() => {
+    setHeroImageLoaded(InternalRoute.OurStory);
+  }, [setHeroImageLoaded]);
 
   return (
     <PageLayout
@@ -33,14 +33,14 @@ const OurStory: React.FC<PageProps> = () => {
           className={globalStyles.heroImage}
           layout="fullWidth"
           loading="eager"
-          onLoad={setOurStoryPageLoaded}
+          onLoad={setOurStoryHeroImageLoaded}
           placeholder="none"
           quality={80}
           src="../assets/images/heros/eric-and-lauren-on-a-road.jpg"
         />
       }
       heroImageClassName={styles.heroImageContainer}
-      heroImageLoaded={pageLoaded[InternalRoute.OurStory]}
+      heroImageLoaded={heroImageLoaded[InternalRoute.OurStory]}
       subtitle="A match made in Florida"
       title="Our Story"
     >

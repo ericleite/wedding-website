@@ -1,13 +1,13 @@
 import React, { createContext, useCallback, useContext, useMemo, useReducer } from 'react';
 
-import { ActionType, InternalRoute, PageLoadedAction } from '../types';
+import { ActionType, HeroImageLoadedAction, InternalRoute } from '../types';
 
-type Action = PageLoadedAction;
+type Action = HeroImageLoadedAction;
 type Dispatch = (action: Action) => void;
-type State = { pageLoaded: { [key in InternalRoute]: boolean } };
+type State = { heroImageLoaded: { [key in InternalRoute]: boolean } };
 
 const INITIAL_STATE: State = {
-  pageLoaded: {
+  heroImageLoaded: {
     [InternalRoute.Accommodations]: false,
     [InternalRoute.Home]: false,
     [InternalRoute.NotFound]: false,
@@ -22,10 +22,10 @@ const AppStateContext = createContext<{ state: State; dispatch: Dispatch } | und
 
 function appStateReducer(state: State, action: Action) {
   switch (action.type) {
-    case ActionType.PageLoaded: {
+    case ActionType.HeroImageLoaded: {
       return {
-        pageLoaded: {
-          ...state.pageLoaded,
+        heroImageLoaded: {
+          ...state.heroImageLoaded,
           [action.payload.route]: true,
         },
       };
@@ -50,14 +50,12 @@ export function useAppState() {
     throw new Error('useAppState must be used within an AppStateProvider');
   }
 
-  const setPageLoaded = useCallback(
+  const setHeroImageLoaded = useCallback(
     (route: InternalRoute) => {
-      context.dispatch({ payload: { route }, type: ActionType.PageLoaded });
+      context.dispatch({ payload: { route }, type: ActionType.HeroImageLoaded });
     },
     [context],
   );
 
-  console.log(context.state.pageLoaded);
-
-  return useMemo(() => ({ ...context, setPageLoaded }), [context, setPageLoaded]);
+  return useMemo(() => ({ ...context, setHeroImageLoaded }), [context, setHeroImageLoaded]);
 }

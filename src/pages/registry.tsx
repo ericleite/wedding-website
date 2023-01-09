@@ -13,12 +13,12 @@ const Registry: React.FC<PageProps> = () => {
   const scriptId = useRef(Math.random().toString());
 
   const {
-    setPageLoaded,
-    state: { pageLoaded },
+    setHeroImageLoaded,
+    state: { heroImageLoaded },
   } = useAppState();
-  const setRegistryPageLoaded = useCallback(() => {
-    setPageLoaded(InternalRoute.Registry);
-  }, [setPageLoaded]);
+  const setRegistryHeroImageLoaded = useCallback(() => {
+    setHeroImageLoaded(InternalRoute.Registry);
+  }, [setHeroImageLoaded]);
 
   return (
     <PageLayout
@@ -30,14 +30,14 @@ const Registry: React.FC<PageProps> = () => {
           className={globalStyles.heroImage}
           layout="fullWidth"
           loading="eager"
-          onLoad={setRegistryPageLoaded}
+          onLoad={setRegistryHeroImageLoaded}
           placeholder="none"
           quality={80}
           src="../assets/images/heros/eric-and-lauren-standing-in-front-of-rocks.jpg"
         />
       }
       heroImageClassName={styles.heroImageContainer}
-      heroImageLoaded={pageLoaded[InternalRoute.Registry]}
+      heroImageLoaded={heroImageLoaded[InternalRoute.Registry]}
       title="Registry"
     >
       <SectionContainer>
