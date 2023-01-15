@@ -104,7 +104,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
               'border-none flex items-center font-serif transition-colors',
               isDark && !isNavOpen && 'text-darkTertiary hover:text-darkPrimary',
               isLight && !isNavOpen && 'text-lightSecondary hover:text-lightPrimary',
-              isNavOpen && 'text-lightTertiary hover:text-darkTertiary',
+              isNavOpen && 'text-darkTertiary hover:text-darkPrimary',
             )}
             onClick={() => {
               setIsNavOpen(false);
