@@ -10,20 +10,19 @@ import React, { useCallback, useEffect, useState } from 'react';
 import resolveConfig from 'tailwindcss/resolveConfig';
 
 import tailwindConfig from '../../../tailwind.config.js';
+import MonogramSVG from '../../assets/images/accents/monogram.inline.svg';
 import * as globalStyles from '../../assets/styles/global.module.css';
-import {
-  AnimatedDivider,
-  AnimatedText,
-  AnimationType,
-  Footer,
-  Header,
-  HeroImage,
-  NavToggle,
-  ScrollIcon,
-} from '../../components';
+import { AnimatedDivider, AnimatedText, Footer, Header, HeroImage, NavToggle, ScrollIcon } from '../../components';
 import { InternalRoute, ThemeColor } from '../../types';
 
 const resolvedTailwindConfig = resolveConfig(tailwindConfig);
+
+const MONOGRAM_SIZE = resolvedTailwindConfig?.theme?.height?.['16'];
+const SUBTITLE_DIVIDER_ANIMATION_DELAY = 700;
+const SUBTITLE_TEXT_ANIMATION_DELAY = 500;
+const TITLE_TEXT_ANIMATION_DELAY = 500;
+const TITLE_TEXT_ANIMATION_DURATION = 1000;
+const TITLE_TEXT_WITH_SUBTITLE_ANIMATION_DELAY = 700;
 
 interface PageLayoutProps {
   className?: string;
@@ -58,6 +57,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   }, []);
 
   useEffect(() => {
+    // Prevent scrolling on the body when the nav is open
     if (isNavOpen) {
       document.body.classList.add('overflow-hidden');
       document.body.classList.add('lg:overflow-visible');
@@ -66,6 +66,7 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
       document.body.classList.remove('lg:overflow-visible');
     }
 
+    // Automatically close the nav on larger screens
     function closeNav() {
       if (isNavOpen) {
         setIsNavOpen(false);
@@ -79,27 +80,32 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
     };
   }, [isNavOpen]);
 
+  useEffect(() => {
+    // Start monogram animation when hero image is loaded
+    if (heroImageLoaded) {
+      // Delay line animation to allow for hero image to fade in
+      document.getElementById('monogram-svg-radial-gradient-animate-currentColor')?.beginElement();
+      document.getElementById('monogram-svg-radial-gradient-animate-transparent')?.beginElement();
+    }
+  }, [heroImageLoaded]);
+
   const monogram = (
     <div className="absolute w-full top-[12.5%] -translate-y-1/2 flex justify-center">
       <h4 className="text-h4 leading-none">
-        <AnimatedText animationType={AnimationType.FadeIn} delay={1400} hasTriggered={heroImageLoaded}>
-          <Link
-            className={clsx(
-              'border-none flex items-center font-serif transition-colors',
-              isDark && !isNavOpen && 'text-darkTertiary hover:text-darkPrimary',
-              isLight && !isNavOpen && 'text-lightSecondary hover:text-lightPrimary',
-              isNavOpen && 'text-lightTertiary hover:text-darkTertiary',
-            )}
-            onClick={() => {
-              setIsNavOpen(false);
-            }}
-            to={InternalRoute.Home}
-          >
-            <span>E</span>
-            <span className="text-h6 px-7">&amp;</span>
-            <span>L</span>
-          </Link>
-        </AnimatedText>
+        <Link
+          className={clsx(
+            'border-none flex items-center font-serif transition-colors',
+            isDark && !isNavOpen && 'text-darkTertiary hover:text-darkPrimary',
+            isLight && !isNavOpen && 'text-lightSecondary hover:text-lightPrimary',
+            isNavOpen && 'text-lightTertiary hover:text-darkTertiary',
+          )}
+          onClick={() => {
+            setIsNavOpen(false);
+          }}
+          to={InternalRoute.Home}
+        >
+          <MonogramSVG height={MONOGRAM_SIZE} width={MONOGRAM_SIZE} />
+        </Link>
       </h4>
     </div>
   );
@@ -117,13 +123,13 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
                 isLight && 'text-lightPrimary',
               )}
             >
-              <AnimatedText delay={500} hasTriggered={heroImageLoaded}>
+              <AnimatedText delay={SUBTITLE_TEXT_ANIMATION_DELAY} hasTriggered={heroImageLoaded}>
                 {subtitle}
               </AnimatedText>
             </p>
             <AnimatedDivider
               color={isLight ? ThemeColor.ExtraLight : ThemeColor.Dark}
-              delay={700}
+              delay={SUBTITLE_DIVIDER_ANIMATION_DELAY}
               hasTriggered={heroImageLoaded}
             />
           </>
@@ -135,7 +141,11 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
             isLight && 'text-lightPrimary',
           )}
         >
-          <AnimatedText delay={subtitle ? 700 : 500} duration={1000} hasTriggered={heroImageLoaded}>
+          <AnimatedText
+            delay={subtitle ? TITLE_TEXT_WITH_SUBTITLE_ANIMATION_DELAY : TITLE_TEXT_ANIMATION_DELAY}
+            duration={TITLE_TEXT_ANIMATION_DURATION}
+            hasTriggered={heroImageLoaded}
+          >
             {title}
           </AnimatedText>
         </h1>

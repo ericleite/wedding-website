@@ -58,28 +58,28 @@ module.exports = {
       // Typography scale can be found here:
       // https://type-scale.com/?size=16&scale=1.333&text=This%20is%20a%20heading&font=Playfair%20Display&fontweight=600&bodyfont=Montserrat&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false
       0: '0',
-      1: '0.0625rem',
-      2: '0.125rem',
-      3: '0.15625rem',
-      4: '0.1875rem',
-      5: '0.25rem',
-      6: '0.3125rem',
-      7: '0.4375rem',
-      8: '0.5625rem',
-      9: '0.75rem',
-      10: '1rem',
-      11: '1.3125rem',
-      12: '1.75rem',
-      13: '2.375rem',
-      14: '3.125rem',
-      15: '4.25rem',
-      16: '5.625rem',
-      17: '7.5rem',
-      18: '10rem',
-      19: '13.25rem',
-      20: '17.75rem',
-      21: '23.625rem',
-      22: '31.5rem',
+      1: '0.0625rem', // 1px
+      2: '0.125rem', // 2px
+      3: '0.15625rem', // 2.5px
+      4: '0.1875rem', // 3px
+      5: '0.25rem', // 4px
+      6: '0.3125rem', // 5px
+      7: '0.4375rem', // 7px
+      8: '0.5625rem', // 9px
+      9: '0.75rem', // 12px
+      10: '1rem', // 16px
+      11: '1.3125rem', // 21px
+      12: '1.75rem', // 28px
+      13: '2.375rem', // 38px
+      14: '3.125rem', // 50px
+      15: '4.25rem', // 68px
+      16: '5.625rem', // 90px
+      17: '7.5rem', // 120px
+      18: '10rem', // 160px
+      19: '13.25rem', // 212px
+      20: '17.75rem', // 284px
+      21: '23.625rem', // 380px
+      22: '31.5rem', // 508px
     },
     transitionDuration: {
       500: '500ms',

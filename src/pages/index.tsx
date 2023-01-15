@@ -18,8 +18,8 @@ const Index: React.FC<PageProps<SiteData>> = () => {
   const locationSectionRef = useRef<HTMLDivElement>(null);
   const [locationSectionAnimationStarted, setLocationSectionAnimationStarted] = useState(false);
   const startLocationSectionAnimations = useCallback(() => {
-    document.getElementById('c-currentColor')?.beginElement();
-    document.getElementById('c-transparent')?.beginElement();
+    document.getElementById('mountain-svg-linear-gradient-animate-currentColor')?.beginElement();
+    document.getElementById('mountain-svg-linear-gradient-animate-transparent')?.beginElement();
     setLocationSectionAnimationStarted(true);
   }, []);
   useIntersectionObserver(locationSectionRef, startLocationSectionAnimations);
