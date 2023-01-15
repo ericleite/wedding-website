@@ -81,23 +81,53 @@ const Header: React.FC<HeaderProps> = ({ className, isNavOpen, theme = ThemeColo
         )}
         id={HEADER_NAV_ID}
       >
-        <Link activeClassName={styles.isActive} className={styles.link} to={InternalRoute.OurStory}>
+        <Link
+          activeClassName={styles.isActive}
+          aria-label="Go to Our Story"
+          className={styles.link}
+          title="Go to Our Story"
+          to={InternalRoute.OurStory}
+        >
           <span>Our Story</span>
         </Link>
         <span className={styles.divider}>|</span>
-        <Link activeClassName={styles.isActive} className={styles.link} to={InternalRoute.Schedule}>
+        <Link
+          activeClassName={styles.isActive}
+          aria-label="Go to Schedule"
+          className={styles.link}
+          title="Go to Schedule"
+          to={InternalRoute.Schedule}
+        >
           <span>Schedule</span>
         </Link>
         <span className={styles.divider}>|</span>
-        <Link activeClassName={styles.isActive} className={styles.link} to={InternalRoute.Accommodations}>
-          <span>Travel &amp; Hotel</span>
+        <Link
+          activeClassName={styles.isActive}
+          aria-label="Go to Travel & Hotel"
+          className={styles.link}
+          title="Go to Travel & Hotel"
+          to={InternalRoute.Accommodations}
+        >
+          <span>Travel & Hotel</span>
         </Link>
         <span className={styles.divider}>|</span>
-        <Link activeClassName={styles.isActive} className={styles.link} to={InternalRoute.Registry}>
+        <Link
+          activeClassName={styles.isActive}
+          aria-label="Go to Registry"
+          className={styles.link}
+          title="Go to Registry"
+          to={InternalRoute.Registry}
+        >
           <span>Registry</span>
         </Link>
         <span className={styles.divider}>|</span>
-        <OutboundLink className={styles.link} href={ExternalRoute.Rsvp} target="_blank">
+        <OutboundLink
+          aria-label="Go to external RSVP page"
+          className={styles.link}
+          href={ExternalRoute.Rsvp}
+          target="_blank"
+          title="Go to external RSVP page"
+        >
           <span>RSVP</span>
         </OutboundLink>
       </nav>

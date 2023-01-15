@@ -3,20 +3,10 @@
   <style>
     .monogram-svg-outline {
       fill: none;
-      stroke: url(#monogram-svg-radial-gradient);
+      stroke: currentColor;
       stroke-width: 16
     }
   </style>
-  <defs>
-    <radialGradient id="monogram-svg-radial-gradient" fy="100%" r="100%">
-      <stop offset="0" stop-color="currentColor">
-        <animate id="monogram-svg-radial-gradient-animate-currentColor" dur="2.1s" attributeName="offset" fill="freeze" from="0" to="1" begin="indefinite" calcMode="spline" keySplines="0 0 0 1" />
-      </stop>
-      <stop offset="0" stop-color="transparent">
-        <animate id="monogram-svg-radial-gradient-animate-transparent" dur="2.1s" attributeName="offset" fill="freeze" from="0" to="1" begin="indefinite" calcMode="spline" keySplines="0 0 0 1" />
-      </stop>
-    </radialGradient>
-  </defs>
   <path class="monogram-svg-outline" d="m624.9 786.9h-399.5l-199.8-345.3 199.8-345.3h399.5l199.7 345.3z" />
   <path class="monogram-svg-outline" d="m736.8 212.6l77 337.4-188.8 236.9h-400l-188.8-236.9 77-337.4 311.8-150.2z" />
   <path fill="currentColor"

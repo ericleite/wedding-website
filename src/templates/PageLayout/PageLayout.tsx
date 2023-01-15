@@ -12,11 +12,21 @@ import resolveConfig from 'tailwindcss/resolveConfig';
 import tailwindConfig from '../../../tailwind.config.js';
 import MonogramSVG from '../../assets/images/accents/monogram.inline.svg';
 import * as globalStyles from '../../assets/styles/global.module.css';
-import { AnimatedDivider, AnimatedText, Footer, Header, HeroImage, NavToggle, ScrollIcon } from '../../components';
+import {
+  AnimatedDivider,
+  AnimatedText,
+  AnimationType,
+  Footer,
+  Header,
+  HeroImage,
+  NavToggle,
+  ScrollIcon,
+} from '../../components';
 import { InternalRoute, ThemeColor } from '../../types';
 
 const resolvedTailwindConfig = resolveConfig(tailwindConfig);
 
+const MONOGRAM_ANIMATION_DELAY = 1400;
 const MONOGRAM_SIZE = resolvedTailwindConfig?.theme?.height?.['16'];
 const SUBTITLE_DIVIDER_ANIMATION_DELAY = 700;
 const SUBTITLE_TEXT_ANIMATION_DELAY = 500;
@@ -80,32 +90,31 @@ const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
     };
   }, [isNavOpen]);
 
-  useEffect(() => {
-    // Start monogram animation when hero image is loaded
-    if (heroImageLoaded) {
-      // Delay line animation to allow for hero image to fade in
-      document.getElementById('monogram-svg-radial-gradient-animate-currentColor')?.beginElement();
-      document.getElementById('monogram-svg-radial-gradient-animate-transparent')?.beginElement();
-    }
-  }, [heroImageLoaded]);
-
   const monogram = (
     <div className="absolute w-full top-[12.5%] -translate-y-1/2 flex justify-center">
       <h4 className="text-h4 leading-none">
-        <Link
-          className={clsx(
-            'border-none flex items-center font-serif transition-colors',
-            isDark && !isNavOpen && 'text-darkTertiary hover:text-darkPrimary',
-            isLight && !isNavOpen && 'text-lightSecondary hover:text-lightPrimary',
-            isNavOpen && 'text-lightTertiary hover:text-darkTertiary',
-          )}
-          onClick={() => {
-            setIsNavOpen(false);
-          }}
-          to={InternalRoute.Home}
+        <AnimatedText
+          animationType={AnimationType.FadeIn}
+          delay={MONOGRAM_ANIMATION_DELAY}
+          hasTriggered={heroImageLoaded}
         >
-          <MonogramSVG height={MONOGRAM_SIZE} width={MONOGRAM_SIZE} />
-        </Link>
+          <Link
+            aria-label="Go to homepage"
+            className={clsx(
+              'border-none flex items-center font-serif transition-colors',
+              isDark && !isNavOpen && 'text-darkTertiary hover:text-darkPrimary',
+              isLight && !isNavOpen && 'text-lightSecondary hover:text-lightPrimary',
+              isNavOpen && 'text-lightTertiary hover:text-darkTertiary',
+            )}
+            onClick={() => {
+              setIsNavOpen(false);
+            }}
+            title="Go to homepage"
+            to={InternalRoute.Home}
+          >
+            <MonogramSVG height={MONOGRAM_SIZE} width={MONOGRAM_SIZE} />
+          </Link>
+        </AnimatedText>
       </h4>
     </div>
   );
