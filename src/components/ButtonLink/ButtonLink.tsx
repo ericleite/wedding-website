@@ -7,6 +7,8 @@ import { ThemeColor, ThemeSize } from '../../types';
 import { Button } from '../Button';
 
 interface ButtonLinkProps {
+  buttonClassName?: string;
+  buttonSpanClassName?: string;
   className?: string;
   color?: ThemeColor;
   href: string;
@@ -15,6 +17,8 @@ interface ButtonLinkProps {
 }
 
 const ButtonLink: React.FC<React.PropsWithChildren<ButtonLinkProps>> = ({
+  buttonClassName,
+  buttonSpanClassName,
   children,
   className,
   color = ThemeColor.Gold,
@@ -24,9 +28,8 @@ const ButtonLink: React.FC<React.PropsWithChildren<ButtonLinkProps>> = ({
   ...props
 }) => {
   const classNames = clsx('border-none inline-block', className);
-
   const buttonEl = (
-    <Button color={color} semantic={false} size={size}>
+    <Button className={buttonClassName} color={color} semantic={false} size={size} spanClassName={buttonSpanClassName}>
       {children}
     </Button>
   );

@@ -110,7 +110,6 @@ const Schedule: React.FC<PageProps> = () => {
                 />
                 <EventDetails
                   attendees="Westin Guests"
-                  attire="Cocktail"
                   location="Dubose Residence"
                   locationHref="https://goo.gl/maps/1ByJ2GznuMhSXiaJ7"
                   name="Shuttle to Hotel"

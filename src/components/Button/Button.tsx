@@ -8,6 +8,7 @@ interface ButtonProps {
   color?: ThemeColor;
   semantic?: boolean;
   size?: ThemeSize;
+  spanClassName?: string;
 }
 
 export const COLOR_MAP: Partial<Record<ThemeColor, string>> = Object.freeze({
@@ -32,6 +33,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
   color = ThemeColor.Gold,
   semantic = true,
   size = ThemeSize.Md,
+  spanClassName,
 }) => {
   const classNames = clsx(
     'border-2 md:border-3 font-bold tracking-widest uppercase transition-colors',
@@ -41,12 +43,12 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
   );
 
   if (!semantic) {
-    return <span className={clsx('flex items-center', classNames)}>{children}</span>;
+    return <span className={clsx('flex items-center', classNames, spanClassName)}>{children}</span>;
   }
 
   return (
     <button className={classNames}>
-      <span className="flex items-center">{children}</span>
+      <span className={clsx('flex items-center', spanClassName)}>{children}</span>
     </button>
   );
 };
