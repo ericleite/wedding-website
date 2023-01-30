@@ -33,7 +33,7 @@ export default function EventDetails({
   return (
     <div className="text-center">
       <h6 className="mb-8 text-h6">{name}</h6>
-      <div className="space-y-0">
+      <div>
         <p className="font-bold">
           {start &&
             start.toLocaleTimeString('en-us', { hour12: true, timeStyle: 'short', timeZone: 'America/Los_Angeles' })}
@@ -41,9 +41,9 @@ export default function EventDetails({
           {stop &&
             stop.toLocaleTimeString('en-us', { hour12: true, timeStyle: 'short', timeZone: 'America/Los_Angeles' })}
         </p>
-        <p>{locationWithAddress}</p>
-        <p>{attendees} welcome</p>
-        <p>{attire && <>{attire} attire</>}</p>
+        <p className="mt-0">{locationWithAddress}</p>
+        <p className="text-small mt-6">{attendees} welcome</p>
+        <p className="italic text-small mt-6">{attire && <>{attire} attire</>}</p>
       </div>
     </div>
   );

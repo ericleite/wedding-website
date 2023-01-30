@@ -168,7 +168,7 @@ const Accommodations: React.FC<PageProps> = () => {
               size={ThemeSize.Sm}
             >
               <span>Book at Courtyard</span>
-              <small className="inline">(available until 2/10)</small>
+              <span className="text-small">(available until 2/10)</span>
             </ButtonLink>
           </p>
         </section>
