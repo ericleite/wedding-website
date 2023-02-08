@@ -6,6 +6,7 @@ import { ThemeColor, ThemeSize } from '../../types';
 interface ButtonProps {
   className?: string;
   color?: ThemeColor;
+  disabled?: boolean;
   semantic?: boolean;
   size?: ThemeSize;
   spanClassName?: string;
@@ -31,6 +32,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
   children,
   className,
   color = ThemeColor.Gold,
+  disabled = false,
   semantic = true,
   size = ThemeSize.Md,
   spanClassName,
@@ -47,7 +49,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
   }
 
   return (
-    <button className={classNames}>
+    <button className={classNames} disabled={disabled}>
       <span className={clsx('flex items-center', spanClassName)}>{children}</span>
     </button>
   );

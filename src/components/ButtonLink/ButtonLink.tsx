@@ -11,6 +11,7 @@ interface ButtonLinkProps {
   buttonSpanClassName?: string;
   className?: string;
   color?: ThemeColor;
+  disabled?: boolean;
   href: string;
   outbound?: boolean;
   size?: ThemeSize;
@@ -22,6 +23,7 @@ const ButtonLink: React.FC<React.PropsWithChildren<ButtonLinkProps>> = ({
   children,
   className,
   color = ThemeColor.Gold,
+  disabled,
   href,
   outbound = false,
   size = ThemeSize.Md,
@@ -29,21 +31,28 @@ const ButtonLink: React.FC<React.PropsWithChildren<ButtonLinkProps>> = ({
 }) => {
   const classNames = clsx('border-none inline-block', className);
   const buttonEl = (
-    <Button className={buttonClassName} color={color} semantic={false} size={size} spanClassName={buttonSpanClassName}>
+    <Button
+      className={buttonClassName}
+      color={color}
+      disabled={disabled}
+      semantic={false}
+      size={size}
+      spanClassName={buttonSpanClassName}
+    >
       {children}
     </Button>
   );
 
   if (!outbound) {
     return (
-      <Link className={classNames} to={href} {...props}>
+      <Link aria-disabled={disabled} className={classNames} to={href} {...props}>
         {buttonEl}
       </Link>
     );
   }
 
   return (
-    <OutboundLink className={classNames} href={href} target="_blank" {...props}>
+    <OutboundLink className={classNames} disabled={disabled} href={href} target="_blank" {...props}>
       {buttonEl}
     </OutboundLink>
   );

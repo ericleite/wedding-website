@@ -128,9 +128,9 @@ const Accommodations: React.FC<PageProps> = () => {
               book a room.
             </p>
             <p>
-              <b>January 31st update:</b> The Westin hotel block is almost full! We have opened a second hotel block at
-              the Courtyard by Marriott Palm Desert. This hotel will be available for booking until <b>February 10th</b>
-              . Please book your room as soon as possible to ensure you get the discounted rate.
+              <b>February 7th update:</b> The Westin hotel block is now full! We have opened a second hotel block at the
+              Courtyard by Marriott Palm Desert. This hotel will be available for booking until <b>February 10th</b>.
+              Please book your room as soon as possible to ensure you get the discounted rate.
             </p>
           </div>
         </section>
@@ -147,12 +147,13 @@ const Accommodations: React.FC<PageProps> = () => {
           <p>
             <ButtonLink
               buttonSpanClassName="flex-col"
+              disabled={true}
               href="https://book.passkey.com/e/50383865"
               outbound
               size={ThemeSize.Sm}
             >
               <span>Book at Westin</span>
-              <span className="text-small mt-6">(only 2 rooms left!)</span>
+              <span className="text-small mt-6">(sold out!)</span>
             </ButtonLink>
           </p>
         </section>
