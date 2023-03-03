@@ -170,6 +170,7 @@ const Accommodations: React.FC<PageProps> = () => {
           <p>
             <ButtonLink
               buttonSpanClassName="flex-col"
+              disabled={true}
               href="https://www.marriott.com/events/start.mi?id=1669936014503&key=GRP"
               outbound
               size={ThemeSize.Sm}
